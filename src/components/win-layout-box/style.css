@@ -1,0 +1,9 @@
+.layout-box {
+    margin: 10px;
+    border: 2px solid #58a5f0;
+    height: 120px;
+}
+
+.layout-box:hover {
+    border-color: #63ccff;
+}

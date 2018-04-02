@@ -1,0 +1,40 @@
+.matrix-container {
+  display: flex;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.matrix-container .left-nav-container {
+  width: auto;
+  background: #004c8c;
+  color: white;
+}
+
+.matrix-container .center-context-pane {
+  flex: 1;
+  display: flex;
+}
+
+.matrix-container .center-context-pane > .dynamic-library {
+  width: 240px;
+  background: #0277bd;
+  overflow: auto;
+}
+
+.matrix-container .center-context-pane > .runtime-window {
+  flex: 1;
+  background: #e1e2e1;
+  overflow: auto;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  background: #2468a2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #58a5f0;
+}
