@@ -12,4 +12,4 @@ Run `npm run dev` for a dev server. Navigate to `http://localhost:4200/`. The ap
 Run `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
 ## Production start
-Run `npm start` to start the express server. And the server will be listening on port 3006(http) and 3008(https).
+Run `npm start` to start the express server. And the server will be listening on port `3006 [http]` and `3008 [https]`.
