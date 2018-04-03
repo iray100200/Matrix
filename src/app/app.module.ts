@@ -7,6 +7,7 @@ import { MXRouterModule } from '../modules/router.module';
 import { MXWinLeftNavigator, MXWinLeftNavigatorDirective } from '../components/win-left-navigator';
 import { MXWinLayoutBox } from '../components/win-layout-box';
 import { MXWinComponentBox } from '../components/win-component-box';
+import { MXWinSplitPane, MXWinPrimarySide, MXWinSecondarySide } from '../components/win-split-pane';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
@@ -16,7 +17,10 @@ import { RouterModule } from '@angular/router';
     MXWinLeftNavigator,
     MXWinLeftNavigatorDirective,
     MXWinLayoutBox,
-    MXWinComponentBox
+    MXWinComponentBox,
+    MXWinSplitPane,
+    MXWinPrimarySide,
+    MXWinSecondarySide
   ],
   imports: [
     MXRouterModule,
