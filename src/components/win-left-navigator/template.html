@@ -3,7 +3,7 @@
     <ul>
         <li *ngFor="let m of menuList">
             <div class="menu-item-container">
-                <div class="menu-item-icon" nav-item-name="{{m.name}}">
+                <div class="menu-item-icon" nav-item-name="{{m.name}}" title="{{m.label}}">
                     <i class="material-icons md-20">{{m.icon}}</i>
                     <div class="menu-item-text" *ngIf="m.label">{{m.label}}</div>
                 </div>
