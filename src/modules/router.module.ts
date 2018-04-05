@@ -8,7 +8,7 @@ export const RouteConfig = [
         loadChildren: './home.module#HomeModule'
     },
     {
-        path: 'layout/common_',
+        path: 'layout/common',
         component: CommonLayout
     }
 ]

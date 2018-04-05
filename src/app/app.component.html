@@ -3,7 +3,7 @@
         <div mx-win-left-nav #target></div>
     </div>
     <div class="center-context-pane" mx-win-split-pane #context>
-        <div mx-win-primary-side class="dynamic-library">
+        <div mx-win-primary-side [minWidth]="240" [maxWidth]="320" class="dynamic-library">
             <a routerLink="/layout/common"><div mx-win-layout-box></div></a>
             <div mx-win-layout-box></div>
             <div mx-win-layout-box></div>

@@ -23,12 +23,14 @@
   width: 240px;
   background: #0277bd;
   overflow: auto;
+  will-change: width;
 }
 
 .matrix-container .center-context-pane > .runtime-window {
   flex: 1;
   background: #e1e2e1;
   overflow: auto;
+  will-change: width;
 }
 
 ::-webkit-scrollbar {
