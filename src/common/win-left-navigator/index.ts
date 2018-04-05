@@ -50,6 +50,10 @@ export class MXWinLeftNavigator implements OnInit, AfterViewInit {
     };
     @ViewChildren(MXWinLeftNavigatorDirective) itemList: QueryList<MXWinLeftNavigatorDirective>;
     constructor(protected elementRef: ElementRef) {
+        this.menuList.map((m) => {
+            m.href = m.href || null;
+            return m;
+        });
     }
     ngOnInit() {
 

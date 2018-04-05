@@ -1,5 +1,5 @@
 import { Component, ViewChild, OnInit, ElementRef } from '@angular/core';
-import { Events, MXWinLeftNavigator } from '../components/win-left-navigator';
+import { Events, MXWinLeftNavigator } from '../common/win-left-navigator';
 
 @Component({
   selector: '[matrix-root]',

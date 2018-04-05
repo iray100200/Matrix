@@ -1,0 +1,17 @@
+.layout-context {
+    display: flex;
+}
+
+.layout-context .dynamic-library {
+    width: 240px;
+    background: #0277bd;
+    overflow: auto;
+    will-change: width;
+}
+
+.layout-context.runtime-window {
+    flex: 1;
+    background: #e1e2e1;
+    overflow: auto;
+    will-change: width;
+}

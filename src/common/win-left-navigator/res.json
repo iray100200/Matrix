@@ -19,9 +19,7 @@
         "name" : "layout",
         "icon" : "dashboard",
         "label" : "布局",
-        "events": {
-            "onClick": "operateFrames"
-        }
+        "href": "layout"
     }, {
         "name" : "comp",
         "icon" : "settings_input_component",
