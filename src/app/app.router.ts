@@ -11,6 +11,12 @@ export const MXRouterConfig = [
     },
     {
         path: 'layout',
-        component: MXLayoutComponent
+        component: MXLayoutComponent,
+        children: [
+            {
+                path: 'win-layouts',
+                component: CommonLayout
+            }
+        ]
     }
 ]

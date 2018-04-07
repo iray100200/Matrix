@@ -1,0 +1,34 @@
+[
+    {
+        "path": "win-layouts",
+        "component": "./common-layout"
+    },
+    {
+        "path": "win-layouts",
+        "component": "./common-layout"
+    },
+    {
+        "path": "win-layouts",
+        "component": "./common-layout"
+    },
+    {
+        "path": "win-layouts",
+        "component": "./common-layout"
+    },
+    {
+        "path": "win-layouts",
+        "component": "./common-layout"
+    },
+    {
+        "path": "win-layouts",
+        "component": "./common-layout"
+    },
+    {
+        "path": "win-layouts",
+        "component": "./common-layout"
+    },
+    {
+        "path": "win-layouts",
+        "component": "./common-layout"
+    }
+]

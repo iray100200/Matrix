@@ -16,13 +16,10 @@
 
 .matrix-container .center-context-pane {
   flex: 1;
+  height: 100%;
+  position: relative;
 }
 
-::-webkit-scrollbar {
-  width: 3px;
-  background: #2468a2;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #58a5f0;
+.matrix-container .center-context-pane > div {
+  height: 100%;
 }

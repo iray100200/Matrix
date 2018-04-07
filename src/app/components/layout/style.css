@@ -1,17 +1,54 @@
 .layout-context {
+    position: absolute;
     display: flex;
+    height: 100%;
+    left: 0;
+    right: 0;
 }
 
-.layout-context .dynamic-library {
+.layout-context .library-context {
     width: 240px;
-    background: #0277bd;
+    background: #004c8c;
+    background: linear-gradient(90deg, #0277bd, #004c8c);
     overflow: auto;
     will-change: width;
+    position: relative;
 }
 
-.layout-context.runtime-window {
+.layout-context .library-items {
+    
+}
+
+.layout-context .library-context .library-tag {
+    padding: 4px 12px;
+    background: #004c8c;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.layout-context .runtime-context {
     flex: 1;
     background: #e1e2e1;
     overflow: auto;
     will-change: width;
+    position: relative;
+    display: flex;
+    background: linear-gradient(45deg, #c8c9c8, #e3e3e3);
+}
+
+.layout-context .runtime-context .tools-panel {
+    width: 48px;
+    background: #0277bd;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 10;
+}
+
+.layout-context .runtime-context .mx-container {
+    position: relative;
+    flex: 1;
+    margin: 25px;
 }

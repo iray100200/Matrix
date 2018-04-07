@@ -1,17 +1,14 @@
 <div mx-win-split-pane #context class="layout-context">
-    <div mx-win-primary-side [minWidth]="240" [maxWidth]="320" class="dynamic-library">
-        <a routerLink="/layout/common">
-            <div mx-win-layout-box></div>
-        </a>
-        <div mx-win-layout-box></div>
-        <div mx-win-layout-box></div>
-        <div mx-win-layout-box></div>
-        <div mx-win-layout-box></div>
-        <div mx-win-layout-box></div>
-        <div mx-win-layout-box></div>
-        <div mx-win-layout-box></div>
+    <div mx-win-primary-side [minWidth]="240" [maxWidth]="320" class="library-context">
+        <div class="library-items">
+            <a [routerLink]="item.path" *ngFor="let item of resJson">
+                <div mx-win-layout-box></div>
+            </a>
+        </div>
     </div>
-    <div mx-win-secondary-side class="runtime-window">
-
+    <div mx-win-secondary-side class="runtime-context" #virtualWin>
+        <div class="mx-container">
+            <router-outlet></router-outlet>
+        </div>
     </div>
 </div>
