@@ -1,14 +1,25 @@
 .layout-box {
     margin: 12px;
-    border: 2px solid #58a5f0;
+    border: 1px solid #d3d7d4;
     padding: 25%;
 }
 
 .layout-box.cloned {
-    border: 2px dotted #58a5f0;
+    border: 1px dotted #d3d7d4;
     position: absolute;
 }
 
 .layout-box:hover {
-    border-color: #63ccff;
+    border-color: #999d9c;
+    transition: 0.3s background;
+}
+
+.img {
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.img:hover {
+    background-size: 120%;
 }

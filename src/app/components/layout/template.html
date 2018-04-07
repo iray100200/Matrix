@@ -2,7 +2,7 @@
     <div mx-win-primary-side [minWidth]="240" [maxWidth]="320" class="library-context">
         <div class="library-items">
             <a [routerLink]="item.path" *ngFor="let item of resJson">
-                <div mx-win-layout-box></div>
+                <div mx-win-layout-box [img]="item.thumb"></div>
             </a>
         </div>
     </div>

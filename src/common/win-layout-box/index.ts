@@ -3,7 +3,8 @@ import {
     Input,
     HostListener,
     ElementRef,
-    AfterViewInit
+    AfterViewInit,
+    ViewChild
 } from "@angular/core";
 import { Router } from "@angular/router";
 
@@ -13,7 +14,9 @@ import { Router } from "@angular/router";
     styleUrls: ["./style.css"]
 })
 export class MXWinLayoutBox implements AfterViewInit {
+    @Input() img: string;
+    @ViewChild('context') context: ElementRef;
     ngAfterViewInit() {
-        
+        this.context.nativeElement.style.backgroundImage = `url(${this.img})`;
     }
 }

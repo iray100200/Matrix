@@ -1,0 +1,10 @@
+.guidance * {
+    line-height: 180%;
+    color: #004c8c;
+    display: flex;
+    align-items: center;
+}
+
+.tag {
+    border-bottom: 2px solid #004c8c;
+}
