@@ -1,10 +1,19 @@
-.guidance * {
-    line-height: 180%;
+.guidance *:not(i) {
+    line-height: 100%;
     color: #004c8c;
     display: flex;
     align-items: center;
+    padding-top: 8px;
+    padding-bottom: 12px;
 }
 
 .tag {
     border-bottom: 2px solid #004c8c;
+    padding-top: 4px;
+}
+
+.bg {
+    font-size: 100px;
+    position: absolute;
+    z-index: 100;
 }

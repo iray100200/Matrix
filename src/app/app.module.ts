@@ -10,6 +10,7 @@ import { MXRouterConfig } from './app.router';
 import { MXHomeComponent } from './components/home';
 import { MXLayoutComponent } from './components/layout';
 import { ClarityModule } from '@clr/angular';
+import { SERVICES_PROVIDERS } from '../services';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import { ClarityModule } from '@clr/angular';
     CommonModule,
     ClarityModule
   ],
-  providers: [],
+  providers: [
+    SERVICES_PROVIDERS
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

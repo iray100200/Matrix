@@ -18,12 +18,12 @@
         "href": "account"
     }, {
         "name" : "layout",
-        "icon" : "dashboard",
+        "icon" : "inbox",
         "label" : "布局",
         "href": "layout"
     }, {
         "name" : "comp",
-        "icon" : "settings_input_component",
+        "icon" : "widgets",
         "label" : "组件",
         "events": {
             "onClick": "operateComponents"

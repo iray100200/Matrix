@@ -1,10 +1,10 @@
 <div class="mx-root-container">
-    <div class="alert alert-app-level"></div>
+    <div *ngIf="hasAlert" class="alert alert-app-level"></div>
     <div class="mx-section-container">
         <div class="mx-left-nav-container">
             <div mx-win-left-nav #target></div>
         </div>
-        <div class="mx-center-context-pane">
+        <div class="mx-center-content-container">
             <router-outlet></router-outlet>
         </div>
     </div>

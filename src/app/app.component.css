@@ -26,12 +26,12 @@
   color: #fffffb;
 }
 
-.mx-root-container .mx-section-container .mx-center-context-pane {
+.mx-root-container .mx-section-container .mx-center-content-container {
   flex: 1;
   height: 100%;
   position: relative;
 }
 
-.mx-root-container .mx-section-container .mx-center-context-pane > div {
+.mx-root-container .mx-section-container .mx-center-content-container > div {
   height: 100%;
 }

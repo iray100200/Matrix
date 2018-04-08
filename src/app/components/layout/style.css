@@ -30,15 +30,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background: #5eb8ff;
 }
 
 .layout-context .runtime-context .tools-panel .material-icons {
-    padding: 0 10px 0 25px;
+    padding: 0 8px 0 20px;
 }
 
 .layout-context .runtime-context .mx-container {
     position: relative;
     flex: 1;
-    margin: 0 25px 25px;
-    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+    padding: 25px;
 }
