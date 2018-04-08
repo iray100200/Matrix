@@ -6,11 +6,13 @@ import { CommonLayout, Guidance } from './win-layouts';
 import { NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { ClarityModule } from '@clr/angular';
 
 @NgModule({
     imports: [
         BrowserModule,
-        RouterModule
+        RouterModule,
+        ClarityModule
     ],
     declarations: [
         MXWinComponentBox,

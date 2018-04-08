@@ -31,10 +31,11 @@
     align-items: center;
     justify-content: center;
     background: #5eb8ff;
+    color: #fffffb;
 }
 
 .layout-context .runtime-context .tools-panel .material-icons {
-    padding: 0 8px 0 20px;
+    padding: 0 8px 0 0;
 }
 
 .layout-context .runtime-context .mx-container {

@@ -9,7 +9,7 @@ import { RouterModule } from '@angular/router';
 import { MXRouterConfig } from './app.router';
 import { MXHomeComponent } from './components/home';
 import { MXLayoutComponent } from './components/layout';
-import { ClarityModule } from '@clr/angular';
+import { ClarityModule, ClrIconModule } from '@clr/angular';
 import { SERVICES_PROVIDERS } from '../services';
 
 @NgModule({
@@ -23,7 +23,8 @@ import { SERVICES_PROVIDERS } from '../services';
     RouterModule.forRoot(MXRouterConfig),
     BrowserModule,
     CommonModule,
-    ClarityModule
+    ClarityModule,
+    ClrIconModule
   ],
   providers: [
     SERVICES_PROVIDERS
