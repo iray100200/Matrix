@@ -1,4 +1,4 @@
-.matrix-container {
+.mx-root-container {
   display: flex;
   position: absolute;
   left: 0;
@@ -9,29 +9,29 @@
   flex-direction: column;
 }
 
-.matrix-container .alert-app-level {
+.mx-root-container .alert-app-level {
   height: 32px;
   color: #fffffb;
 }
 
-.matrix-container .mx-container {
+.mx-root-container .mx-section-container {
   display: flex;
   flex: 1;
   position: relative;
 }
 
-.matrix-container .mx-container .left-nav-container {
+.mx-root-container .mx-section-container .mx-left-nav-container {
   width: auto;
   background: #130c0e;
   color: #fffffb;
 }
 
-.matrix-container .mx-container .center-context-pane {
+.mx-root-container .mx-section-container .mx-center-context-pane {
   flex: 1;
   height: 100%;
   position: relative;
 }
 
-.matrix-container .mx-container .center-context-pane > div {
+.mx-root-container .mx-section-container .mx-center-context-pane > div {
   height: 100%;
 }
