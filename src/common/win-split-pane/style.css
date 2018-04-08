@@ -1,0 +1,23 @@
+._mx-split-pane {
+    display: flex;
+    width: 100%;
+}
+
+._mx-split-pane.horizontal.move * {
+    cursor: ns-resize;
+}
+
+._mx-split-pane.vertial.move * {
+    cursor: ew-resize;
+}
+
+._mx-monaco-sash {
+    position: absolute;
+    cursor: ew-resize;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    margin-left: -2px;
+    user-select: none;
+    touch-action: none;
+}

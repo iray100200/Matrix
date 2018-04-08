@@ -1,5 +1,6 @@
 import {
     Directive,
+    Component,
     Input,
     ElementRef,
     AfterViewInit,
@@ -31,8 +32,10 @@ export class MXWinSecondarySide {
     }
 }
 
-@Directive({
+@Component({
     selector: "[mx-win-split-pane]",
+    styleUrls: ['./style.css'],
+    templateUrl: './template.html',
     queries: {
         primarySide: new ContentChild(MXWinPrimarySide),
         secondarySide: new ContentChild(MXWinSecondarySide)
@@ -40,6 +43,8 @@ export class MXWinSecondarySide {
 })
 export class MXWinSplitPane implements AfterViewInit {
     @Input() direction: string = "v";
+    @ViewChild('context') context: ElementRef;
+    @ViewChild('sash') sashRef: ElementRef;
     private nativeElement: HTMLElement;
     private sashElement: HTMLElement;
     private isMousedown: boolean = false;
@@ -48,8 +53,8 @@ export class MXWinSplitPane implements AfterViewInit {
     private animation;
     primarySide: MXWinPrimarySide;
     secondarySide: MXWinSecondarySide;
-    constructor(private elementRef: ElementRef) {
-        this.nativeElement = this.elementRef.nativeElement;
+    constructor() {
+        
     }
     bindEvents() {
         function movex(val: number, callback: Function) {
@@ -120,8 +125,8 @@ export class MXWinSplitPane implements AfterViewInit {
         }
     }
     ngAfterViewInit() {
-        this.sashElement = document.createElement("div");
-        this.sashElement.className = "_mx-monaco-sash";
+        this.nativeElement = this.context.nativeElement;
+        this.sashElement = this.sashRef.nativeElement;
         this.sashElement.style.left =
             this.primarySide.nativeElement.offsetWidth + "px";
         !/relative|absolute/.test(getComputedStyle(this.nativeElement).position)

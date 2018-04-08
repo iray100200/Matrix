@@ -1,0 +1,12 @@
+._mx-scroll-bar {
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    border-radius: 0 !important;
+    width: 4px !important;
+    background: #f6f5ec !important;
+}
+
+._mx-scroll-bar-thumb {
+    background: #72777b !important;
+}

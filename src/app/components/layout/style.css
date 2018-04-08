@@ -9,14 +9,28 @@
 .layout-context .library-context {
     width: 240px;
     background: #f6f5ec;
-    overflow: auto;
+    overflow: hidden;
     will-change: width;
     position: relative;
 }
 
+.layout-context .library-context .library-items {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.layout-context .library-context .library-items .library-items-container {
+    padding: 0 4px 12px 0;
+}
+
+.layout-context .library-context .library-items a {
+    display: block;
+    padding: 12px 12px 0;
+}
+
 .layout-context .runtime-context {
     flex: 1;
-    overflow: auto;
     will-change: width;
     position: relative;
     display: flex;

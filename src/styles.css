@@ -61,31 +61,3 @@ matrix-root {
 .material-icons.md-36 { font-size: 36px; }
 .material-icons.md-42 { font-size: 42px; }
 .material-icons.md-48 { font-size: 48px; }
-
-._mx-split-pane.horizontal.move * {
-  cursor: ns-resize;
-}
-
-._mx-split-pane.vertial.move * {
-  cursor: ew-resize;
-}
-
-._mx-monaco-sash {
-  position: absolute;
-  cursor: ew-resize;
-  top: 0;
-  bottom: 0;
-  width: 5px;
-  margin-left: -2.5px;
-  user-select: none;
-  touch-action: none;
-}
-
-::-webkit-scrollbar {
-  width: 3px;
-  background: #d9d6c3;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #4f5555;
-}

@@ -1,7 +1,6 @@
 .layout-box {
-    margin: 12px;
     border: 1px solid #d3d7d4;
-    padding: 32.75%;
+    padding: 30%;
 }
 
 .layout-box.cloned {
