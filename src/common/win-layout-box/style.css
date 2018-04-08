@@ -1,7 +1,7 @@
 .layout-box {
     margin: 12px;
     border: 1px solid #d3d7d4;
-    padding: 25%;
+    padding: 32.75%;
 }
 
 .layout-box.cloned {
@@ -11,7 +11,7 @@
 
 .layout-box:hover {
     border-color: #999d9c;
-    transition: 0.3s background;
+    transition: 0.5s background, border;
 }
 
 .img {
@@ -21,5 +21,5 @@
 }
 
 .img:hover {
-    background-size: 120%;
+    background-size: 125%;
 }

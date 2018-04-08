@@ -6,8 +6,14 @@
             </a>
         </div>
     </div>
-    <div mx-win-secondary-side class="runtime-context" #virtualWin>
-        <div class="mx-container">
+    <div mx-win-secondary-side class="runtime-context">
+        <div class="tools-panel">
+            <i class="material-icons md-18">aspect_ratio</i>
+            <span>{{width}}</span>
+            <clr-icon shape="times"></clr-icon>
+            <span>{{height}}</span>
+        </div>
+        <div class="mx-container" #virtualWin>
             <router-outlet></router-outlet>
         </div>
     </div>

@@ -6,20 +6,32 @@
   bottom: 0;
   right: 0;
   font-size: .92em;
+  flex-direction: column;
 }
 
-.matrix-container .left-nav-container {
+.matrix-container .alert-app-level {
+  height: 32px;
+  color: #fffffb;
+}
+
+.matrix-container .mx-container {
+  display: flex;
+  flex: 1;
+  position: relative;
+}
+
+.matrix-container .mx-container .left-nav-container {
   width: auto;
-  background: #004c8c;
-  color: white;
+  background: #130c0e;
+  color: #fffffb;
 }
 
-.matrix-container .center-context-pane {
+.matrix-container .mx-container .center-context-pane {
   flex: 1;
   height: 100%;
   position: relative;
 }
 
-.matrix-container .center-context-pane > div {
+.matrix-container .mx-container .center-context-pane > div {
   height: 100%;
 }

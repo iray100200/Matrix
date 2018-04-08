@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { MXRouterConfig } from './app.router';
 import { MXHomeComponent } from './components/home';
 import { MXLayoutComponent } from './components/layout';
+import { ClarityModule } from '@clr/angular';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MXLayoutComponent } from './components/layout';
     MXCommonModule,
     RouterModule.forRoot(MXRouterConfig),
     BrowserModule,
-    CommonModule
+    CommonModule,
+    ClarityModule
   ],
   providers: [],
   bootstrap: [AppComponent]

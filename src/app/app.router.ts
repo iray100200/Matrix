@@ -11,6 +11,10 @@ export const MXRouterConfig = [
         component: MXHomeComponent
     },
     {
+        path: 'account',
+        component: MXHomeComponent
+    },
+    {
         path: 'layout',
         component: MXLayoutComponent,
         children: [

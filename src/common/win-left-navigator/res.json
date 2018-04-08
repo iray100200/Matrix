@@ -14,7 +14,8 @@
         "name" : "account",
         "icon" : "account_box",
         "label" : "账户",
-        "default" : true
+        "default" : true,
+        "href": "account"
     }, {
         "name" : "layout",
         "icon" : "dashboard",
