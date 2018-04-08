@@ -14,7 +14,7 @@ const etag = require("etag");
 const dir0 = dir(path.resolve(__dirname, "dist"));
 const testExt = /\.(html|js|css|woff2?|ttf|eot|svg|png|jpe?g|gif|bmp)$/;
 const testGzip = /\bgzip\b/;
-const testGzipExt = /\.(js|css|ttf|eot|svg)$/;
+const testGzipExt = /\.(js|css|ttf|eot)$/;
 const options = {
     key: fs.readFileSync("keys/server-key.pem"),
     cert: fs.readFileSync("keys/server-cert.pem")

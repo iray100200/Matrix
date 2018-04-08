@@ -41,5 +41,6 @@
 .layout-context .runtime-context .mx-container {
     position: relative;
     flex: 1;
-    padding: 25px;
+    margin: 12px;
+    background-color: #f0f0f3;
 }

@@ -2,7 +2,7 @@ import { MXWinComponentBox } from './win-component-box';
 import { MXWinLayoutBox }from './win-layout-box';
 import { MXWinLeftNavigator, MXWinLeftNavigatorDirective } from './win-left-navigator';
 import { MXWinPrimarySide, MXWinSecondarySide, MXWinSplitPane } from './win-split-pane';
-import { CommonLayout, Guidance } from './win-layouts';
+import { MXWinLayoutsModule } from './win-layouts';
 import { NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
@@ -12,7 +12,8 @@ import { ClarityModule } from '@clr/angular';
     imports: [
         BrowserModule,
         RouterModule,
-        ClarityModule
+        ClarityModule,
+        MXWinLayoutsModule
     ],
     declarations: [
         MXWinComponentBox,
@@ -21,9 +22,7 @@ import { ClarityModule } from '@clr/angular';
         MXWinLeftNavigatorDirective,
         MXWinPrimarySide,
         MXWinSecondarySide,
-        MXWinSplitPane,
-        CommonLayout,
-        Guidance
+        MXWinSplitPane
     ],
     exports: [
         MXWinComponentBox,
@@ -32,9 +31,7 @@ import { ClarityModule } from '@clr/angular';
         MXWinLeftNavigatorDirective,
         MXWinPrimarySide,
         MXWinSecondarySide,
-        MXWinSplitPane,
-        CommonLayout,
-        Guidance
+        MXWinSplitPane
     ]
 })
 export class MXCommonModule {}

@@ -1,3 +1,7 @@
+.guidance {
+    padding: 20px;
+}
+
 .guidance *:not(i) {
     line-height: 100%;
     color: #004c8c;
@@ -9,5 +13,5 @@
 
 .tag {
     border-bottom: 2px solid #004c8c;
-    padding-top: 4px;
+    padding-top: 0!important;
 }

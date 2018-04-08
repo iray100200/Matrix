@@ -11,13 +11,14 @@
 
 .layout-box:hover {
     border-color: #999d9c;
-    transition: 0.5s background, border;
+    transition: 0.5s all;
 }
 
 .img {
     background-size: 100% auto;
     background-position: center;
     background-repeat: no-repeat;
+    will-change: auto;
 }
 
 .img:hover {

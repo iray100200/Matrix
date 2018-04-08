@@ -1,7 +1,5 @@
 import { Component, ViewChild, OnInit, ElementRef } from '@angular/core';
-import { Router } from "@angular/router";
 import * as ResJson from './res.json';
-import { RouterConfig } from '../../../common/win-layouts';
 
 @Component({
     selector: '[mx-app-layout]',
@@ -13,8 +11,7 @@ export class MXLayoutComponent implements OnInit {
     @ViewChild('virtualWin') virtualWin: ElementRef;
     width: number = 0;
     height: number = 0;
-    constructor(private router: Router) {
-        this.router.resetConfig(this.router.config.concat(RouterConfig));
+    constructor() {
     }
     ngOnInit() {
         this.width = this.virtualWin.nativeElement.offsetWidth;
