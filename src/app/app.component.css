@@ -10,8 +10,9 @@
 }
 
 .mx-root-container .alert-app-level {
-  height: 32px;
+  height: 24px;
   color: #fffffb;
+  background: #2a5caa;
 }
 
 .mx-root-container .mx-section-container {

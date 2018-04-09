@@ -1,5 +1,4 @@
 <div class="mx-root-container">
-    <div *ngIf="hasAlert" class="alert alert-app-level"></div>
     <div class="mx-section-container">
         <div class="mx-left-nav-container">
             <div mx-win-left-nav #target></div>
@@ -8,4 +7,5 @@
             <router-outlet></router-outlet>
         </div>
     </div>
+    <div *ngIf="hasAlert" class="alert alert-app-level"></div>
 </div>
