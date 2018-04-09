@@ -61,7 +61,7 @@ export class MXWinSecondarySide extends MXWinSplitPaneChildDirective {
     }
 })
 export class MXWinSplitPane implements OnInit, AfterViewInit {
-    @Input() direction: string = "v";
+    @Input() direction: string = "x";
     @ViewChild("context") context: ElementRef;
     @ViewChild("sash") sashRef: ElementRef;
     private nativeElement: HTMLElement;
@@ -112,19 +112,19 @@ export class MXWinSplitPane implements OnInit, AfterViewInit {
         };
     }
     bindEvents() {
-        let moveX = this.move("x"),
-            moveY = this.move("y");
+        let move = this.direction === 'x' ? this.move("x") : this.move("y");
         this.sashElement.addEventListener("mousedown", e => {
             this.isMousedown = true;
             this.x = e.x;
             this.nativeElement.classList.add("move");
         });
         this.nativeElement.addEventListener("mousemove", e => {
+            let d = this.direction;
             if (this.isMousedown) {
                 this.destroy();
                 this.animation = requestAnimationFrame(() => {
-                    moveX(e.x - this.x, () => {
-                        this.x = e.x;
+                    move(e[d] - this[d], () => {
+                        this[d] = e[d];
                     });
                 });
             }
@@ -158,7 +158,7 @@ export class MXWinSplitPane implements OnInit, AfterViewInit {
         this.bindEvents();
     }
     get sashStyle() {
-        return this.direction === "v"
+        return this.direction === "x"
             ? {
                   left: this.primarySide.width
               }
