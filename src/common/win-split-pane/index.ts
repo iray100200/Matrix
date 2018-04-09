@@ -10,7 +10,7 @@ import {
 } from "@angular/core";
 
 class MXWinSplitPaneChildDirective {
-    protected nativeElement;
+    nativeElement;
     protected direction: string;
     @Input() minWidth: number = 0;
     @Input() minHeight: number = 0;
@@ -73,47 +73,34 @@ export class MXWinSplitPane implements OnInit, AfterViewInit {
     primarySide: MXWinPrimarySide;
     secondarySide: MXWinSecondarySide;
     constructor() {}
+    private move(direction): Function {
+        let elm = this.primarySide.nativeElement;
+        let { minWidth, maxWidth, minHeight, maxHeight } = this.primarySide;
+        let pelm = this.primarySide.nativeElement;
+        let selm = this.sashElement;
+        let min, max, wh, lt;
+        direction === 'x' ? (min = minWidth, max = maxWidth, wh = 'width', lt = 'left') : direction === 'y' ? (min = minHeight, max = maxHeight, wh = 'height', lt = 'top') : () => { throw `Invaild param direction: ${direction}` };
+        function set (v) {
+            pelm.style[wh] = selm.style[lt] = v + "px";
+        }
+        function compare (v, callback: Function = () => {}) {
+            if (min <= v && max >= v) {
+                set(v);
+                callback();
+            } else if (max < v) {
+                set(max);
+            } else if (min > v) {
+                set(min);
+            }
+        }
+        return function(value: number, callback?: Function) {
+            let ofs = direction === 'x' ? elm.offsetWidth : elm.offsetHeight;
+            let val = ofs + value;
+            compare(val, callback);
+        }
+    }
     bindEvents() {
-        function movex(val: number, callback: Function) {
-            let width = this.primarySide.nativeElement.offsetWidth + val;
-            if (
-                this.primarySide.minWidth < width &&
-                this.primarySide.maxWidth > width
-            ) {
-                this.primarySide.nativeElement.style.width = this.sashElement.style.left =
-                    width + "px";
-                if (callback) callback(width);
-            } else if (this.primarySide.maxWidth < width) {
-                this.primarySide.nativeElement.style.width = this.sashElement.style.left =
-                    this.primarySide.maxWidth + "px";
-            } else if (this.primarySide.minWidth > width) {
-                this.primarySide.nativeElement.style.width = this.sashElement.style.left =
-                    this.primarySide.minWidth + "px";
-            }
-        }
-        function movey(val: number, callback: Function) {
-            let height = this.primarySide.nativeElement.offsetHeight + val;
-            if (
-                this.primarySide.minHeight < height &&
-                this.primarySide.maxHeight > height
-            ) {
-                this.primarySide.nativeElement.style.height = this.sashElement.style.top =
-                    height + "px";
-                if (callback) callback(height);
-            }
-        }
-        function moveTo() {
-            switch (this.direction) {
-                case "v":
-                    movex.apply(this, arguments);
-                    break;
-                case "h":
-                    movey.apply(this, arguments);
-                    break;
-                default:
-                    movex.apply(this, arguments);
-            }
-        }
+        let moveX = this.move('x'), moveY = this.move('y');
         this.sashElement.addEventListener("mousedown", e => {
             this.isMousedown = true;
             this.x = e.x;
@@ -123,11 +110,12 @@ export class MXWinSplitPane implements OnInit, AfterViewInit {
             if (this.isMousedown) {
                 this.destroy();
                 this.animation = requestAnimationFrame(() => {
-                    moveTo.call(this, e.x - this.x, () => {
+                    moveX(e.x - this.x, () => {
                         this.x = e.x;
                     });
                 });
             }
+            e.preventDefault();
         });
         this.nativeElement.addEventListener("mouseup", () => {
             this.destroy();
