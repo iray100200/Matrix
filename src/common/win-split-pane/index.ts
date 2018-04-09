@@ -79,11 +79,23 @@ export class MXWinSplitPane implements OnInit, AfterViewInit {
         let pelm = this.primarySide.nativeElement;
         let selm = this.sashElement;
         let min, max, wh, lt;
-        direction === 'x' ? (min = minWidth, max = maxWidth, wh = 'width', lt = 'left') : direction === 'y' ? (min = minHeight, max = maxHeight, wh = 'height', lt = 'top') : () => { throw `Invaild param direction: ${direction}` };
-        function set (v) {
+        direction === "x"
+            ? ((min = minWidth),
+              (max = maxWidth),
+              (wh = "width"),
+              (lt = "left"))
+            : direction === "y"
+                ? ((min = minHeight),
+                  (max = maxHeight),
+                  (wh = "height"),
+                  (lt = "top"))
+                : () => {
+                      throw `Invaild param direction: ${direction}`;
+                  };
+        function set(v) {
             pelm.style[wh] = selm.style[lt] = v + "px";
         }
-        function compare (v, callback: Function = () => {}) {
+        function compare(v, callback: Function = () => {}) {
             if (min <= v && max >= v) {
                 set(v);
                 callback();
@@ -94,13 +106,14 @@ export class MXWinSplitPane implements OnInit, AfterViewInit {
             }
         }
         return function(value: number, callback?: Function) {
-            let ofs = direction === 'x' ? elm.offsetWidth : elm.offsetHeight;
+            let ofs = direction === "x" ? elm.offsetWidth : elm.offsetHeight;
             let val = ofs + value;
             compare(val, callback);
-        }
+        };
     }
     bindEvents() {
-        let moveX = this.move('x'), moveY = this.move('y');
+        let moveX = this.move("x"),
+            moveY = this.move("y");
         this.sashElement.addEventListener("mousedown", e => {
             this.isMousedown = true;
             this.x = e.x;
