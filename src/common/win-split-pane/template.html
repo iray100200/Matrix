@@ -1,4 +1,4 @@
-<div class="_mx-split-pane" #context>
+<div class="_mx-split-pane" [ngClass]="{'vertical': direction === 'v', 'horizontal': direction === 'h'}" #context>
     <ng-content></ng-content>
-    <div class="_mx-monaco-sash" #sash></div>
+    <div class="_mx-monaco-sash" [ngStyle]="sashStyle" #sash></div>
 </div>

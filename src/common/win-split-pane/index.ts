@@ -3,48 +3,67 @@ import {
     Component,
     Input,
     ElementRef,
+    OnInit,
     AfterViewInit,
     ViewChild,
     ContentChild
 } from "@angular/core";
 
-@Directive({ selector: "[mx-win-primary-side]" })
-export class MXWinPrimarySide {
-    nativeElement;
+class MXWinSplitPaneChildDirective {
+    protected nativeElement;
+    protected direction: string;
     @Input() minWidth: number = 0;
     @Input() minHeight: number = 0;
     @Input() maxWidth: number = 0;
     @Input() maxHeight: number = 0;
+    constructor(elementRef: ElementRef) {
+        this.nativeElement = elementRef.nativeElement;
+    }
+    get width(): string {
+        return this.nativeElement.offsetWidth + "px";
+    }
+    get height(): string {
+        return this.nativeElement.offsetHeight + "px";
+    }
+    init(direction: string) {
+        this.direction = direction;
+    }
+}
+
+@Directive({ selector: "[mx-win-primary-side]" })
+export class MXWinPrimarySide extends MXWinSplitPaneChildDirective
+    implements AfterViewInit {
+    @Input() entryWidth: number = 0;
+    @Input() entryHeight: number = 0;
     constructor(private elementRef: ElementRef) {
-        this.nativeElement = this.elementRef.nativeElement;
+        super(elementRef);
+    }
+    ngAfterViewInit() {
+        this.nativeElement.style.width =
+            (this.entryWidth || this.minWidth || 200) + "px";
     }
 }
 
 @Directive({ selector: "[mx-win-secondary-side]" })
-export class MXWinSecondarySide {
-    nativeElement;
-    @Input() minWidth: number = 0;
-    @Input() minHeight: number = 0;
-    @Input() maxWidth: number = 0;
-    @Input() maxHeight: number = 0;
+export class MXWinSecondarySide extends MXWinSplitPaneChildDirective {
     constructor(private elementRef: ElementRef) {
-        this.nativeElement = this.elementRef.nativeElement;
+        super(elementRef);
     }
 }
 
 @Component({
     selector: "[mx-win-split-pane]",
-    styleUrls: ['./style.css'],
-    templateUrl: './template.html',
+    styleUrls: ["./style.css"],
+    templateUrl: "./template.html",
     queries: {
         primarySide: new ContentChild(MXWinPrimarySide),
         secondarySide: new ContentChild(MXWinSecondarySide)
     }
 })
-export class MXWinSplitPane implements AfterViewInit {
+export class MXWinSplitPane implements OnInit, AfterViewInit {
     @Input() direction: string = "v";
-    @ViewChild('context') context: ElementRef;
-    @ViewChild('sash') sashRef: ElementRef;
+    @ViewChild("context") context: ElementRef;
+    @ViewChild("sash") sashRef: ElementRef;
     private nativeElement: HTMLElement;
     private sashElement: HTMLElement;
     private isMousedown: boolean = false;
@@ -53,9 +72,7 @@ export class MXWinSplitPane implements AfterViewInit {
     private animation;
     primarySide: MXWinPrimarySide;
     secondarySide: MXWinSecondarySide;
-    constructor() {
-        
-    }
+    constructor() {}
     bindEvents() {
         function movex(val: number, callback: Function) {
             let width = this.primarySide.nativeElement.offsetWidth + val;
@@ -124,16 +141,28 @@ export class MXWinSplitPane implements AfterViewInit {
             this.animation = null;
         }
     }
-    ngAfterViewInit() {
-        this.nativeElement = this.context.nativeElement;
-        this.sashElement = this.sashRef.nativeElement;
-        this.sashElement.style.left =
-            this.primarySide.nativeElement.offsetWidth + "px";
+    private init() {
+        this.primarySide.init(this.direction);
+        this.secondarySide.init(this.direction);
         !/relative|absolute/.test(getComputedStyle(this.nativeElement).position)
             ? (this.nativeElement.style.position = "relative")
             : null;
-        this.nativeElement.classList.add("_mx-split-pane", "vertial");
-        this.nativeElement.appendChild(this.sashElement);
+    }
+    ngOnInit() {
+        this.nativeElement = this.context.nativeElement;
+        this.sashElement = this.sashRef.nativeElement;
+    }
+    ngAfterViewInit() {
+        this.init();
         this.bindEvents();
+    }
+    get sashStyle() {
+        return this.direction === "v"
+            ? {
+                  left: this.primarySide.width
+              }
+            : {
+                  top: this.primarySide.height
+              };
     }
 }
