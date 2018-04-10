@@ -5,6 +5,6 @@ import { Component } from '@angular/core';
     templateUrl: "./template.html",
     styleUrls: ["./style.css"]
 })
-export class Guidance {
+export class MXGuidance {
     
 }

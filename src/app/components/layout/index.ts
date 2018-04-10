@@ -9,12 +9,15 @@ import * as ResJson from './res.json';
 export class MXLayoutComponent implements OnInit {
     resJson: Array<any> = <any>ResJson;
     @ViewChild('virtualWin') virtualWin: ElementRef;
-    width: number = 0;
-    height: number = 0;
     constructor() {
     }
     ngOnInit() {
-        this.width = this.virtualWin.nativeElement.offsetWidth;
-        this.height = this.virtualWin.nativeElement.offsetHeight;
+        
+    }
+    get vwidth(): number {
+        return this.virtualWin.nativeElement.offsetWidth;
+    }
+    get vheight(): number {
+        return this.virtualWin.nativeElement.offsetHeight;
     }
 }

@@ -1,8 +1,8 @@
-export * from './common-layout';
+export * from './sample-layout';
 export * from './guidance';
 import { BrowserModule } from '@angular/platform-browser';
-import { CommonLayout } from './common-layout';
-import { Guidance } from './guidance';
+import { MXSampleLayout } from './sample-layout';
+import { MXGuidance } from './guidance';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
@@ -11,8 +11,8 @@ import { RouterModule } from '@angular/router';
         BrowserModule
     ],
     declarations: [
-        CommonLayout,
-        Guidance
+        MXSampleLayout,
+        MXGuidance
     ]
 })
 export class MXWinLayoutsModule {

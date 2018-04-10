@@ -11,6 +11,7 @@ import { MXHomeComponent } from './components/home';
 import { MXLayoutComponent } from './components/layout';
 import { ClarityModule, ClrIconModule } from '@clr/angular';
 import { SERVICES_PROVIDERS } from '../services';
+import { MXWinLayoutsModule } from '../modules';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SERVICES_PROVIDERS } from '../services';
     BrowserModule,
     CommonModule,
     ClarityModule,
-    ClrIconModule
+    ClrIconModule,
+    MXWinLayoutsModule
   ],
   providers: [
     SERVICES_PROVIDERS

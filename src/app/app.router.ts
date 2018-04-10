@@ -1,7 +1,7 @@
 import { RouterModule, Router } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { CommonLayout } from '../common/win-layouts';
-import { Guidance } from '../common/win-layouts';
+import { MXSampleLayout } from '../modules';
+import { MXGuidance } from '../modules';
 import { MXHomeComponent } from './components/home';
 import { MXLayoutComponent } from './components/layout';
 
@@ -20,11 +20,11 @@ export const MXRouterConfig = [
         children: [
             {
                 path: '',
-                component: Guidance
+                component: MXGuidance
             },
             {
                 path: 'win-layouts',
-                component: CommonLayout
+                component: MXSampleLayout
             }
         ]
     }
