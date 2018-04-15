@@ -1,0 +1,10 @@
+.mx-layout .mx-layout-container {
+    background: #fffffd;
+    border: 1px solid transparent;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    transition: 0.2s all;
+}
+
+.mx-layout:hover .mx-layout-container {
+    opacity: 0.64;
+}

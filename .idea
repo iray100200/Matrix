@@ -1,1 +1,3 @@
 // account = what you have created with your account
+
+// 客户端执行事件监听 -> 更改 -> 保存 -> http传输（静态文本，属性配置等） -> srv合成并返回客户端 -> 客户端打包 -> 输出目标文件

@@ -9,13 +9,10 @@ import {
     ContentChild
 } from "@angular/core";
 
+@Directive({})
 class MXWinSplitPaneChildDirective {
     nativeElement;
     protected direction: string;
-    @Input() minWidth: number = 0;
-    @Input() minHeight: number = 0;
-    @Input() maxWidth: number = 0;
-    @Input() maxHeight: number = 0;
     constructor(elementRef: ElementRef) {
         this.nativeElement = elementRef.nativeElement;
     }
@@ -35,6 +32,10 @@ export class MXWinPrimarySide extends MXWinSplitPaneChildDirective
     implements AfterViewInit {
     @Input() entryWidth: number = 0;
     @Input() entryHeight: number = 0;
+    @Input() minWidth: number = 0;
+    @Input() minHeight: number = 0;
+    @Input() maxWidth: number = 0;
+    @Input() maxHeight: number = 0;
     constructor(private elementRef: ElementRef) {
         super(elementRef);
     }
@@ -46,6 +47,10 @@ export class MXWinPrimarySide extends MXWinSplitPaneChildDirective
 
 @Directive({ selector: "[mx-win-secondary-side]" })
 export class MXWinSecondarySide extends MXWinSplitPaneChildDirective {
+    @Input() minWidth: number = 0;
+    @Input() minHeight: number = 0;
+    @Input() maxWidth: number = 0;
+    @Input() maxHeight: number = 0;
     constructor(private elementRef: ElementRef) {
         super(elementRef);
     }

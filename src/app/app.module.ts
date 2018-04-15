@@ -12,6 +12,7 @@ import { MXLayoutComponent } from './components/layout';
 import { ClarityModule, ClrIconModule } from '@clr/angular';
 import { SERVICES_PROVIDERS } from '../services';
 import { MXWinLayoutsModule } from '../modules';
+import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,11 +27,17 @@ import { MXWinLayoutsModule } from '../modules';
     CommonModule,
     ClarityModule,
     ClrIconModule,
-    MXWinLayoutsModule
+    MXWinLayoutsModule,
+    HttpClientModule
   ],
   providers: [
-    SERVICES_PROVIDERS
+    SERVICES_PROVIDERS,
+    HttpClient
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor() {
+    
+  }
+}

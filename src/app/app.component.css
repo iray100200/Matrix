@@ -36,3 +36,18 @@
 .mx-root-container .mx-section-container .mx-center-content-container > div {
   height: 100%;
 }
+
+.save {
+  border-radius: 50%;
+  height: 48px;
+  width: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 36px;
+  right: 20px;
+  background: #2a5caa;
+  color: #fffffb;
+  cursor: pointer;
+}

@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { ClarityModule } from '@clr/angular';
 import { ScrollbarModule } from 'ngx-scrollbar';
 import { MXWinScroller } from './win-scroller';
+import { MXWinBaseLayout } from './win-base-layout';
 
 @NgModule({
     imports: [
@@ -24,7 +25,8 @@ import { MXWinScroller } from './win-scroller';
         MXWinPrimarySide,
         MXWinSecondarySide,
         MXWinSplitPane,
-        MXWinScroller
+        MXWinScroller,
+        MXWinBaseLayout
     ],
     exports: [
         MXWinComponentBox,
@@ -35,7 +37,8 @@ import { MXWinScroller } from './win-scroller';
         MXWinSecondarySide,
         MXWinSplitPane,
         MXWinSplitPane,
-        MXWinScroller
+        MXWinScroller,
+        MXWinBaseLayout
     ]
 })
 export class MXCommonModule {}

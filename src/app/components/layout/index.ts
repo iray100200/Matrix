@@ -8,11 +8,14 @@ import * as ResJson from './res.json';
 })
 export class MXLayoutComponent implements OnInit {
     resJson: Array<any> = <any>ResJson;
+    private resize: number = 0;
     @ViewChild('virtualWin') virtualWin: ElementRef;
     constructor() {
     }
     ngOnInit() {
-        
+        window.addEventListener('resize', () => {
+            this.resize++;
+        })
     }
     get vwidth(): number {
         return this.virtualWin.nativeElement.offsetWidth;

@@ -11,6 +11,7 @@ const http = require("http");
 const https = require("https");
 const cache = require("cache-control");
 const etag = require("etag");
+const serve = require("./serve");
 const dir0 = dir(path.resolve(__dirname, "dist"));
 const testExt = /\.(html|js|css|woff2?|ttf|eot|svg|png|jpe?g|gif|bmp)$/;
 const testGzip = /\bgzip\b/;
@@ -51,6 +52,8 @@ function compression() {
     };
 }
 
+serve.call(this, app);
+
 app.use(
     cache({
         "/**": 86400,
@@ -64,7 +67,7 @@ app.use(
     })
 );
 
-app.get("*", function(req, res, next) {
+app.use(/^(?!\/?api\/)/, function(req, res, next) {
     try {
         res.sendFile(dir0("index.html"));
     } catch (e) {
