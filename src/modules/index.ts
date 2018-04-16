@@ -1,36 +1,23 @@
 export * from './mx-layouts';
-import { MXGuidance, MXWinLayoutsModule } from './mx-layouts';
+import { MXGuidanceLayout, MXLayoutsModule, LayoutsModule } from './mx-layouts';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
-import { MXCommonModule } from '../common';
 import { ClarityModule, ClrIconModule } from '@clr/angular';
-
-export class MXModules {
-    static getLayoutModule(name) {
-        switch (name) {
-            case 'guidance':
-                return MXGuidance;
-        }
-    }
-}
 
 @NgModule({
     imports: [
         CommonModule,
         BrowserModule,
-        MXWinLayoutsModule,
-        MXCommonModule,
+        LayoutsModule,
+        MXLayoutsModule,
         ClarityModule,
         ClrIconModule
     ],
     bootstrap: [
-        MXGuidance
+        MXGuidanceLayout
     ]
 })
 export class MXModule {
-    component;
-    constructor(private mxModules: MXModules) {
-        
-    }
+    
 }

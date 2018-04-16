@@ -11,7 +11,7 @@ import { MXHomeComponent } from './components/home';
 import { MXLayoutComponent } from './components/layout';
 import { ClarityModule, ClrIconModule } from '@clr/angular';
 import { SERVICES_PROVIDERS } from '../services';
-import { MXWinLayoutsModule } from '../modules';
+import { MXLayoutsModule } from '../modules';
 import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
 
 @NgModule({
@@ -27,7 +27,7 @@ import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http'
     CommonModule,
     ClarityModule,
     ClrIconModule,
-    MXWinLayoutsModule,
+    MXLayoutsModule,
     HttpClientModule
   ],
   providers: [

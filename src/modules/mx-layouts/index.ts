@@ -2,21 +2,41 @@ export * from './sample-layout';
 export * from './guidance';
 import { BrowserModule } from '@angular/platform-browser';
 import { MXSampleLayout } from './sample-layout';
-import { MXGuidance } from './guidance';
+import { GuidanceLayout, MXGuidanceLayout } from './guidance';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { MXCommonModule } from '../../common';
 
 @NgModule({
     imports: [
+        BrowserModule
+    ],
+    declarations: [
+        GuidanceLayout
+    ],
+    entryComponents: [
+        GuidanceLayout
+    ]
+})
+export class LayoutsModule {
+
+}
+
+@NgModule({
+    imports: [
         BrowserModule,
-        MXCommonModule
+        MXCommonModule,
+        LayoutsModule
     ],
     declarations: [
         MXSampleLayout,
-        MXGuidance
+        MXGuidanceLayout
+    ],
+    entryComponents: [
+        MXSampleLayout,
+        MXGuidanceLayout
     ]
 })
-export class MXWinLayoutsModule {
+export class MXLayoutsModule {
 
 }

@@ -1,7 +1,7 @@
 import { RouterModule, Router } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { MXSampleLayout } from '../modules';
-import { MXGuidance } from '../modules';
+import { MXGuidanceLayout } from '../modules';
 import { MXHomeComponent } from './components/home';
 import { MXLayoutComponent } from './components/layout';
 
@@ -20,7 +20,7 @@ export const MXRouterConfig = [
         children: [
             {
                 path: '',
-                component: MXGuidance
+                component: MXGuidanceLayout
             },
             {
                 path: 'win-layouts',
