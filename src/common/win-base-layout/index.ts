@@ -7,7 +7,7 @@ import { Component, ViewEncapsulation } from "@angular/core";
         "(click)": "onClick($event)"
     },
     template: `<div class="mx-layout">
-            <div class="mx-layout-container">
+            <div class="mx-layout-container stretch">
                 <ng-content></ng-content>
             </div>
         </div>`

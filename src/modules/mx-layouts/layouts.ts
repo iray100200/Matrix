@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { MXSampleLayout } from './sample-layout';
+import { SampleLayout } from './sample-layout';
 import { GuidanceLayout } from './guidance';
 import { NgModule } from '@angular/core';
 
@@ -8,14 +8,16 @@ import { NgModule } from '@angular/core';
         BrowserModule
     ],
     declarations: [
-        GuidanceLayout
-        
+        GuidanceLayout,
+        SampleLayout
     ],
     entryComponents: [
-        GuidanceLayout
+        GuidanceLayout,
+        SampleLayout
     ],
     exports: [
-        GuidanceLayout
+        GuidanceLayout,
+        SampleLayout
     ]
 })
 export class LayoutsModule {

@@ -5,6 +5,14 @@ import { Component } from '@angular/core';
     templateUrl: "./template.html",
     styleUrls: ["./style.css"]
 })
+export class SampleLayout {
+    
+}
+
+@Component({
+    selector: "[sample-layout]",
+    template: `<mx-layout><div sample-layout></mx-layout>`
+})
 export class MXSampleLayout {
     
 }
