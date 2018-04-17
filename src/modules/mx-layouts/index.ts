@@ -1,29 +1,13 @@
 export * from './sample-layout';
 export * from './guidance';
+export * from './layouts';
 import { BrowserModule } from '@angular/platform-browser';
 import { MXSampleLayout } from './sample-layout';
-import { GuidanceLayout, MXGuidanceLayout } from './guidance';
+import { MXGuidanceLayout } from './guidance';
+import { LayoutsModule } from './layouts';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { MXCommonModule } from '../../common';
-
-@NgModule({
-    imports: [
-        BrowserModule
-    ],
-    declarations: [
-        GuidanceLayout
-    ],
-    entryComponents: [
-        GuidanceLayout
-    ],
-    exports: [
-        GuidanceLayout
-    ]
-})
-export class LayoutsModule {
-
-}
 
 @NgModule({
     imports: [

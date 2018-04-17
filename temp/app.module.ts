@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { GuidanceLayout } from '../src/modules/mx-layouts/guidance';
+import { LayoutsModule } from '../src/modules/mx-layouts/layouts';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 
@@ -9,14 +9,14 @@ import { HttpModule } from '@angular/http';
     imports: [
         BrowserModule,
         HttpClientModule,
-        HttpModule
+        HttpModule,
+        LayoutsModule
     ],
     providers: [
         HttpClientModule
     ],
     declarations: [
-        AppComponent,
-        GuidanceLayout
+        AppComponent
     ],
     bootstrap: [
         AppComponent
