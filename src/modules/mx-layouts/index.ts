@@ -16,6 +16,9 @@ import { MXCommonModule } from '../../common';
     ],
     entryComponents: [
         GuidanceLayout
+    ],
+    exports: [
+        GuidanceLayout
     ]
 })
 export class LayoutsModule {

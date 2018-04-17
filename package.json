@@ -3,16 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "description": "Example project from an angular.io guide.",
-  "scripts": {
-    "ng": "ng",
-    "start": "node app",
-    "build": "ng build --prod && gulp compress",
-    "dev": "ng serve",
-    "test": "ng test",
-    "lint": "tslint ./src/**/*.ts -t verbose",
-    "e2e": "ng e2e",
-    "gen": "webpack-dev-server --config temp/webpack.config.js --progress"
-  },
   "keywords": [],
   "author": "",
   "license": "MIT",
@@ -82,5 +72,15 @@
     "webpack": "^4.5.0",
     "webpack-cli": "^2.0.14"
   },
-  "repository": {}
+  "repository": {},
+  "scripts": {
+    "ng": "ng",
+    "start": "node app",
+    "build": "ng build --app matrix --prod && gulp compress",
+    "dev": "ng serve --app matrix",
+    "test": "ng test",
+    "lint": "tslint ./src/**/*.ts -t verbose",
+    "e2e": "ng e2e",
+    "gen": "ng serve --app gen --port 4500"
+  }
 }

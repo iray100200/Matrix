@@ -1,5 +1,6 @@
 .guidance {
     padding: 20px;
+    background: #fffffb;
 }
 
 .guidance *:not(i) {
