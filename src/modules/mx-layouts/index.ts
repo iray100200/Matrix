@@ -8,12 +8,14 @@ import { LayoutsModule } from './layouts';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { MXCommonModule } from '../../common';
+import { StandaloneComponentsInterpreterModule } from '../mx-components';
 
 @NgModule({
     imports: [
         BrowserModule,
         MXCommonModule,
-        LayoutsModule
+        LayoutsModule,
+        StandaloneComponentsInterpreterModule
     ],
     declarations: [
         MXSampleLayout,

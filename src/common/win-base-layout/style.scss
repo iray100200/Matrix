@@ -1,0 +1,27 @@
+@import '../../base.sass';
+
+._mx-layout .mx-layout-container {
+    border: 1px solid transparent;
+    transition: 0.2s all;
+    border: 1px dashed transparent;
+    display: flex;
+    flex-direction: column;
+}
+
+._mx-layout .mx-layout-container > div {
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+._mx-layout .mx-layout-container.stretch {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow: auto;
+    width: 100%;
+}
+
+._mx-layout:hover .mx-layout-container {
+    opacity: 0.84;
+    border: 1px dashed #5eb8ff;
+}

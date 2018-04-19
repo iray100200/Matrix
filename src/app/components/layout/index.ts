@@ -4,7 +4,7 @@ import * as ResJson from './res.json';
 @Component({
     selector: '[mx-app-layout]',
     templateUrl: './template.html',
-    styleUrls: ['./style.css']
+    styleUrls: ['./style.scss']
 })
 export class MXLayoutComponent implements OnInit {
     resJson: Array<any> = <any>ResJson;

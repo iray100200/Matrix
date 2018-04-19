@@ -1,0 +1,12 @@
+.property-pane-win {
+    width: 260px;
+    color: #fffffb;
+}
+
+.head {
+    height: 28px;
+    background: #008aba;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+}

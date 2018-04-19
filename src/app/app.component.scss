@@ -1,3 +1,5 @@
+@import '../base.sass';
+
 .mx-root-container {
   display: flex;
   position: absolute;
@@ -5,14 +7,14 @@
   top: 0;
   bottom: 0;
   right: 0;
-  font-size: .92em;
+  font-size: .8em;
   flex-direction: column;
 }
 
 .mx-root-container .alert-app-level {
   height: 24px;
   color: #fffffb;
-  background: #2a5caa;
+  background: $barColor;
 }
 
 .mx-root-container .mx-section-container {
@@ -47,7 +49,7 @@
   position: fixed;
   bottom: 36px;
   right: 20px;
-  background: #2a5caa;
+  background: $barColor;
   color: #fffffb;
   cursor: pointer;
 }

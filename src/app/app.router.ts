@@ -23,7 +23,7 @@ export const MXRouterConfig = [
                 component: MXGuidanceLayout
             },
             {
-                path: 'win-layouts',
+                path: 'sample-layouts',
                 component: MXSampleLayout
             }
         ]

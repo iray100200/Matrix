@@ -2,10 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { SampleLayout } from './sample-layout';
 import { GuidanceLayout } from './guidance';
 import { NgModule } from '@angular/core';
+import { StandaloneComponentsModule, StandaloneComponentsInterpreterModule } from '../mx-components';
 
 @NgModule({
     imports: [
-        BrowserModule
+        BrowserModule,
+        StandaloneComponentsModule,
+        StandaloneComponentsInterpreterModule
     ],
     declarations: [
         GuidanceLayout,
@@ -21,5 +24,27 @@ import { NgModule } from '@angular/core';
     ]
 })
 export class LayoutsModule {
+
+}
+
+@NgModule({
+    imports: [
+        BrowserModule,
+        StandaloneComponentsModule
+    ],
+    declarations: [
+        GuidanceLayout,
+        SampleLayout
+    ],
+    entryComponents: [
+        GuidanceLayout,
+        SampleLayout
+    ],
+    exports: [
+        GuidanceLayout,
+        SampleLayout
+    ]
+})
+export class MXStandaloneLayoutsModule {
 
 }

@@ -1,6 +1,6 @@
 [
     {
-        "path": "win-layouts",
+        "path": "sample-layouts",
         "component": "./common-layout",
         "thumb": "/assets/images/theme-dark.svg"
     },

@@ -10,8 +10,8 @@ export class SampleLayout {
 }
 
 @Component({
-    selector: "[sample-layout]",
-    template: `<mx-layout><div sample-layout></mx-layout>`
+    selector: "[mx-sample-layout]",
+    template: `<mx-layout><div sample-layout></div></mx-layout>`
 })
 export class MXSampleLayout {
     

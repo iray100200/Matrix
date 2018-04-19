@@ -9,6 +9,8 @@ import { ClarityModule } from '@clr/angular';
 import { ScrollbarModule } from 'ngx-scrollbar';
 import { MXWinScroller } from './win-scroller';
 import { MXWinBaseLayout } from './win-base-layout';
+import { MXWinPropertyPane } from './win-property-pane';
+import { SampleComponentInterpreter } from './win-interpreter';
 
 @NgModule({
     imports: [
@@ -26,7 +28,9 @@ import { MXWinBaseLayout } from './win-base-layout';
         MXWinSecondarySide,
         MXWinSplitPane,
         MXWinScroller,
-        MXWinBaseLayout
+        MXWinBaseLayout,
+        MXWinPropertyPane,
+        
     ],
     exports: [
         MXWinComponentBox,
@@ -38,7 +42,8 @@ import { MXWinBaseLayout } from './win-base-layout';
         MXWinSplitPane,
         MXWinSplitPane,
         MXWinScroller,
-        MXWinBaseLayout
+        MXWinBaseLayout,
+        MXWinPropertyPane
     ]
 })
 export class MXCommonModule {}
