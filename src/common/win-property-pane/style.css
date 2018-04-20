@@ -1,6 +1,8 @@
 .property-pane-win {
     width: 260px;
-    color: #fffffb;
+    color: #130c0e;
+    font-size: 110%;
+    user-select: none;
 }
 
 .head {
@@ -9,4 +11,27 @@
     padding: 0 10px;
     display: flex;
     align-items: center;
+    color: #fffffb;
+}
+
+.attr-container {
+    display: flex;
+    align-items: center;
+    padding: 2px 4px 2px 12px;
+}
+
+.attr-container:hover {
+    background: #f6f5ec;
+}
+
+.attr-container > .attr-name {
+    width: 64px;
+}
+
+.attr-container > .attr-value {
+    flex: 1;
+}
+
+.style-pane {
+    padding: 10px;
 }

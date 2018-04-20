@@ -6,7 +6,7 @@ import { Component, Directive } from '@angular/core';
     styleUrls: ['./style.css']
 })
 export class SampleComponent {
-
+    properties: Array<string>;
 }
 
 @Directive({

@@ -1,0 +1,10 @@
+.palette {
+    height: 400px;
+    width: 200px;
+    position: absolute;
+    right: 100px;
+    top: 20px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    background: #f6f5ec;
+    z-index: 100;
+}

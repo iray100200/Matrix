@@ -1,3 +1,11 @@
 <div class="property-pane-win">
     <div class="head">属性窗口</div>
+    <div class="style-pane">
+        <div *ngFor="let attr of stylesAttributes">
+            <div class="attr-container">
+                <div class="attr-name">{{attr.name}}</div>
+                <div mx-win-color-selector class="attr-value"></div>
+            </div>
+        </div>
+    </div>
 </div>

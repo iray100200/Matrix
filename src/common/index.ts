@@ -10,7 +10,8 @@ import { ScrollbarModule } from 'ngx-scrollbar';
 import { MXWinScroller } from './win-scroller';
 import { MXWinBaseLayout } from './win-base-layout';
 import { MXWinPropertyPane } from './win-property-pane';
-import { SampleComponentInterpreter } from './win-interpreter';
+import { MXWinColorSelector } from './win-color-selector';
+import { MXWinPalette } from './win-palette';
 
 @NgModule({
     imports: [
@@ -30,7 +31,8 @@ import { SampleComponentInterpreter } from './win-interpreter';
         MXWinScroller,
         MXWinBaseLayout,
         MXWinPropertyPane,
-        
+        MXWinColorSelector,
+        MXWinPalette
     ],
     exports: [
         MXWinComponentBox,
@@ -43,7 +45,8 @@ import { SampleComponentInterpreter } from './win-interpreter';
         MXWinSplitPane,
         MXWinScroller,
         MXWinBaseLayout,
-        MXWinPropertyPane
+        MXWinPropertyPane,
+        MXWinPalette
     ]
 })
 export class MXCommonModule {}
