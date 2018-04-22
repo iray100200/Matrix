@@ -17,11 +17,15 @@
 .attr-container {
     display: flex;
     align-items: center;
-    padding: 2px 4px 2px 12px;
+    padding: 0 4px 0 12px;
 }
 
 .attr-container:hover {
     background: #f6f5ec;
+}
+
+.attr-container.selected {
+    background: #4e72b8;
 }
 
 .attr-container > .attr-name {

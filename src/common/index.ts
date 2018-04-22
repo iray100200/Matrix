@@ -15,6 +15,7 @@ import { MXWinPalette } from './win-palette';
 import { MXWinTemplateHostDirective } from './win-directives';
 import { MXService } from '../services';
 import { ColorSketchModule } from 'ngx-color/sketch';
+import { ColorHueModule } from 'ngx-color/hue';
 
 @NgModule({
     imports: [
@@ -22,7 +23,8 @@ import { ColorSketchModule } from 'ngx-color/sketch';
         RouterModule,
         ClarityModule,
         ScrollbarModule,
-        ColorSketchModule
+        ColorSketchModule,
+        ColorHueModule
     ],
     declarations: [
         MXWinComponentBox,

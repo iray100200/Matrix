@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit, ElementRef } from "@angular/core";
+import { Component, ViewChild, OnInit, ElementRef, ComponentFactoryResolver } from "@angular/core";
 import { Events, MXWinLeftNavigator } from "../common/win-left-navigator";
 import { AlertServiceProvider, MXService } from "../services";
 import { MXGuidanceLayout } from "../modules";

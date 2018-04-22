@@ -4,6 +4,7 @@
     z-index: 100;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.36);
     border-radius: 4px;
+    cursor: default;
 }
 
 ._mx-palette .palette-head {
@@ -20,7 +21,7 @@
 ._mx-palette .btn-container {
     height: calc(100% - 6px);
     width: 20px;
-    margin: 3.5px 5px 0 0;
+    margin: 3.5px 6px 0 0;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -50,7 +51,6 @@
     border-radius: 4px!important;
     border-top-left-radius: 0!important;
     border-top-right-radius: 0!important;
-    padding: 6px 6px 0!important;
 }
 
 ._mx-palette .sketch-picker input {

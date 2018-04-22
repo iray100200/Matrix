@@ -1,4 +1,4 @@
-import { Component, ViewChild, Directive, ViewContainerRef } from '@angular/core';
+import { Component, ViewChild, Directive, ViewContainerRef, EventEmitter } from '@angular/core';
 import { MXWinPalette } from '../win-palette';
 import { MXService } from '../../services/mx.service';
 
@@ -9,12 +9,15 @@ import { MXService } from '../../services/mx.service';
 })
 export class MXWinColorSelector {
     color = 'transparent';
-    winPalette: MXWinPalette;
-    @ViewChild('templateHost', { read: ViewContainerRef }) templateHost;
+    SelectEvent: EventEmitter<any> = new EventEmitter();
     constructor(private service: MXService) {
         
     }
     onClick(e) {
         this.service.load(MXWinPalette);
+        this.SelectEvent.emit({
+            name: 'win-color-selector',
+            eventType: 'click'
+        })
     }
 }

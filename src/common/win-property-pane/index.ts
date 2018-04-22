@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, ViewChildren, AfterViewInit } from '@angular/core';
+import { MXWinColorSelector } from '../win-color-selector';
 
 @Component({
     selector: '[mx-win-property-pane]',
     templateUrl: './template.html',
     styleUrls: ['./style.css']
 })
-export class MXWinPropertyPane {
+export class MXWinPropertyPane implements AfterViewInit {
+    @ViewChildren('winColorSelector') selectors: Array<MXWinColorSelector>;
+    private clickedItem: HTMLElement;
     stylesAttributes: Array<any> = [
         {
             name: "背景颜色",
@@ -20,4 +23,14 @@ export class MXWinPropertyPane {
             value: "固定"
         }
     ];
+    ngAfterViewInit() {
+        this.selectors.forEach(element => {
+            element.SelectEvent.subscribe(t => {
+                this.clickedItem.classList.add('selected');
+            })
+        });
+    }
+    handleItemClick(e) {
+        this.clickedItem = e.currentTarget;
+    }
 }
