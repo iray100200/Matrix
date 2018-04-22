@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ApplicationModule } from '@angular/core';
 import { JsonPipe } from '@angular/common';
 
 import { AppComponent } from './app.component';
@@ -21,6 +21,7 @@ import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http'
     MXLayoutComponent
   ],
   imports: [
+    ApplicationModule,
     MXCommonModule,
     RouterModule.forRoot(MXRouterConfig),
     BrowserModule,
@@ -33,6 +34,11 @@ import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http'
   providers: [
     SERVICES_PROVIDERS,
     HttpClient
+  ],
+  exports: [
+    AppComponent,
+    MXHomeComponent,
+    MXLayoutComponent
   ],
   bootstrap: [AppComponent]
 })

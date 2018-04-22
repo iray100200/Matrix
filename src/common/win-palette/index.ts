@@ -1,19 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, Input, ViewContainerRef, ComponentFactoryResolver, ComponentFactory, ViewEncapsulation } from '@angular/core';
 
 @Component({
     selector: '[mx-win-palette]',
     templateUrl: './template.html',
-    styleUrls: ['./style.css']
+    styleUrls: ['./style.css'],
+    encapsulation: ViewEncapsulation.None
 })
 export class MXWinPalette {
-    private constructor() {
+    @Input() x = 0;
+    @Input() y = 0;
+    constructor(private componentFactoryResolver: ComponentFactoryResolver) {
+        
+    }
+    public appendTo(viewContainerRef: ViewContainerRef, x?: number, y?: number) {
+        let componentFactory = this.componentFactoryResolver.resolveComponentFactory(MXWinPalette);
+        viewContainerRef.clear();
+        let componentRef = viewContainerRef.createComponent(componentFactory);
+    }
+    handleChange(e) {
 
     }
-    private instance: MXWinPalette;
-    public getInstance() {
-        if (!this.instance) {
-            this.instance = new MXWinPalette();
-        }
-        return this.instance;
+    handleChangeComplete(e) {
+
+    }
+    handleSave(e) {
+
+    }
+    handleClose(e) {
+        
     }
 }

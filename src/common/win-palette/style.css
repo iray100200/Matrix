@@ -1,10 +1,58 @@
-.palette {
-    height: 400px;
+._mx-palette {
     width: 200px;
     position: absolute;
-    right: 100px;
-    top: 20px;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-    background: #f6f5ec;
     z-index: 100;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.36);
+    border-radius: 4px;
+}
+
+._mx-palette .palette-head {
+    background: #f9f9f9;
+    height: 28px;
+    position: relative;
+    z-index: 1;
+    border-radius: inherit;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    text-align: right;
+}
+
+._mx-palette .btn-container {
+    height: calc(100% - 6px);
+    width: 20px;
+    margin: 3.5px 5px 0 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+._mx-palette .btn-container:first-child {
+    margin-right: -2px;
+}
+
+._mx-palette .ok-btn {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #7bbfea;
+}
+
+._mx-palette .close-btn {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #d3d7d4;
+}
+
+._mx-palette .sketch-picker {
+    box-shadow: 0 0 0!important;
+    border-radius: 4px!important;
+    border-top-left-radius: 0!important;
+    border-top-right-radius: 0!important;
+    padding: 6px 6px 0!important;
+}
+
+._mx-palette .sketch-picker input {
+    padding: 1px 1px 0px 4px!important;
 }

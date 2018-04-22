@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, Directive, ViewContainerRef } from '@angular/core';
 import { MXWinPalette } from '../win-palette';
+import { MXService } from '../../services/mx.service';
 
 @Component({
     selector: '[mx-win-color-selector]',
@@ -8,7 +9,12 @@ import { MXWinPalette } from '../win-palette';
 })
 export class MXWinColorSelector {
     color = 'transparent';
-    onClick(e) {
+    winPalette: MXWinPalette;
+    @ViewChild('templateHost', { read: ViewContainerRef }) templateHost;
+    constructor(private service: MXService) {
         
+    }
+    onClick(e) {
+        this.service.load(MXWinPalette);
     }
 }

@@ -26,6 +26,7 @@
     "angular-in-memory-web-api": "~0.5.0",
     "classlist.js": "^1.1.20150312",
     "core-js": "^2.5.5",
+    "ngx-color": "^1.2.1",
     "ngx-scrollbar": "^1.5.6",
     "rxjs": "^5.5.10",
     "zone.js": "^0.8.26"

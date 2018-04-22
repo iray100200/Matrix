@@ -12,13 +12,17 @@ import { MXWinBaseLayout } from './win-base-layout';
 import { MXWinPropertyPane } from './win-property-pane';
 import { MXWinColorSelector } from './win-color-selector';
 import { MXWinPalette } from './win-palette';
+import { MXWinTemplateHostDirective } from './win-directives';
+import { MXService } from '../services';
+import { ColorSketchModule } from 'ngx-color/sketch';
 
 @NgModule({
     imports: [
         BrowserModule,
         RouterModule,
         ClarityModule,
-        ScrollbarModule
+        ScrollbarModule,
+        ColorSketchModule
     ],
     declarations: [
         MXWinComponentBox,
@@ -32,7 +36,9 @@ import { MXWinPalette } from './win-palette';
         MXWinBaseLayout,
         MXWinPropertyPane,
         MXWinColorSelector,
-        MXWinPalette
+        MXWinPalette,
+        // directives
+        MXWinTemplateHostDirective
     ],
     exports: [
         MXWinComponentBox,
@@ -46,7 +52,14 @@ import { MXWinPalette } from './win-palette';
         MXWinScroller,
         MXWinBaseLayout,
         MXWinPropertyPane,
+        MXWinPalette,
+        MXWinTemplateHostDirective
+    ],
+    entryComponents: [
         MXWinPalette
+    ],
+    providers: [
+        MXService
     ]
 })
 export class MXCommonModule {}

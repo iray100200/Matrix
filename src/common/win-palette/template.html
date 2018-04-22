@@ -1,1 +1,11 @@
-<div class="palette"></div>
+<div class="_mx-palette" [style.left]="x" [style.top]="y">
+    <div class="palette-head">
+        <div class="btn-container" title="选中" (click)="handleSave($event)">
+            <i class="ok-btn"></i>
+        </div>
+        <div class="btn-container" title="关闭" (click)="handleClose($event)">
+            <i class="close-btn"></i>
+        </div>
+    </div>
+    <color-sketch [ngClass]="sketch" (onChange)="handleChange($event)" (onChangeComplete)="handleChangeComplete($event)"></color-sketch>
+</div>
