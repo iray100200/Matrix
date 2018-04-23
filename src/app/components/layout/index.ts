@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit, ElementRef, ViewContainerRef } from '@angular/core';
+import { Component, ViewChild, OnInit, ElementRef, ViewContainerRef, Input } from '@angular/core';
 import * as ResJson from './res.json';
 import { MXService } from '../../../services/mx.service';
 
@@ -10,6 +10,7 @@ import { MXService } from '../../../services/mx.service';
 export class MXLayoutComponent implements OnInit {
     resJson: Array<any> = <any>ResJson;
     private resize: number = 0;
+    component;
     @ViewChild('virtualWin') virtualWin: ElementRef;
     @ViewChild('templateHost', { read: ViewContainerRef }) templateHost;
     ngOnInit() {
