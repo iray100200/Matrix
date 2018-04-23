@@ -3,6 +3,9 @@
     color: #130c0e;
     font-size: 110%;
     user-select: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .head {
@@ -17,7 +20,7 @@
 .attr-container {
     display: flex;
     align-items: center;
-    padding: 0 4px 0 12px;
+    padding: 0 5px;
 }
 
 .attr-container:hover {
@@ -37,5 +40,6 @@
 }
 
 .style-pane {
-    padding: 10px;
+    flex: 1;
+    padding: 5px;
 }

@@ -23,28 +23,6 @@ import { StandaloneComponentsModule, StandaloneComponentsInterpreterModule } fro
         SampleLayout
     ]
 })
-export class LayoutsModule {
-
-}
-
-@NgModule({
-    imports: [
-        BrowserModule,
-        StandaloneComponentsModule
-    ],
-    declarations: [
-        GuidanceLayout,
-        SampleLayout
-    ],
-    entryComponents: [
-        GuidanceLayout,
-        SampleLayout
-    ],
-    exports: [
-        GuidanceLayout,
-        SampleLayout
-    ]
-})
 export class MXStandaloneLayoutsModule {
 
 }

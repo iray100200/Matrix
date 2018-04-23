@@ -4,7 +4,7 @@ export * from './layouts';
 import { BrowserModule } from '@angular/platform-browser';
 import { MXSampleLayout } from './sample-layout';
 import { MXGuidanceLayout } from './guidance';
-import { LayoutsModule } from './layouts';
+import { MXStandaloneLayoutsModule } from './layouts';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { MXCommonModule } from '../../common';
@@ -14,7 +14,7 @@ import { StandaloneComponentsInterpreterModule } from '../mx-components';
     imports: [
         BrowserModule,
         MXCommonModule,
-        LayoutsModule,
+        MXStandaloneLayoutsModule,
         StandaloneComponentsInterpreterModule
     ],
     declarations: [
