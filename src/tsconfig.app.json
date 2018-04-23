@@ -4,11 +4,10 @@
     "outDir": "../out-tsc/app",
     "baseUrl": "./",
     "module": "es2015",
-    "types": []
+    "types": [],
+    "paths": {
+      "common/services": ["common/win-services/index"]
+    }
   },
-  "exclude": [
-    "test.ts",
-    "**/*.spec.ts",
-    "**/testing/*"
-  ]
+  "exclude": ["test.ts", "**/*.spec.ts", "**/testing/*"]
 }

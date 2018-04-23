@@ -1,4 +1,5 @@
-import { Component, Directive } from '@angular/core';
+import { Component, Directive, EventEmitter } from '@angular/core';
+import { MXComponentServiceProvider } from 'common/services';
 
 @Component({
     selector: '[component="sample-component"]',
@@ -16,7 +17,13 @@ export class SampleComponent {
     }
 })
 export class SampleComponentInterpreter {
-    onClick(e) {
+    constructor(private componentServiceProvider: MXComponentServiceProvider) {
 
+    }
+    onClick(e) {
+        this.componentServiceProvider.emit({
+            target: SampleComponent,
+            eventType: 'click'
+        });
     }
 }

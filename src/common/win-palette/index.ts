@@ -1,5 +1,5 @@
 import { Component, Input, ComponentFactory, ViewEncapsulation, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
-import { DocumentServiceProvider } from '../win-services';
+import { MXDocumentServiceProvider as documentService } from '../win-services';
 
 @Component({
     selector: '[mx-win-palette]',
@@ -36,7 +36,7 @@ export class MXWinPalette implements AfterViewInit {
             ty = this.y;
             isMousedown = true;
         });
-        DocumentServiceProvider.MosuemoveEvent.subscribe(e => {
+        documentService.MosuemoveEvent.subscribe(e => {
             if (isMousedown) {
                 let xsize = e.x - ex, ysize = e.y - ey;
                 if (animation) {
@@ -49,7 +49,7 @@ export class MXWinPalette implements AfterViewInit {
                 });
             }
         });
-        DocumentServiceProvider.MouseupEvent.subscribe(e => {
+        documentService.MouseupEvent.subscribe(e => {
             isMousedown = false;
         });
     }

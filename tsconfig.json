@@ -11,6 +11,10 @@
     "typeRoots": [
       "node_modules/@types"
     ],
+    "baseUrl": ".",
+    "paths": {
+      "common/services": ["src/common/win-services", "src/common/win-services/index"]
+    },
     "lib": [
       "es2017",
       "dom"
