@@ -16,6 +16,7 @@ import { MXWinTemplateHostDirective } from './win-directives';
 import { MXService } from '../services';
 import { ColorSketchModule } from 'ngx-color/sketch';
 import { ColorHueModule } from 'ngx-color/hue';
+import { DocumentServiceProvider } from './win-services';
 
 @NgModule({
     imports: [
@@ -61,7 +62,7 @@ import { ColorHueModule } from 'ngx-color/hue';
         MXWinPalette
     ],
     providers: [
-        MXService
+        DocumentServiceProvider
     ]
 })
 export class MXCommonModule {}

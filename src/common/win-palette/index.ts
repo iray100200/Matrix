@@ -1,5 +1,5 @@
-import { Component, Input, ViewContainerRef, ComponentFactoryResolver, ComponentFactory, ViewEncapsulation, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
-import { MXService } from '../../services/mx.service';
+import { Component, Input, ComponentFactory, ViewEncapsulation, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { DocumentServiceProvider } from '../win-services';
 
 @Component({
     selector: '[mx-win-palette]',
@@ -21,13 +21,8 @@ export class MXWinPalette implements AfterViewInit {
     get height() {
         return this.element.offsetHeight;
     }
-    constructor(private componentFactoryResolver: ComponentFactoryResolver, private elementRef: ElementRef) {
+    constructor(private elementRef: ElementRef) {
         
-    }
-    public appendTo(viewContainerRef: ViewContainerRef, x?: number, y?: number) {
-        let componentFactory = this.componentFactoryResolver.resolveComponentFactory(MXWinPalette);
-        viewContainerRef.clear();
-        let componentRef = viewContainerRef.createComponent(componentFactory);
     }
     private registerEvents() {
         let animation = null, me = this;
@@ -41,7 +36,7 @@ export class MXWinPalette implements AfterViewInit {
             ty = this.y;
             isMousedown = true;
         });
-        MXService.MosuemoveEvent.subscribe(e => {
+        DocumentServiceProvider.MosuemoveEvent.subscribe(e => {
             if (isMousedown) {
                 let xsize = e.x - ex, ysize = e.y - ey;
                 if (animation) {
@@ -54,7 +49,7 @@ export class MXWinPalette implements AfterViewInit {
                 });
             }
         });
-        MXService.MouseupEvent.subscribe(e => {
+        DocumentServiceProvider.MouseupEvent.subscribe(e => {
             isMousedown = false;
         });
     }

@@ -15,11 +15,7 @@ export class MXLayoutComponent implements OnInit {
     ngOnInit() {
         window.addEventListener('resize', () => {
             this.resize++;
-        })
-        MXService.HostLoaderEvent.subscribe(e => {
-            this.templateHost.clear();
-            this.templateHost.createComponent(e.target);
-        })
+        });
     }
     get vwidth(): number {
         return this.virtualWin.nativeElement.offsetWidth;
