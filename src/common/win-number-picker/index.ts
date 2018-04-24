@@ -1,4 +1,4 @@
-import { Component, ViewChild, Input } from "@angular/core";
+import { Component, ViewChild, Input, EventEmitter } from "@angular/core";
 
 @Component({
     selector: "[mx-win-number-picker]",
@@ -8,6 +8,7 @@ import { Component, ViewChild, Input } from "@angular/core";
 export class MXWinNumberPicker {
     @ViewChild("element") element;
     private _value;
+    private event: EventEmitter<any> = new EventEmitter();
     @Input() min = 0;
     @Input() max = 1024;
     get value() {
@@ -16,6 +17,7 @@ export class MXWinNumberPicker {
     set value(val: any) {
         this._value = val || 0;
         this.element.nativeElement.value = this._value;
+        this.event.emit(this._value);
     }
     private isValueInvalid(value) {
         return value < this.min || value > this.max;
@@ -51,5 +53,8 @@ export class MXWinNumberPicker {
             return e.preventDefault();
         }
         this.value = value;
+    }
+    subscribe(next: Function, error?: Function, complete?: Function) {
+        return this.event.subscribe(next, error, complete);
     }
 }
