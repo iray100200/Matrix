@@ -1,0 +1,19 @@
+.number-picker {
+    display: flex;
+    align-items: center;
+}
+
+input {
+    padding: 0 2px 0;
+    ime-mode: disabled;
+    margin-right: 4px;
+    width: 80px;
+    height: 22px;
+    position: relative;
+    top: 1px;
+    text-align: right;
+}
+
+.select {
+    display: inline-block;
+}
