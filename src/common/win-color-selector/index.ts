@@ -8,4 +8,7 @@ import { Component, ViewChild, Directive, ViewContainerRef, EventEmitter, Output
 export class MXWinColorSelector {
     @Input() color = 'transparent';
     @Output() colorChange: EventEmitter<any> = new EventEmitter();
+    onClick(e) {
+        
+    }
 }
