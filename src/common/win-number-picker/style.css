@@ -4,7 +4,7 @@
 }
 
 input {
-    padding: 5px 2px 0;
+    padding: 1px 2px 0;
     ime-mode: disabled;
     margin-right: 4px;
     width: 80px;
@@ -16,6 +16,5 @@ input {
 }
 
 .select select {
-    min-width: 0.84em;
     padding-left: 2px;
 }
