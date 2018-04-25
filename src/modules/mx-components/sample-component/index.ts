@@ -1,13 +1,23 @@
-import { Component, Directive, EventEmitter } from '@angular/core';
+import { Component, Directive, EventEmitter, Input, ViewChild, ContentChild, ElementRef, AfterViewInit, AfterViewChecked } from '@angular/core';
 import { MXComponentServiceProvider } from 'common/services';
+import { MXBaseButtonComponent } from '../base';
 
 @Component({
     selector: '[component="sample-component"]',
     templateUrl: './template.html',
-    styleUrls: ['./style.css']
+    styleUrls: ['./style.css'],
+    exportAs: 'sample'
 })
-export class SampleComponent {
-    properties: Array<string>;
+export class SampleComponent extends MXBaseButtonComponent implements AfterViewInit, AfterViewChecked {
+    constructor(protected elementRef: ElementRef) {
+        super(elementRef);
+    }
+    ngAfterViewInit() {
+
+    }
+    ngAfterViewChecked() {
+        
+    }
 }
 
 @Directive({
@@ -17,12 +27,13 @@ export class SampleComponent {
     }
 })
 export class SampleComponentInterpreter {
+    @ContentChild(SampleComponent) component;
     constructor(private componentServiceProvider: MXComponentServiceProvider) {
 
     }
     onClick(e) {
         this.componentServiceProvider.emit({
-            target: SampleComponent,
+            target: this.component,
             eventType: 'click'
         });
     }

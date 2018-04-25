@@ -10,6 +10,11 @@ import { MXComponentServiceProvider } from '../win-services';
 export class MXWinPropertyPane implements AfterViewInit {
     @Input() component;
     @ViewChild('stylePanel', { read: ViewContainerRef }) stylePanel;
+    constructor(private componentServiceProvider: MXComponentServiceProvider) {
+        componentServiceProvider.subscribe(r => {
+            r.target.width = 200;
+        });
+    }
     ngAfterViewInit() {
         
     }
