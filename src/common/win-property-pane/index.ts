@@ -1,4 +1,4 @@
-import { Component, ViewChildren, AfterViewInit, ViewChild, ViewContainerRef, Input, ComponentFactoryResolver } from '@angular/core';
+import { Component, ViewChildren, AfterViewInit, ViewChild, ViewContainerRef, Input, ComponentFactoryResolver, ComponentRef } from '@angular/core';
 import { MXWinColorSelector } from '../win-color-selector';
 import { MXComponentServiceProvider } from '../win-services';
 import { MXWinNumberPicker } from '../win-number-picker';
@@ -20,7 +20,7 @@ export class MXWinPropertyPane implements AfterViewInit {
     ngAfterViewInit() {
         
     }
-    direct(component) {
+    direct(component: ComponentRef<any>) {
         let styleProperties = ['width', 'height'];
         this.stylePanel.clear();
         styleProperties.forEach(t => {
