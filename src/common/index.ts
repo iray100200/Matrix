@@ -62,7 +62,8 @@ import { MXWinNumberPicker } from './win-number-picker';
         MXWinTemplateHostDirective
     ],
     entryComponents: [
-        MXWinPalette
+        MXWinPalette,
+        MXWinNumberPicker
     ],
     providers: [
         MXDocumentServiceProvider,
