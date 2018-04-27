@@ -23,7 +23,7 @@ export class MXWinNumberPicker {
         return value < this.min || value > this.max;
     }
     handleInput(e: KeyboardEvent) {
-        let value = this.value.replace(/[a-z]/gi, "");
+        let value = parseInt(String((<HTMLInputElement>e.currentTarget).value).replace(/[a-z]/gi, "")) || 0;
         if (this.isValueInvalid(value)) {
             if (value < this.min) {
                 this.value = 0;
