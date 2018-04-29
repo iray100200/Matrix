@@ -11,3 +11,7 @@
 .number-picker-group .group {
     flex: 1;
 }
+
+.number-picker-group .group [mx-win-number-picker]:not(:last-child) {
+    margin-bottom: 4px;
+}
