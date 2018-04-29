@@ -1,14 +1,42 @@
 .number-picker {
     display: flex;
     align-items: center;
+    line-height: 1em;
+}
+
+.number-picker.standalone {
+    padding: 2px 2px 2px 5px;
+    margin: 2px 8px 0 8px;
 }
 
 input {
-    padding: 1px 2px 0;
+    padding: 1px 4px 0 2px;
     ime-mode: disabled;
     margin-right: 4px;
     width: 80px;
     text-align: right;
+    height: 22px;
+    flex: 1;
+    border: 1px solid #ececea!important;
+    background: #fff!important;
+    cursor: copy;
+}
+
+input:focus {
+    background: #fff!important;
+}
+
+.text {
+    width: 68px;
+    position: relative;
+    height: 22px;
+    color: black;
+    line-height: 23px;
+    text-transform: capitalize;
+}
+
+.text:focus {
+    border: inherit;
 }
 
 .select {
@@ -16,5 +44,17 @@ input {
 }
 
 .select select {
-    padding-left: 2px;
+    padding: 1px 2px 0 4px;
+    height: 22px;
+    border: 1px solid #ececea;
+    background: #fff;
+    cursor: default;
+}
+
+.select select:focus {
+    background: #fff;
+}
+
+.select:after {
+    top: .4em;
 }

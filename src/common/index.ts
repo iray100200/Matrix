@@ -17,7 +17,7 @@ import { MXService } from '../services';
 import { ColorSketchModule } from 'ngx-color/sketch';
 import { ColorHueModule } from 'ngx-color/hue';
 import { MXDocumentServiceProvider, MXComponentServiceProvider } from './win-services';
-import { MXWinNumberPicker } from './win-number-picker';
+import { MXWinNumberPicker, MXWinNumberPickerGroup } from './win-number-picker';
 
 @NgModule({
     imports: [
@@ -42,6 +42,7 @@ import { MXWinNumberPicker } from './win-number-picker';
         MXWinColorSelector,
         MXWinPalette,
         MXWinNumberPicker,
+        MXWinNumberPickerGroup,
         // directives
         MXWinTemplateHostDirective
     ],
@@ -59,11 +60,13 @@ import { MXWinNumberPicker } from './win-number-picker';
         MXWinPropertyPane,
         MXWinPalette,
         MXWinNumberPicker,
+        MXWinNumberPickerGroup,
         MXWinTemplateHostDirective
     ],
     entryComponents: [
         MXWinPalette,
-        MXWinNumberPicker
+        MXWinNumberPicker,
+        MXWinNumberPickerGroup
     ],
     providers: [
         MXDocumentServiceProvider,

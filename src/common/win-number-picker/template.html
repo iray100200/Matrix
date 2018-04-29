@@ -1,4 +1,5 @@
-<div class="number-picker">
+<div class="number-picker" [ngClass]="{'standalone':!isChild}">
+    <span *ngIf="label" class="text">{{label}}</span>
     <input type="text" #element (input)="handleInput($event)" (keydown)="handleKeydown($event)" (mousewheel)="handleMousewheel($event)"/>
     <div class="select">
         <select>

@@ -7,10 +7,12 @@ import { Component, ViewChild, Input, EventEmitter } from "@angular/core";
 })
 export class MXWinNumberPicker {
     @ViewChild("element") element;
-    private _value;
-    private event: EventEmitter<any> = new EventEmitter();
     @Input() min = 0;
     @Input() max = 1024;
+    @Input() isChild: boolean = false;
+    private _value;
+    private event: EventEmitter<any> = new EventEmitter();
+    label: string;
     get value() {
         return this._value || 0;
     }
@@ -34,11 +36,13 @@ export class MXWinNumberPicker {
         }
         this.value = value;
     }
+    defaultKeyCodes: Array<number> = [
+        8,37, 38, 39, 40, 46
+    ];
     handleKeydown(e: KeyboardEvent) {
         let keyCode = e.keyCode;
         if (
-            keyCode == 8 ||
-            keyCode == 46 ||
+            this.defaultKeyCodes.indexOf(keyCode) > -1 ||
             (keyCode >= 48 && keyCode <= 57) ||
             (keyCode >= 96 && keyCode <= 105)
         ) {
@@ -56,5 +60,33 @@ export class MXWinNumberPicker {
     }
     subscribe(next: Function, error?: Function, complete?: Function) {
         return this.event.subscribe(next, error, complete);
+    }
+}
+
+@Component({
+    selector: '[mx-win-number-picker-group]',
+    styleUrls: ['./style.group.css', './style.css'],
+    template: `<div class="number-picker-group">
+        <div *ngIf="label" class="text">{{label}}</div>
+        <div class="group">
+            <div mx-win-number-picker *ngFor="let item of attributes" [isChild]="true" #numberPickerGroup></div>
+        </div>
+    </div>`
+})
+export class MXWinNumberPickerGroup {
+    label: string;
+    className: string;
+    attributes: Array<any> = [];
+    private _value: any;
+    get value() {
+        return this._value;
+    }
+    set value(val) {
+        this._value = val;
+        for (var a in val) {
+            this.attributes.push({
+                a: val[a]
+            })
+        }
     }
 }

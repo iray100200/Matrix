@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit, ElementRef, ComponentFactoryResolver } from "@angular/core";
+import { Component, ViewChild, OnInit, ElementRef, ComponentFactoryResolver, ViewEncapsulation } from "@angular/core";
 import { Events, MXWinLeftNavigator } from "../common/win-left-navigator";
 import { AlertServiceProvider, MXService } from "../services";
 import { MXGuidanceLayout } from "../modules";
@@ -6,7 +6,8 @@ import { MXGuidanceLayout } from "../modules";
 @Component({
     selector: "[matrix-root]",
     templateUrl: "./app.component.html",
-    styleUrls: ["./app.component.scss"]
+    styleUrls: ["./app.component.scss"],
+    encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
     @ViewChild("context") context: ElementRef;

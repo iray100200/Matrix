@@ -1,0 +1,13 @@
+.number-picker-group {
+    display: flex;
+    padding: 2px 2px 2px 5px;
+    margin: 2px 8px 0 8px;
+}
+
+.number-picker-group .text {
+    width: 68px;
+}
+
+.number-picker-group .group {
+    flex: 1;
+}
