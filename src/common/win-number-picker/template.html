@@ -1,10 +1,9 @@
-<div class="number-picker" [ngClass]="{'standalone':!isChild}">
+<div class="_mx-number-picker" [ngClass]="{'standalone':!isChild}">
     <span *ngIf="label" class="text">{{label}}</span>
     <input type="text" #element (input)="handleInput($event)" (keydown)="handleKeydown($event)" (mousewheel)="handleMousewheel($event)"/>
     <div class="select">
-        <select>
+        <select #dropdown>
             <option>px</option>
-            <option>%</option>
         </select>
     </div>
 </div>

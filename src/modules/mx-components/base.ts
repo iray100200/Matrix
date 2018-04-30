@@ -35,7 +35,7 @@ export class MXBaseButtonComponent {
     private _margin: Margin = new Margin();
     private _padding: Padding = new Padding();
     get nativeElement() {
-        return this.target.nativeElement;
+        return <HTMLElement>this.target.nativeElement;
     }
     get width() {
         this._width = this.nativeElement.offsetWidth;
@@ -61,16 +61,8 @@ export class MXBaseButtonComponent {
         return this._margin;
     }
     set margin(val: Margin) {
-        this._margin.bottom = val.bottom;
-        this._margin.top = val.top;
-        this._margin.left = val.left;
-        this._margin.right = val.right;
-    }
-    set padding(val: Padding) {
-        this._padding.bottom = val.bottom;
-        this._padding.top = val.top;
-        this._padding.left = val.left;
-        this._padding.right = val.right;
+        this._margin = val;
+        this.nativeElement.style.cssText = `margin:${val.top} ${val.right} ${val.bottom} ${val.left}`;
     }
     get padding() {
         this._padding.top = getComputedStyle(this.nativeElement).paddingTop;
@@ -78,5 +70,9 @@ export class MXBaseButtonComponent {
         this._padding.left = getComputedStyle(this.nativeElement).paddingLeft;
         this._padding.bottom = getComputedStyle(this.nativeElement).paddingBottom;
         return this._padding;
+    }
+    set padding(val: Padding) {
+        this._padding = val;
+        this.nativeElement.style.cssText = `padding:${val.top} ${val.right} ${val.bottom} ${val.left}`;
     }
 }

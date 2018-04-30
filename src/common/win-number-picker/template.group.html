@@ -1,0 +1,6 @@
+<div class="_mx-number-picker-group">
+    <div *ngIf="label" class="text">{{label}}</div>
+    <div class="group">
+        <div mx-win-number-picker #children *ngFor="let item of attributes" [isChild]="true" [label]="item.label" [value]="item.value" #numberPickerGroup></div>
+    </div>
+</div>

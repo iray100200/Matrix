@@ -1,17 +1,23 @@
-.number-picker-group {
+._mx-number-picker-group {
     display: flex;
+    flex-direction: column;
     padding: 2px 2px 2px 5px;
-    margin: 2px 8px 0 8px;
+    margin: 0 8px 0 8px;
 }
 
-.number-picker-group .text {
-    width: 68px;
+._mx-number-picker-group .text {
+    width: 80px;
+    text-transform: capitalize;
 }
 
-.number-picker-group .group {
+._mx-number-picker-group .group {
     flex: 1;
 }
 
-.number-picker-group .group [mx-win-number-picker]:not(:last-child) {
-    margin-bottom: 4px;
+._mx-number-picker-group .group .text {
+    text-indent: 0.8em;
+}
+
+._mx-number-picker-group .group [mx-win-number-picker] {
+    margin-top: 4px;
 }

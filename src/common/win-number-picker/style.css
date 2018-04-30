@@ -1,15 +1,15 @@
-.number-picker {
+._mx-number-picker {
     display: flex;
     align-items: center;
     line-height: 1em;
 }
 
-.number-picker.standalone {
+._mx-number-picker.standalone {
     padding: 2px 2px 2px 5px;
-    margin: 2px 8px 0 8px;
+    margin: 0 8px 0 8px;
 }
 
-input {
+._mx-number-picker input {
     padding: 1px 4px 0 2px;
     ime-mode: disabled;
     margin-right: 4px;
@@ -22,12 +22,12 @@ input {
     cursor: copy;
 }
 
-input:focus {
+._mx-number-picker input:focus {
     background: #fff!important;
 }
 
-.text {
-    width: 68px;
+._mx-number-picker .text {
+    width: 80px;
     position: relative;
     height: 22px;
     color: black;
@@ -35,15 +35,15 @@ input:focus {
     text-transform: capitalize;
 }
 
-.text:focus {
+._mx-number-picker .text:focus {
     border: inherit;
 }
 
-.select {
+._mx-number-picker .select {
     display: inline-block;
 }
 
-.select select {
+._mx-number-picker .select select {
     padding: 1px 2px 0 4px;
     height: 22px;
     border: 1px solid #ececea;
@@ -51,10 +51,10 @@ input:focus {
     cursor: default;
 }
 
-.select select:focus {
+._mx-number-picker .select select:focus {
     background: #fff;
 }
 
-.select:after {
+._mx-number-picker .select:after {
     top: .4em;
 }

@@ -41,6 +41,11 @@ export class MXWinPropertyPane implements AfterViewInit {
                         let componentRef = this.stylePanel.createComponent(componentFactory);
                         componentRef.instance.label = t;
                         componentRef.instance.value = component[t];
+                        componentRef.instance.subscribe(v => {
+                            let prop = component[t];
+                            prop[v.attribute] = v.value;
+                            component[t] = prop;
+                        });
                         break;
                     }
                 }
