@@ -20,11 +20,12 @@
         "name" : "layout",
         "icon" : "inbox",
         "label" : "布局",
-        "href": "layout"
+        "href": "switch/layout"
     }, {
         "name" : "comp",
         "icon" : "widgets",
         "label" : "组件",
+        "href": "switch/component",
         "events": {
             "onClick": "operateComponents"
         }

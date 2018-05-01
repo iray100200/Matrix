@@ -1,13 +1,13 @@
 import { Component, ViewChild, OnInit, ElementRef, ViewContainerRef, Input } from '@angular/core';
-import * as ResJson from './res.json';
+import * as ResJson from './res-layouts.json';
 import { MXService } from '../../../services/mx.service';
 
 @Component({
-    selector: '[mx-app-layout]',
+    selector: '[mx-app-switch]',
     templateUrl: './template.html',
     styleUrls: ['./style.scss']
 })
-export class MXLayoutComponent implements OnInit {
+export class MXSwitchComponent implements OnInit {
     resJson: Array<any> = <any>ResJson;
     private resize: number = 0;
     component;

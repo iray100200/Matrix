@@ -85,6 +85,7 @@ export class MXWinNumberPickerGroup implements AfterViewInit{
     label: string;
     className: string;
     attributes: Array<any> = [];
+    showMore: boolean = false;
     private event: EventEmitter<any> = new EventEmitter();
     private _value: any;
     get value() {
@@ -103,6 +104,9 @@ export class MXWinNumberPickerGroup implements AfterViewInit{
     }
     subscribe (fn: Function){
         return this.event.subscribe(fn);
+    }
+    handleShowOrHide() {
+        this.showMore = !this.showMore;
     }
     ngAfterViewInit() {
         this.children.forEach(f => {

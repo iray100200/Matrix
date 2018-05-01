@@ -1,6 +1,8 @@
 <div class="_mx-number-picker-group">
-    <div *ngIf="label" class="text">{{label}}</div>
-    <div class="group">
+    <div *ngIf="label" class="text">{{label}}
+        <i class="angle" [ngClass]="{'rotated':showMore}" (click)="handleShowOrHide()"><clr-icon shape="angle"></clr-icon></i>
+    </div>
+    <div class="group" *ngIf="showMore">
         <div mx-win-number-picker #children *ngFor="let item of attributes" [isChild]="true" [label]="item.label" [value]="item.value" #numberPickerGroup></div>
     </div>
 </div>

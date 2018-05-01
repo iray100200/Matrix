@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { MXSampleLayout } from '../modules';
 import { MXGuidanceLayout } from '../modules';
 import { MXHomeComponent } from './components/home';
-import { MXLayoutComponent } from './components/layout';
+import { MXSwitchComponent } from './components/switch';
 
 export const MXRouterConfig = [
     {
@@ -15,8 +15,8 @@ export const MXRouterConfig = [
         component: MXHomeComponent
     },
     {
-        path: 'layout',
-        component: MXLayoutComponent,
+        path: 'switch/:location',
+        component: MXSwitchComponent,
         children: [
             {
                 path: '',

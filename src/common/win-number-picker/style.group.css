@@ -1,13 +1,30 @@
 ._mx-number-picker-group {
     display: flex;
     flex-direction: column;
-    padding: 2px 2px 2px 5px;
+    padding: 2px 2px 0 5px;
     margin: 0 8px 0 8px;
 }
 
 ._mx-number-picker-group .text {
-    width: 80px;
+    display: flex;
+    align-items: center;
     text-transform: capitalize;
+    position: relative;
+}
+
+._mx-number-picker-group .text .angle {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+}
+
+._mx-number-picker-group .text .angle.rotated {
+    transform: rotate(180deg);
 }
 
 ._mx-number-picker-group .group {
