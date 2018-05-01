@@ -1,7 +1,7 @@
 ._mx-number-picker-group {
     display: flex;
     flex-direction: column;
-    padding: 2px 2px 0 5px;
+    padding: 2px 2px 0 2px;
     margin: 0 8px 0 8px;
 }
 
@@ -19,7 +19,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 24px;
+    width: 16px;
     height: 24px;
 }
 
