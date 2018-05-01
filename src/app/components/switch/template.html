@@ -3,7 +3,8 @@
         <div class="library-items" mx-win-scroller>
             <div class="library-items-container">
                 <a [routerLink]="item.path" *ngFor="let item of resJson">
-                    <div mx-win-layout-box [img]="item.thumb"></div>
+                    <div *ngIf="location==='layout'" mx-win-layout-box [img]="item.thumb"></div>
+                    <div *ngIf="location==='component'" mx-win-component-box [img]="item.thumb"></div>
                 </a>
             </div>
         </div>
