@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ApplicationModule } from '@angular/core';
 import { JsonPipe } from '@angular/common';
 
-import { AppComponent } from './app.component';
+import { AppComponent, ComponentDirective } from './app.component';
 import { MXCommonModule } from '../common';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -18,13 +18,13 @@ import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http'
   declarations: [
     AppComponent,
     MXHomeComponent,
-    MXSwitchComponent
+    MXSwitchComponent,
+    ComponentDirective
   ],
   imports: [
     ApplicationModule,
     MXCommonModule,
     RouterModule.forRoot(MXRouterConfig),
-    BrowserModule,
     CommonModule,
     ClarityModule,
     ClrIconModule,

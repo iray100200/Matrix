@@ -10,6 +10,9 @@ import { BrowserModule } from '@angular/platform-browser';
         BrowserModule,
         MXLayoutsModule
     ],
+    exports: [
+        MXLayoutsModule
+    ],
     bootstrap: [
         MXGuidanceLayout
     ]

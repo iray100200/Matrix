@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit, ElementRef, ComponentFactoryResolver, ViewEncapsulation } from "@angular/core";
+import { Component, ViewChild, OnInit, ElementRef, ComponentFactoryResolver, ViewEncapsulation, Directive } from "@angular/core";
 import { Events, MXWinLeftNavigator } from "../common/win-left-navigator";
 import { AlertServiceProvider, MXService } from "../services";
 import { MXGuidanceLayout } from "../modules";
@@ -32,5 +32,17 @@ export class AppComponent implements OnInit {
             deps_of_module: ''
         };
         this.mxService.transform(params).subscribe(t => {});
+    }
+}
+
+@Directive({
+    selector: 'button',
+    host: {
+        '(click)': 'onClick($event)'
+    }
+})
+export class ComponentDirective {
+    onClick(e) {
+
     }
 }

@@ -1,42 +1,34 @@
 [
     {
         "path": "sample-layouts",
-        "component": "./common-layout",
         "thumb": "/assets/images/theme-dark.svg"
     },
     {
         "path": "win-layouts",
-        "component": "./common-layout",
         "thumb": "/assets/images/theme-light.svg"
     },
     {
         "path": "win-layouts",
-        "component": "./common-layout",
         "thumb": "/assets/images/theme-light.svg"
     },
     {
         "path": "win-layouts",
-        "component": "./common-layout",
         "thumb": "/assets/images/theme-light.svg"
     },
     {
         "path": "win-layouts",
-        "component": "./common-layout",
         "thumb": "/assets/images/theme-dark.svg"
     },
     {
         "path": "win-layouts",
-        "component": "./common-layout",
         "thumb": "/assets/images/theme-dark.svg"
     },
     {
         "path": "win-layouts",
-        "component": "./common-layout",
         "thumb": "/assets/images/theme-dark.svg"
     },
     {
         "path": "win-layouts",
-        "component": "./common-layout",
         "thumb": "/assets/images/theme-dark.svg"
     }
 ]

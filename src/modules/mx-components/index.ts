@@ -1,31 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { NgModule, Directive } from '@angular/core';
-import { SampleComponent } from './sample-component';
-import { SampleComponentInterpreter} from './sample-component';
+import { SampleComponent, SampleComponentInterpreterDirective } from './sample-component';
+import { Provider } from '@angular/core';
+export * from './sample-component';
 
-@NgModule({
-    imports: [
-        CommonModule
-    ],
-    declarations: [
-        SampleComponent
-    ],
-    exports: [
-        SampleComponent
-    ]
-})
-export class StandaloneComponentsModule {
+export const MX_COMPONENTS: Provider[] = [
+    SampleComponent
+]
 
-}
-
-@NgModule({
-    declarations: [
-        SampleComponentInterpreter
-    ],
-    exports: [
-        SampleComponentInterpreter
-    ]
-})
-export class StandaloneComponentsInterpreterModule {
-
-}
+export const MX_COM_DIRECTIVES: Provider[] = [
+    SampleComponentInterpreterDirective
+];

@@ -3,7 +3,7 @@ import { MXComponentServiceProvider } from 'common/services';
 import { MXBaseButtonComponent } from '../base';
 
 @Component({
-    selector: '[component="sample-component"]',
+    selector: 'component[sample-component]',
     templateUrl: './template.html',
     styleUrls: ['./style.css'],
     exportAs: 'sample'
@@ -21,12 +21,12 @@ export class SampleComponent extends MXBaseButtonComponent implements AfterViewI
 }
 
 @Directive({
-    selector: '[component]',
+    selector: 'component',
     host: {
         '(click)': 'onClick($event)'
     }
 })
-export class SampleComponentInterpreter {
+export class SampleComponentInterpreterDirective {
     @ContentChild(SampleComponent) component;
     constructor(private componentServiceProvider: MXComponentServiceProvider) {
 

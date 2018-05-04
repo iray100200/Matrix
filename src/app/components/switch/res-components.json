@@ -1,1 +1,6 @@
-[]
+[
+    {
+        "path": "sample-component",
+        "thumb": "/assets/images/theme-dark.svg"
+    }
+]
