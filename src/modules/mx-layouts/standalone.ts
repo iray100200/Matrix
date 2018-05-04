@@ -1,24 +1,26 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { SampleLayout } from './sample-layout';
 import { GuidanceLayout } from './guidance';
 import { NgModule } from '@angular/core';
-import { MX_COMPONENTS } from '../mx-components';
+import { MXStandaloneComponentsModule } from '../mx-components/standalone';
+
+export const MX_LAYOUTS = [
+    GuidanceLayout,
+    SampleLayout
+]
 
 @NgModule({
+    imports: [
+        CommonModule
+    ],
     declarations: [
-        GuidanceLayout,
-        SampleLayout,
-        MX_COMPONENTS
+        MX_LAYOUTS
     ],
     entryComponents: [
-        GuidanceLayout,
-        SampleLayout,
-        MX_COMPONENTS
+        MX_LAYOUTS
     ],
     exports: [
-        GuidanceLayout,
-        SampleLayout,
-        MX_COMPONENTS
+        MX_LAYOUTS
     ]
 })
 export class MXStandaloneLayoutsModule {

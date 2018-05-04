@@ -22,6 +22,7 @@ import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http'
     ComponentDirective
   ],
   imports: [
+    CommonModule,
     ApplicationModule,
     MXCommonModule,
     RouterModule.forRoot(MXRouterConfig),

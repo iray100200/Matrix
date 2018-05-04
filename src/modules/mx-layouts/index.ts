@@ -4,30 +4,30 @@ export * from './standalone';
 import { BrowserModule } from '@angular/platform-browser';
 import { MXSampleLayout } from './sample-layout';
 import { MXGuidanceLayout } from './guidance';
-import { MXStandaloneLayoutsModule } from './standalone';
+import { MXComponentsModule } from '../mx-components';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { MXCommonModule } from '../../common';
 import { MX_COM_DIRECTIVES } from '../mx-components';
+import { MX_LAYOUTS } from './standalone';
 
 @NgModule({
     imports: [
         BrowserModule,
         MXCommonModule,
-        MXStandaloneLayoutsModule
+        MXComponentsModule
     ],
     declarations: [
+        MX_LAYOUTS,
         MXSampleLayout,
-        MXGuidanceLayout,
-        MX_COM_DIRECTIVES
+        MXGuidanceLayout
     ],
     entryComponents: [
+        MX_LAYOUTS,
         MXSampleLayout,
         MXGuidanceLayout
     ],
     exports: [
-        MX_COM_DIRECTIVES,
-        MXStandaloneLayoutsModule
+        MX_LAYOUTS
     ]
 })
 export class MXLayoutsModule {
