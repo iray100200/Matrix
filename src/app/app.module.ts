@@ -2,13 +2,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ApplicationModule } from '@angular/core';
 import { JsonPipe } from '@angular/common';
 
-import { AppComponent, ComponentDirective } from './app.component';
+import { AppComponent } from './app.component';
 import { MXCommonModule } from '../common';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MXRouterConfig } from './app.router';
 import { MXHomeComponent } from './components/home';
 import { MXSwitchComponent } from './components/switch';
+import { MXSwitchToLayouts } from './components/switch-layouts';
+import { MXSwitchToComponents } from './components/switch-components';
 import { ClarityModule, ClrIconModule } from '@clr/angular';
 import { SERVICES_PROVIDERS } from '../services';
 import { MXLayoutsModule } from '../modules';
@@ -19,7 +21,8 @@ import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http'
     AppComponent,
     MXHomeComponent,
     MXSwitchComponent,
-    ComponentDirective
+    MXSwitchToLayouts,
+    MXSwitchToComponents
   ],
   imports: [
     CommonModule,
@@ -39,7 +42,9 @@ import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http'
   exports: [
     AppComponent,
     MXHomeComponent,
-    MXSwitchComponent
+    MXSwitchComponent,
+    MXSwitchToLayouts,
+    MXSwitchToComponents
   ],
   bootstrap: [AppComponent]
 })

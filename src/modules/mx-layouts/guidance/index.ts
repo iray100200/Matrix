@@ -1,4 +1,4 @@
-import { Directive, Component, ViewContainerRef, AfterViewInit, ElementRef, ViewChild, EventEmitter, ComponentFactoryResolver } from '@angular/core';
+import { Component, ViewContainerRef, AfterViewInit, ViewChild } from '@angular/core';
 import { MXComponentServiceProvider } from '../../../common/win-services';
 
 @Component({
@@ -7,7 +7,7 @@ import { MXComponentServiceProvider } from '../../../common/win-services';
     styleUrls: ["./style.css"]
 })
 export class GuidanceLayout {
-    @ViewChild('container', { read: ViewContainerRef }) container;
+    @ViewChild('container', { read: ViewContainerRef }) container: ViewContainerRef;
     constructor() {
 
     }
@@ -21,23 +21,18 @@ export class GuidanceLayout {
         '(mouseenter)': "handleMouseenter($event)"
     }
 })
-export class MXGuidanceLayout extends GuidanceLayout {
+export class MXGuidanceLayout implements AfterViewInit {
     @ViewChild(GuidanceLayout) target: GuidanceLayout;
-    private event: EventEmitter<any> = new EventEmitter();
     private component: any;
-    constructor(private componentFactoryResolver: ComponentFactoryResolver,
-        private componentServiceProvider: MXComponentServiceProvider) {
-        super();
-        this.componentServiceProvider.subscribe(f => {
-            this.component = f.target;
-        })
-    }
-    load(component) {
-        if (component) {
-            this.target.container.createComponent(this.componentFactoryResolver.resolveComponentFactory(component));
-        }
+    constructor(private componentServiceProvider: MXComponentServiceProvider) {
     }
     handleMouseenter(e) {
-        this.load(this.component);
+        this.componentServiceProvider.emit({
+            target: this.target.container,
+            type: 'container'
+        });
+    }
+    ngAfterViewInit() {
+        
     }
 }

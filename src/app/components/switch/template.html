@@ -2,12 +2,10 @@
     <div mx-win-primary-side [minWidth]="240" [maxWidth]="320" class="library-context">
         <div class="library-items" mx-win-scroller>
             <div class="library-items-container">
-                <div *ngFor="let item of resJson">
-                    <a *ngIf="location==='layout'" [routerLink]="item.path" >
-                        <div mx-win-layout-box [img]="item.thumb"></div>
-                    </a>
-                    <div *ngIf="location==='component'" mx-win-component-box [img]="item.thumb" #components></div>
-                </div>
+                <div *ngIf="location==='layout'; else elseBlock" switch-layouts></div>
+                <ng-template #elseBlock>
+                    <div switch-components></div>
+                </ng-template>
             </div>
         </div>
     </div>

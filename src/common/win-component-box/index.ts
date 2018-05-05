@@ -1,5 +1,5 @@
-import { Component, Input, EventEmitter } from '@angular/core';
-import { SampleComponent } from '../../modules/mx-components';
+import { Component, Input, EventEmitter, AfterViewInit } from '@angular/core';
+import { SampleComponentInterpreterDirective } from '../../modules/mx-components/sample-component/interpreter';
 
 @Component({
     selector: "[mx-win-component-box]",
@@ -9,14 +9,18 @@ import { SampleComponent } from '../../modules/mx-components';
         '(click)': 'handleClick($event)'
     }
 })
-export class MXWinComponentBox {
-    @Input() componentName: string;
+export class MXWinComponentBox implements AfterViewInit {
+    @Input() ref: string;
     @Input() img: any;
+    @Input() name: any;
     private event: EventEmitter<any> = new EventEmitter();
     subscribe(fn: Function) {
         this.event.subscribe(fn);
     }
     handleClick(e) {
-        this.event.emit(SampleComponent);
+        this.event.emit(SampleComponentInterpreterDirective);
+    }
+    ngAfterViewInit() {
+
     }
 }

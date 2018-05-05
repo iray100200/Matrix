@@ -14,7 +14,7 @@ export class MXWinPropertyPane implements AfterViewInit {
     @ViewChild('numberPicker') numberPicker: MXWinNumberPicker;
     constructor(private componentServiceProvider: MXComponentServiceProvider, private componentFactoryResolver: ComponentFactoryResolver) {
         componentServiceProvider.subscribe(r => {
-            this.direct(r.target);
+            if(r.type === '_component') this.direct(r.target);
         });
     }
     ngAfterViewInit() {

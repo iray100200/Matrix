@@ -1,9 +1,37 @@
 @import url('@clr/icons/clr-icons.min.css');
 @import url('@clr/ui/clr-ui.min.css');
 
+/* roboto-300 - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: url('/assets/fonts/roboto-v18-latin-300.eot'); /* IE9 Compat Modes */
+  src: local('Roboto Light'), local('Roboto-Light'),
+       url('/assets/fonts/roboto-v18-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/assets/fonts/roboto-v18-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/assets/fonts/roboto-v18-latin-300.woff') format('woff'), /* Modern Browsers */
+       url('/assets/fonts/roboto-v18-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/assets/fonts/roboto-v18-latin-300.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+/* roboto-regular - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/roboto-v18-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Roboto'), local('Roboto-Regular'),
+       url('/assets/fonts/roboto-v18-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/assets/fonts/roboto-v18-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/assets/fonts/roboto-v18-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('/assets/fonts/roboto-v18-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/assets/fonts/roboto-v18-latin-regular.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+
 body, p, ul, h1, h2, h3, h4, h5 {
   margin: 0;
   padding: 0;
+  font-family: Roboto, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 label {
@@ -14,10 +42,15 @@ matrix-root {
   display: block;
 }
 
-* {
-  font-family: Arial, Helvetica, sans-serif;
+li {
   list-style: none;
+}
+
+button, input {
   outline: none;
+}
+
+* {
   box-sizing: border-box;
 }
 

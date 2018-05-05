@@ -34,15 +34,3 @@ export class AppComponent implements OnInit {
         this.mxService.transform(params).subscribe(t => {});
     }
 }
-
-@Directive({
-    selector: 'button',
-    host: {
-        '(click)': 'onClick($event)'
-    }
-})
-export class ComponentDirective {
-    onClick(e) {
-
-    }
-}

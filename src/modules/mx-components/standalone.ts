@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { SampleComponent } from './sample-component';
 import { Provider } from '@angular/core';
+import { SampleComponentInterpreterDirective } from './sample-component/interpreter';
 
 export const MX_COMPONENTS: Provider[] = [
     SampleComponent

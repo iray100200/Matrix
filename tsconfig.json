@@ -13,7 +13,8 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "common/services": ["src/common/win-services", "src/common/win-services/index"]
+      "common/services": ["src/common/win-services", "src/common/win-services/index"],
+      "modules/components": ["src/modules/mx-components", "src/modules/mx-components/index"]
     },
     "lib": [
       "es2017",

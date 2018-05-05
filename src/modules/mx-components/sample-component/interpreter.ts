@@ -1,22 +1,23 @@
-import { Directive, ContentChild, ViewContainerRef, Provider } from '@angular/core';
+import { Directive, ContentChild, ViewContainerRef, Provider, Component, ViewChild } from '@angular/core';
 import { SampleComponent } from './index';
 import { MXComponentServiceProvider } from 'common/services';
 
-@Directive({
-    selector: 'component',
+@Component({
+    selector: 'component-outlet',
+    template: `<component sample-component></component>`,
     host: {
         '(click)': 'onClick($event)'
     }
 })
 export class SampleComponentInterpreterDirective {
-    @ContentChild(SampleComponent) component;
+    @ViewChild(SampleComponent) component;
     constructor(private componentServiceProvider: MXComponentServiceProvider) {
         
     }
     onClick(e) {
         this.componentServiceProvider.emit({
             target: this.component,
-            eventType: 'click'
+            type: '_component'
         });
     }
 }

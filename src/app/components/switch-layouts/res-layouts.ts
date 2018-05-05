@@ -1,4 +1,4 @@
-[
+export const ResLayouts = [
     {
         "path": "sample-layouts",
         "thumb": "/assets/images/theme-dark.svg"

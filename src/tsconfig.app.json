@@ -6,7 +6,8 @@
     "module": "es2015",
     "types": [],
     "paths": {
-      "common/services": ["common/win-services/index"]
+      "common/services": ["common/win-services/index"],
+      "modules/components": ["modules/mx-components/index"]
     }
   },
   "exclude": ["test.ts", "**/*.spec.ts", "**/testing/*"]

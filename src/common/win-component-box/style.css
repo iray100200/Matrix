@@ -1,0 +1,16 @@
+.comp-icon {
+    padding: 4px 10px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.1em;
+    width: 50%;
+}
+
+.comp-icon:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.comp-icon label {
+    line-height: 20px;
+}

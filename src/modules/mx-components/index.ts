@@ -9,6 +9,8 @@ export const MX_COM_DIRECTIVES: Provider[] = [
     SampleComponentInterpreterDirective
 ];
 
+export * from './standalone';
+
 export * from './sample-component';
 
 @NgModule({
@@ -24,7 +26,8 @@ export * from './sample-component';
         MX_COM_DIRECTIVES
     ],
     entryComponents: [
-        MX_COMPONENTS
+        MX_COMPONENTS,
+        MX_COM_DIRECTIVES
     ]
 })
 export class MXComponentsModule {

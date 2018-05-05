@@ -5,7 +5,7 @@ import { MXWinPrimarySide, MXWinSecondarySide, MXWinSplitPane } from './win-spli
 import { NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { ClarityModule } from '@clr/angular';
+import { ClarityModule, ClrIconModule } from '@clr/angular';
 import { ScrollbarModule } from 'ngx-scrollbar';
 import { MXWinScroller } from './win-scroller';
 import { MXWinBaseLayout } from './win-base-layout';
@@ -18,12 +18,14 @@ import { ColorSketchModule } from 'ngx-color/sketch';
 import { ColorHueModule } from 'ngx-color/hue';
 import { MXDocumentServiceProvider, MXComponentServiceProvider } from './win-services';
 import { MXWinNumberPicker, MXWinNumberPickerGroup } from './win-number-picker';
+import '@clr/icons/shapes/all-shapes';
 
 @NgModule({
     imports: [
         BrowserModule,
         RouterModule,
         ClarityModule,
+        ClrIconModule,
         ScrollbarModule,
         ColorSketchModule,
         ColorHueModule
