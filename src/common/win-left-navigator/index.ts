@@ -48,6 +48,7 @@ export class MXWinLeftNavigator implements OnInit, AfterViewInit {
     state = {
         expanded: false
     };
+    @Input() currentSelectedIndex: number = 0;
     @ViewChildren(MXWinLeftNavigatorDirective) itemList: QueryList<MXWinLeftNavigatorDirective>;
     constructor(protected elementRef: ElementRef) {
         this.menuList.map((m) => {
@@ -56,6 +57,9 @@ export class MXWinLeftNavigator implements OnInit, AfterViewInit {
         });
     }
     ngOnInit() {
+
+    }
+    operateItemSelect() {
 
     }
     operateFrames() {

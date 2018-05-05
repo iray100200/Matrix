@@ -1,8 +1,8 @@
 
 <nav [ngClass]="{'expanded': state.expanded}">
     <ul>
-        <li *ngFor="let m of menuList">
-            <div class="menu-item-container">
+        <li *ngFor="let m of menuList; let i = index;">
+            <div class="menu-item-container" [ngClass]="{'selected':i===currentSelectedIndex}">
                 <div class="menu-item-icon" nav-item-name="{{m.name}}" title="{{m.label}}" [routerLink]="m.href">
                     <i class="material-icons md-20">{{m.icon}}</i>
                     <div class="menu-item-text" *ngIf="m.label">{{m.label}}</div>
