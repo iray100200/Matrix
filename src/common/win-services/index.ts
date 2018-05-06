@@ -1,6 +1,9 @@
-import { Injectable, EventEmitter } from '@angular/core';
+import { Injectable, EventEmitter, Inject } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 import { fromEvent } from 'rxjs/observable/fromEvent';
-import { Observable } from 'rxjs/observable'
+import { Router, RouterState, ActivatedRoute, NavigationEnd } from '@angular/router';
+import { Observer, PartialObserver } from 'rxjs/Observer';
+import 'rxjs/add/operator/filter';
 
 @Injectable()
 export class MXDocumentServiceProvider {
@@ -17,5 +20,19 @@ export class MXComponentServiceProvider {
     }
     subscribe(fn: Function) {
         MXComponentServiceProvider.event.subscribe(fn);
+    }
+}
+
+@Injectable()
+export class MXRouterService {
+    location: string;
+    routerConfig: Array<any>;
+    constructor(private router: Router) {
+        this.routerConfig = router.config;
+    }
+    subscribe(fn: any) {
+        return this.router.events.filter(event => event instanceof NavigationEnd).subscribe({
+            next: fn
+        });
     }
 }

@@ -4,7 +4,7 @@ import { MXWinLeftNavigator, MXWinLeftNavigatorDirective } from './win-left-navi
 import { MXWinPrimarySide, MXWinSecondarySide, MXWinSplitPane } from './win-split-pane';
 import { NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 import { ClarityModule, ClrIconModule } from '@clr/angular';
 import { ScrollbarModule } from 'ngx-scrollbar';
 import { MXWinScroller } from './win-scroller';
@@ -16,7 +16,7 @@ import { MXWinTemplateHostDirective } from './win-directives';
 import { MXService } from '../services';
 import { ColorSketchModule } from 'ngx-color/sketch';
 import { ColorHueModule } from 'ngx-color/hue';
-import { MXDocumentServiceProvider, MXComponentServiceProvider } from './win-services';
+import { MXDocumentServiceProvider, MXComponentServiceProvider, MXRouterService } from './win-services';
 import { MXWinNumberPicker, MXWinNumberPickerGroup } from './win-number-picker';
 import '@clr/icons/shapes/all-shapes';
 
@@ -72,7 +72,8 @@ import '@clr/icons/shapes/all-shapes';
     ],
     providers: [
         MXDocumentServiceProvider,
-        MXComponentServiceProvider
+        MXComponentServiceProvider,
+        MXRouterService
     ]
 })
 export class MXCommonModule {}

@@ -1,7 +1,8 @@
-import { Component, ViewChild, OnInit, ElementRef, ComponentFactoryResolver, ViewEncapsulation, Directive } from "@angular/core";
+import { Component, ViewChild, OnInit, ElementRef, ViewEncapsulation } from "@angular/core";
 import { Events, MXWinLeftNavigator } from "../common/win-left-navigator";
 import { AlertServiceProvider, MXService } from "../services";
 import { MXGuidanceLayout } from "../modules";
+import { MXRouterService } from 'common/services';
 
 @Component({
     selector: "[matrix-root]",
@@ -13,16 +14,21 @@ export class AppComponent implements OnInit {
     @ViewChild("context") context: ElementRef;
     @ViewChild("target") target: MXWinLeftNavigator;
     hasAlert: boolean = false;
-    constructor(
-        private alertService: AlertServiceProvider,
-        private mxService: MXService
-    ) {}
+    routerIndex: number;
+    constructor(private alertService: AlertServiceProvider, private mxService: MXService, private routerService: MXRouterService) {
+        this.routerIndex = 0;
+    }
     ngOnInit() {
         this.alertService.subscribe(t => {
             this.hasAlert = t.hasAlert;
         });
         this.alertService.emit({
             hasAlert: true
+        });
+        this.routerService.subscribe(event => {
+            this.routerIndex = ['/account', '/switch/layout', '/switch/component'].findIndex(r => {
+                return r === event.url;
+            }) + 1;
         });
     }
     onSave() {
