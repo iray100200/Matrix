@@ -28,5 +28,9 @@ export const MXRouterConfig = [
                 component: MXSampleLayout
             }
         ]
+    },
+    {
+        path: '**',
+        component: MXHomeComponent
     }
 ]

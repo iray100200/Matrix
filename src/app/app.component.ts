@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
     hasAlert: boolean = false;
     routerIndex: number;
     constructor(private alertService: AlertServiceProvider, private mxService: MXService, private routerService: MXRouterService) {
-        this.routerIndex = 0;
+        this.routerIndex = 1;
     }
     ngOnInit() {
         this.alertService.subscribe(t => {
@@ -26,9 +26,10 @@ export class AppComponent implements OnInit {
             hasAlert: true
         });
         this.routerService.subscribe(event => {
-            this.routerIndex = ['/account', '/switch/layout', '/switch/component'].findIndex(r => {
+            let index = ['/account', '/switch/layout', '/switch/component'].findIndex(r => {
                 return r === event.url;
-            }) + 1;
+            });
+            this.routerIndex = 1 + (index > 0 ? index : 0);
         });
     }
     onSave() {

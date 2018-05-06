@@ -13,8 +13,12 @@ li > .menu-item-container {
 }
 
 li > .menu-item-container.selected {
-    background: rgba(200, 200, 200, 0.32);
+    background-color: rgba(200, 200, 200, 0.32);
     color: #fedcbd;
+    background-image: linear-gradient(rgba(200, 200, 200, 0.5), rgba(200, 200, 200, 0.5));
+    background-repeat: repeat-y;
+    background-size: 2px;
+    background-position: left;
 }
 
 li > .menu-item-container > .menu-item-icon {
