@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { MXCommonModule } from '../common';
 import { CommonModule } from '@angular/common';
 import { RouterModule, RouteReuseStrategy } from '@angular/router';
-import { MXRouterConfig, CustomReuseStrategy } from './app.router';
+import { MXRouteConfig, CustomReuseStrategy } from './app.router';
 import { MXHomeComponent } from './components/home';
 import { MXSwitchComponent } from './components/switch';
 import { MXSwitchToLayouts } from './components/switch-layouts';
@@ -28,7 +28,7 @@ import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http'
     CommonModule,
     ApplicationModule,
     MXCommonModule,
-    RouterModule.forRoot(MXRouterConfig),
+    RouterModule.forRoot(MXRouteConfig),
     ClarityModule,
     ClrIconModule,
     MXLayoutsModule,

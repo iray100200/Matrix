@@ -12,7 +12,7 @@ interface RouteStorageObject {
     handle: DetachedRouteHandle;
 }
 
-export const MXRouterConfig = [
+export const MXRouteConfig = [
     {
         path: "",
         component: MXHomeComponent
