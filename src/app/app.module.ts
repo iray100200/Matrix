@@ -29,7 +29,6 @@ import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http'
     ApplicationModule,
     MXCommonModule,
     RouterModule.forRoot(MXRouterConfig),
-    CommonModule,
     ClarityModule,
     ClrIconModule,
     MXLayoutsModule,
