@@ -5,8 +5,8 @@ import { JsonPipe } from '@angular/common';
 import { AppComponent } from './app.component';
 import { MXCommonModule } from '../common';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { MXRouterConfig } from './app.router';
+import { RouterModule, RouteReuseStrategy } from '@angular/router';
+import { MXRouterConfig, CustomReuseStrategy } from './app.router';
 import { MXHomeComponent } from './components/home';
 import { MXSwitchComponent } from './components/switch';
 import { MXSwitchToLayouts } from './components/switch-layouts';
@@ -37,7 +37,8 @@ import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http'
   ],
   providers: [
     SERVICES_PROVIDERS,
-    HttpClient
+    HttpClient,
+    { provide: RouteReuseStrategy, useClass: CustomReuseStrategy }
   ],
   exports: [
     AppComponent,
