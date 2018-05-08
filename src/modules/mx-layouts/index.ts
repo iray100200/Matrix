@@ -8,25 +8,19 @@ import { MXComponentsModule } from '../mx-components';
 import { NgModule, NgModuleRef, ViewContainerRef, ComponentFactory } from '@angular/core';
 import { MXCommonModule } from '../../common';
 import { MX_COM_DIRECTIVES } from '../mx-components';
-import { MX_LAYOUTS } from './standalone';
+import { MXStandaloneLayoutsModule } from './standalone';
 import { MXComponentServiceProvider } from '../../common/win-services';
 
 @NgModule({
     imports: [
         BrowserModule,
         MXCommonModule,
-        MXComponentsModule
+        MXComponentsModule,
+        MXStandaloneLayoutsModule
     ],
     declarations: [
-        MX_LAYOUTS,
         MXSampleLayout,
         MXGuidanceLayout
-    ],
-    entryComponents: [
-        MX_LAYOUTS
-    ],
-    exports: [
-        MX_LAYOUTS
     ]
 })
 export class MXLayoutsModule {

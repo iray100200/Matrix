@@ -10,7 +10,7 @@ import { ScrollbarModule } from 'ngx-scrollbar';
 import { MXWinScroller } from './win-scroller';
 import { MXWinBaseLayout } from './win-base-layout';
 import { MXWinPropertyPane } from './win-property-pane';
-import { MXWinColorSelector } from './win-color-selector';
+import { MXWinColorPicker } from './win-color-picker';
 import { MXWinPalette } from './win-palette';
 import { MXWinTemplateHostDirective } from './win-directives';
 import { MXService } from '../services';
@@ -18,6 +18,7 @@ import { ColorSketchModule } from 'ngx-color/sketch';
 import { ColorHueModule } from 'ngx-color/hue';
 import { MXDocumentServiceProvider, MXComponentServiceProvider, MXRouterService } from './win-services';
 import { MXWinNumberPicker, MXWinNumberPickerGroup } from './win-number-picker';
+import { MXWinComplexPicker } from './win-complex-picker';
 import '@clr/icons/shapes/all-shapes';
 
 @NgModule({
@@ -41,10 +42,11 @@ import '@clr/icons/shapes/all-shapes';
         MXWinScroller,
         MXWinBaseLayout,
         MXWinPropertyPane,
-        MXWinColorSelector,
+        MXWinColorPicker,
         MXWinPalette,
         MXWinNumberPicker,
         MXWinNumberPickerGroup,
+        MXWinComplexPicker,
         // directives
         MXWinTemplateHostDirective
     ],
@@ -63,12 +65,14 @@ import '@clr/icons/shapes/all-shapes';
         MXWinPalette,
         MXWinNumberPicker,
         MXWinNumberPickerGroup,
+        MXWinComplexPicker,
         MXWinTemplateHostDirective
     ],
     entryComponents: [
         MXWinPalette,
         MXWinNumberPicker,
-        MXWinNumberPickerGroup
+        MXWinNumberPickerGroup,
+        MXWinComplexPicker
     ],
     providers: [
         MXDocumentServiceProvider,

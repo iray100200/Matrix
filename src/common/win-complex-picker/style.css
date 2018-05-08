@@ -1,0 +1,40 @@
+._mx-complex-picker-group {
+    display: flex;
+    flex-direction: column;
+    padding: 2px 2px 0 2px;
+    margin: 0 8px 0 8px;
+}
+
+._mx-complex-picker-group > .text {
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    position: relative;
+}
+
+._mx-complex-picker-group > .text .angle {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 24px;
+}
+
+._mx-complex-picker-group > .text .angle.rotated {
+    transform: rotate(180deg);
+}
+
+._mx-complex-picker-group > .group {
+    flex: 1;
+}
+
+._mx-complex-picker-group > .group .text {
+    text-indent: 0.8em;
+}
+
+._mx-complex-picker-group > .group [mx-win-number-picker] {
+    margin-top: 4px;
+}

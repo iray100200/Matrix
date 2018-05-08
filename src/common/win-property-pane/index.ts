@@ -1,7 +1,7 @@
 import { Component, ViewChildren, AfterViewInit, ViewChild, ViewContainerRef, Input, ComponentFactoryResolver, ComponentRef } from '@angular/core';
-import { MXWinColorSelector } from '../win-color-selector';
 import { MXComponentServiceProvider } from '../win-services';
 import { MXWinNumberPicker, MXWinNumberPickerGroup } from '../win-number-picker';
+import { MXWinComplexPicker } from '../win-complex-picker';
 
 @Component({
     selector: '[mx-win-property-pane]',
@@ -21,7 +21,7 @@ export class MXWinPropertyPane implements AfterViewInit {
         
     }
     direct(component: ComponentRef<any>) {
-        let styleProperties = ['width', 'height', 'margin', 'padding'];
+        let styleProperties = ['width', 'height', 'margin', 'padding', 'background'];
         this.stylePanel.clear();
         styleProperties.forEach(t => {
             if (t in component) {
@@ -37,7 +37,7 @@ export class MXWinPropertyPane implements AfterViewInit {
                         break;
                     }
                     case 'object': {
-                        let componentFactory = this.componentFactoryResolver.resolveComponentFactory(MXWinNumberPickerGroup);
+                        let componentFactory = this.componentFactoryResolver.resolveComponentFactory(MXWinComplexPicker);
                         let componentRef = this.stylePanel.createComponent(componentFactory);
                         componentRef.instance.label = t;
                         componentRef.instance.value = component[t];
