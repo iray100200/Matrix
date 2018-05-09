@@ -9,9 +9,18 @@ export class Color {
         this.b = b;
         this.alpha = a || 1;
     }
-    static parse(str: string) {
-        let [...val] = str.match(/[0-9]+/g).map(f => Number(f));
-        return new Color(val[0], val[1], val[2], val[3]);
+    stringify() {
+        let c = this;
+        return `rgba(${c.r}, ${c.g}, ${c.b}, ${c.alpha})`;
+    }
+    static parse(value: string | { r: number, g: number, b: number, a: number }) {
+        if (typeof value === "string") {
+            let [...val] = value.match(/[0-9]+/g).map(f => Number(f));
+            return new Color(val[0], val[1], val[2], val[3]);
+        } else {
+            let { r, g, b, a } = value;
+            return new Color(r, g, b, a);
+        }
     }
 }
 

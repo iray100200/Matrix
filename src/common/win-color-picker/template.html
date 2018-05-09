@@ -1,3 +1,15 @@
-<div class="color-bar" (click)="onClick($event)">
-    <div class="color" [style.backgroundColor]="color"></div>
+<div class="color-picker">
+    <div class="color-bar" (click)="onClick($event)">
+        <div class="color" [style.backgroundColor]="color"></div>
+    </div>
+    <div class="palette-container">
+        <div *ngIf="showPalette" 
+            (move)="onPaletteMove($event)" 
+            (update)="onPaletteUpdate($event)"
+            (close)="onPaletteClose()"
+            (save)="onPaletteSave($event)"
+            [x]="palette_x" 
+            [y]="palette_y" 
+            [align]="palette_alignment" mx-win-palette #palette ></div>
+    </div>
 </div>

@@ -1,4 +1,4 @@
-<div class="_mx-palette" [style.left]="x + 'px'" [style.top]="y + 'px'">
+<div class="_mx-palette" [ngStyle]="xPosition" [style.top]="y + 'px'">
     <div class="palette-head" #head>
         <div class="btn-container" title="选中" (click)="handleSave($event)">
             <i class="ok-btn"></i>
