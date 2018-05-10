@@ -14,22 +14,23 @@ export class Button {
         return <HTMLElement>this.target.nativeElement;
     }
     get width() {
-        this._width = this.nativeElement.offsetWidth;
+        this._width = this._width || this.nativeElement.offsetWidth;
         return this._width
     }
     get background() {
-        this._background.color = Color.parse(getComputedStyle(this.nativeElement).backgroundColor)
+        this._background.color =  this._background.color || Color.parse(getComputedStyle(this.nativeElement, null).backgroundColor);
         return this._background;
     }
     set background(val) {
         this._background.color = val.color;
+        this.nativeElement.style.cssText = `background-color:${val.color.stringify()}`;
     }
     set width(val) {
         this._width = val;
         this.nativeElement.style.width = val + 'px';
     }
     get height() {
-        this._height = this.nativeElement.offsetHeight;
+        this._height = this._height || this.nativeElement.offsetHeight;
         return this._height;
     }
     set height(val) {
@@ -37,8 +38,8 @@ export class Button {
         this.nativeElement.style.height = val + 'px';
     }
     get margin() {
-        this._margin.top = Val.parse(getComputedStyle(this.nativeElement).marginTop);
-        this._margin.right = Val.parse(getComputedStyle(this.nativeElement).marginRight);
+        this._margin.top = this._margin.top || Val.parse(getComputedStyle(this.nativeElement).marginTop);
+        this._margin.right = this._margin.bottom || Val.parse(getComputedStyle(this.nativeElement).marginRight);
         this._margin.left = Val.parse(getComputedStyle(this.nativeElement).marginLeft);
         this._margin.bottom = Val.parse(getComputedStyle(this.nativeElement).marginBottom);
         return this._margin;
@@ -57,8 +58,5 @@ export class Button {
     set padding(val: Padding) {
         this._padding = val;
         this.nativeElement.style.cssText = `padding:${val.top} ${val.right} ${val.bottom} ${val.left}`;
-    }
-    set backgroundColor(color: Color) {
-        
     }
 }

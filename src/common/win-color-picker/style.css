@@ -3,8 +3,8 @@
 }
 
 .color-bar {
-  height: 18px;
-  border: 1px solid #ccc;
+  height: 20px;
+  border: 1px solid #ececea;
   background: #fff;
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAMUlEQVQ4T2NkYGAQYcAP3uCTZhw1gGGYhAGBZIA/nYDCgBDAm9BGDWAAJyRCgLaBCAAgXwixzAS0pgAAAABJRU5ErkJggg==");
   position: relative;

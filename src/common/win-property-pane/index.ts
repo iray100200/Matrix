@@ -25,11 +25,12 @@ export class MXWinPropertyPane implements AfterViewInit {
         this.stylePanel.clear();
         styleProperties.forEach(t => {
             if (t in component) {
+                let instance = (<any>component).getInstanceBeforeHover();
                 switch (typeof component[t]) {
                     case 'number': {
                         let componentFactory = this.componentFactoryResolver.resolveComponentFactory(MXWinNumberPicker);
                         let componentRef = this.stylePanel.createComponent(componentFactory);
-                        componentRef.instance.value = component[t];
+                        componentRef.instance.value = instance[t];
                         componentRef.instance.label = t;
                         componentRef.instance.subscribe(v => {
                             component[t] = v;
@@ -39,10 +40,10 @@ export class MXWinPropertyPane implements AfterViewInit {
                     case 'object': {
                         let componentFactory = this.componentFactoryResolver.resolveComponentFactory(MXWinComplexPicker);
                         let componentRef = this.stylePanel.createComponent(componentFactory);
+                        componentRef.instance.value = instance[t];
                         componentRef.instance.label = t;
-                        componentRef.instance.value = component[t];
                         componentRef.instance.subscribe(v => {
-                            let prop = component[t];
+                            let prop = instance[t];
                             prop[v.attribute] = v.value;
                             component[t] = prop;
                         });
