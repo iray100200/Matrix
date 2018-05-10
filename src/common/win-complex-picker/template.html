@@ -11,7 +11,7 @@
                 <div mx-win-number-picker *ngSwitchCase="'val'" [isChild]="true" [label]="attribute.label" [value]="attribute.value.value"></div>
                 <div class="color-picker-container" *ngSwitchCase="'color'" >
                     <div>Color</div>
-                    <div mx-win-color-picker [color]="attribute.value.stringify()"></div>
+                    <div mx-win-color-picker [color]="attribute.value.stringify()" (change)="onColorChange($event)"></div>
                 </div>
             </div>
         </div>

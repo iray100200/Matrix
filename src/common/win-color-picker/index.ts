@@ -1,4 +1,4 @@
-import { Component, ViewChild, Directive, AfterViewInit, EventEmitter, Output, Input } from '@angular/core';
+import { Component, ViewChild, Directive, EventEmitter, Output, Input } from '@angular/core';
 import { MXWinPalette } from '../win-palette';
 
 @Component({
@@ -6,10 +6,10 @@ import { MXWinPalette } from '../win-palette';
     templateUrl: './template.html',
     styleUrls: ['./style.css']
 })
-export class MXWinColorPicker implements AfterViewInit {
+export class MXWinColorPicker {
     @Input() color: string = 'transparent';
     @Input() showPalette: boolean = false;
-    @Output() colorChange: EventEmitter<any> = new EventEmitter();
+    @Output() change: EventEmitter<any> = new EventEmitter();
     @ViewChild('palette', { read: MXWinPalette }) palette;
     private _palette_x: number;
     private _palette_y: number;
@@ -34,15 +34,15 @@ export class MXWinColorPicker implements AfterViewInit {
         this.palette_y = e.y;
     }
     onPaletteUpdate(e) {
-        this.color = e.stringify();
+        this.color = e;
     }
     onPaletteClose() {
         this.showPalette = false;
     }
     onPaletteSave(e) {
-
+        this.change.emit(this.color);
     }
-    ngAfterViewInit() {
-        
+    subscribe(fn: Function) {
+        return this.change.subscribe(fn);
     }
 }

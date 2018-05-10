@@ -1,4 +1,4 @@
-import { Component, ViewChildren, QueryList, AfterViewInit, EventEmitter, Input, ViewEncapsulation } from '@angular/core';
+import { Component, ViewChildren, QueryList, AfterViewInit, EventEmitter, Input, ViewEncapsulation, ViewChild } from '@angular/core';
 import { Color, Val, Attribute } from '../win-models';
 
 @Component({
@@ -37,6 +37,12 @@ export class MXWinComplexPicker implements AfterViewInit {
     }
     handleShowOrHide() {
         this.showDetails = !this.showDetails;
+    }
+    onColorChange(e) {
+        this.event.emit({
+            value: Color.parse(e),
+            attribute: 'color'
+        })
     }
     ngAfterViewInit() {
         console.log(this.value);

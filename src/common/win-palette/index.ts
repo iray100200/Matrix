@@ -12,7 +12,7 @@ export class MXWinPalette implements AfterViewInit {
     @Input() x: number = 0;
     @Input() y: number = 0;
     @Input() align: string = "left";
-    @Input() color: Color = new Color(255, 255, 255, 1);
+    @Input() color: string = 'transparent';
     get xPosition() {
         return this.align === "right" ? {
             right: this.x + 'px'
@@ -77,14 +77,14 @@ export class MXWinPalette implements AfterViewInit {
         this.registerEvents();
     }
     handleChange(e) {
-        this.color = Color.parse(e.color.rgb);
+        this.color = Color.parse(e.color.rgb).stringify();
         this.update.emit(this.color);
     }
     handleChangeComplete(e) {
-        
+        console.log(e, 'complete')
     }
     handleSave(e) {
-        this.save.emit();
+        this.save.emit(this.color);
     }
     handleClose(e) {
         this.close.emit();
