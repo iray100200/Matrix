@@ -40,8 +40,8 @@ export class Button {
     get margin() {
         this._margin.top = this._margin.top || Val.parse(getComputedStyle(this.nativeElement).marginTop);
         this._margin.right = this._margin.bottom || Val.parse(getComputedStyle(this.nativeElement).marginRight);
-        this._margin.left = Val.parse(getComputedStyle(this.nativeElement).marginLeft);
-        this._margin.bottom = Val.parse(getComputedStyle(this.nativeElement).marginBottom);
+        this._margin.left = this._margin.left || Val.parse(getComputedStyle(this.nativeElement).marginLeft);
+        this._margin.bottom = this._margin.bottom || Val.parse(getComputedStyle(this.nativeElement).marginBottom);
         return this._margin;
     }
     set margin(val: Margin) {
@@ -49,10 +49,10 @@ export class Button {
         this.nativeElement.style.cssText = `margin:${val.top} ${val.right} ${val.bottom} ${val.left}`;
     }
     get padding() {
-        this._padding.top = Val.parse(getComputedStyle(this.nativeElement).paddingTop);
-        this._padding.right = Val.parse(getComputedStyle(this.nativeElement).paddingRight);
-        this._padding.left = Val.parse(getComputedStyle(this.nativeElement).paddingLeft);
-        this._padding.bottom = Val.parse(getComputedStyle(this.nativeElement).paddingBottom);
+        this._padding.top = this._padding.top || Val.parse(getComputedStyle(this.nativeElement).paddingTop);
+        this._padding.right = this._padding.right || Val.parse(getComputedStyle(this.nativeElement).paddingRight);
+        this._padding.left = this._padding.left || Val.parse(getComputedStyle(this.nativeElement).paddingLeft);
+        this._padding.bottom = this._padding.bottom || Val.parse(getComputedStyle(this.nativeElement).paddingBottom);
         return this._padding;
     }
     set padding(val: Padding) {
