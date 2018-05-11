@@ -1,10 +1,9 @@
 .comp-icon {
     padding: 4px 10px;
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
     font-size: 1.1em;
-    width: 50%;
 }
 
 .comp-icon:hover {

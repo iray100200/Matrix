@@ -1,0 +1,13 @@
+.components-container {
+    margin-right: -10px;
+}
+
+.components-container > div {
+    margin: 4px;
+    width: calc(50% - 8px);
+    float: left;
+}
+
+.components-container > div:nth-child(2n) {
+    margin-left: 0;
+}

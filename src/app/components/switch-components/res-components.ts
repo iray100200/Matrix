@@ -6,5 +6,11 @@ export const ResComponents = [
         selector: '[sample-component]',
         name: 'Sample Button',
         description: 'Sample Button'
+    },
+    {
+        ref: SampleComponent,
+        selector: '[sample-component]',
+        name: 'Sample Button',
+        description: 'Sample Button'
     }
 ]
