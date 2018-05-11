@@ -46,8 +46,5 @@ export class MXWinComplexPicker implements AfterViewInit {
     }
     ngAfterViewInit() {
         console.log(this.value);
-        this.children.forEach(f => {
-
-        })
     }
 }
