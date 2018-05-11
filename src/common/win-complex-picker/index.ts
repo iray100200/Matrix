@@ -44,6 +44,13 @@ export class MXWinComplexPicker implements AfterViewInit {
             attribute: 'color'
         })
     }
+    onNumberPickerChange(e, attr) {
+        console.log(e);
+        this.event.emit({
+            value: e,
+            attribute: attr
+        })
+    }
     ngAfterViewInit() {
         console.log(this.value);
     }

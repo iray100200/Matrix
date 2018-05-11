@@ -1,14 +1,14 @@
 <div class="_mx-complex-picker-group">
-    <div class="text">
+    <div class="text" (click)="handleShowOrHide()">
         <label>{{label}}</label>
-        <i class="angle" [ngClass]="{'rotated':showDetails}" (click)="handleShowOrHide()">
+        <i class="angle" [ngClass]="{'rotated':showDetails}">
             <clr-icon shape="angle"></clr-icon>
         </i>
     </div>
     <div class="group" *ngIf="showDetails">
         <div *ngFor="let attribute of attributes">
             <div [ngSwitch]="attribute.type">
-                <div mx-win-number-picker *ngSwitchCase="'val'" [isChild]="true" [label]="attribute.label" [value]="attribute.value.value"></div>
+                <div mx-win-number-picker (change)="onNumberPickerChange($event, attribute.label)" *ngSwitchCase="'val'" [isChild]="true" [label]="attribute.label" [value]="attribute.value.value"></div>
                 <div class="color-picker-container" *ngSwitchCase="'color'" >
                     <div>Color</div>
                     <div mx-win-color-picker [color]="attribute.value.stringify()" (change)="onColorChange($event)"></div>

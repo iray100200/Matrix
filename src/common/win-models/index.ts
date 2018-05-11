@@ -9,7 +9,7 @@ export class Color {
         this.b = b;
         this.alpha = a || 1;
     }
-    stringify() {
+    stringify(): string {
         let c = this;
         return `rgba(${c.r}, ${c.g}, ${c.b}, ${c.alpha})`;
     }
@@ -35,6 +35,9 @@ export class Val {
         let val = str.replace(/[^0-9.]*$/g, '');
         let unit = str.replace(/^[0-9.]*/g, '');
         return new Val(Number(val), unit);
+    }
+    stringify(): string {
+        return this.value + this.unit;
     }
 }
 

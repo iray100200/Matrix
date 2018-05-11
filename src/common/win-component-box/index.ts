@@ -13,6 +13,7 @@ export class MXWinComponentBox implements AfterViewInit {
     @Input() ref: string;
     @Input() img: any;
     @Input() name: any;
+    @Input() shape: string;
     private event: EventEmitter<any> = new EventEmitter();
     subscribe(fn: Function) {
         this.event.subscribe(fn);

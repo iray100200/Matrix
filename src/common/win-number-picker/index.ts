@@ -1,4 +1,5 @@
-import { Component, ViewChild, Input, EventEmitter, ViewEncapsulation, AfterContentChecked, ElementRef, ViewChildren, AfterViewInit } from "@angular/core";
+import { Component, ViewChild, Input, Output, EventEmitter, ViewEncapsulation, AfterContentChecked, ElementRef, ViewChildren, AfterViewInit } from "@angular/core";
+import { Val } from '../win-models';
 
 @Component({
     selector: "[mx-win-number-picker]",
@@ -12,6 +13,7 @@ export class MXWinNumberPicker implements AfterContentChecked {
     @Input() min = 0;
     @Input() max = 1024;
     @Input() isChild: boolean = false;
+    @Output() change: EventEmitter<any> = new EventEmitter();
     private _value;
     private event: EventEmitter<any> = new EventEmitter();
     @Input() label: string;
@@ -21,7 +23,7 @@ export class MXWinNumberPicker implements AfterContentChecked {
     set value(val: any) {
         this._value = val || 0;
         this.element.nativeElement.value = this._value;
-        this.event.emit(this._value);
+        this.change.emit(new Val(val, this.dropdown.nativeElement.value));
     }
     get symbol() {
         return this.dropdown.nativeElement.value;
@@ -67,10 +69,7 @@ export class MXWinNumberPicker implements AfterContentChecked {
         return this.event.subscribe(next, error, complete);
     }
     ngAfterContentChecked() {
-        if (this.dropdown.nativeElement.value === "%") {
-            this.min = 0;
-            this.max = 100;
-        }
+        
     }
 }
 

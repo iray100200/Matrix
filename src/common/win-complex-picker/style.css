@@ -10,6 +10,7 @@
     align-items: center;
     text-transform: capitalize;
     position: relative;
+    cursor: pointer;
 }
 
 ._mx-complex-picker-group > .text .angle {

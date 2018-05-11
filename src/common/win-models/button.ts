@@ -23,7 +23,7 @@ export class Button {
     }
     set background(val) {
         this._background.color = val.color;
-        this.nativeElement.style.cssText = `background-color:${val.color.stringify()}`;
+        this.nativeElement.style.backgroundColor = `${val.color.stringify()}`;
     }
     set width(val) {
         this._width = val;
@@ -46,7 +46,7 @@ export class Button {
     }
     set margin(val: Margin) {
         this._margin = val;
-        this.nativeElement.style.cssText = `margin:${val.top} ${val.right} ${val.bottom} ${val.left}`;
+        this.nativeElement.style.margin = `${val.top.stringify()} ${val.right.stringify()} ${val.bottom.stringify()} ${val.left.stringify()}`;
     }
     get padding() {
         this._padding.top = this._padding.top || Val.parse(getComputedStyle(this.nativeElement).paddingTop);
@@ -57,6 +57,6 @@ export class Button {
     }
     set padding(val: Padding) {
         this._padding = val;
-        this.nativeElement.style.cssText = `padding:${val.top} ${val.right} ${val.bottom} ${val.left}`;
+        this.nativeElement.style.padding = `${val.top.stringify()} ${val.right.stringify()} ${val.bottom.stringify()} ${val.left.stringify()}`;
     }
 }
