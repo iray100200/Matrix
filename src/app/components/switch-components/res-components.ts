@@ -1,15 +1,15 @@
-import { SampleComponent } from 'modules/components';
+import { SampleComponent, SampleComponentInterpreterDirective } from 'modules/components';
 
 export const ResComponents = [
     {
-        ref: SampleComponent,
+        ref: SampleComponentInterpreterDirective,
         selector: '[sample-component]',
         name: 'Sample Button',
         shape: 'window-max',
         description: 'Sample Button'
     },
     {
-        ref: SampleComponent,
+        ref: SampleComponentInterpreterDirective,
         selector: '[sample-component]',
         name: 'Sample Button',
         shape: 'view-columns',

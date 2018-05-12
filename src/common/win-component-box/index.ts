@@ -1,12 +1,13 @@
 import { Component, Input, EventEmitter, AfterViewInit } from '@angular/core';
-import { SampleComponentInterpreterDirective } from '../../modules/mx-components/sample-component/interpreter';
+import { SampleComponentInterpreterDirective } from 'modules/components';
 
 @Component({
     selector: "[mx-win-component-box]",
     templateUrl: "./template.html",
     styleUrls: ["./style.css"],
     host: {
-        '(click)': 'handleClick($event)'
+        '(click)': 'handleClick($event)',
+        '(mousedown)': 'handleMousedown($event)'
     }
 })
 export class MXWinComponentBox implements AfterViewInit {
@@ -14,12 +15,16 @@ export class MXWinComponentBox implements AfterViewInit {
     @Input() img: any;
     @Input() name: any;
     @Input() shape: string;
+    private isMousedown: boolean = false;
     private event: EventEmitter<any> = new EventEmitter();
     subscribe(fn: Function) {
         this.event.subscribe(fn);
     }
     handleClick(e) {
-        this.event.emit(SampleComponentInterpreterDirective);
+        this.event.emit(this.ref);
+    }
+    mousedown(e) {
+        this.isMousedown = true;
     }
     ngAfterViewInit() {
 

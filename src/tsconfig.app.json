@@ -7,7 +7,8 @@
     "types": [],
     "paths": {
       "common/services": ["common/win-services/index"],
-      "modules/components": ["modules/mx-components/index"]
+      "modules/components": ["modules/components/index"],
+      "modules/*": ["modules/*", "modules/*/index"]
     }
   },
   "exclude": ["test.ts", "**/*.spec.ts", "**/testing/*"]

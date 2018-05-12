@@ -4,10 +4,10 @@ export * from './standalone';
 import { BrowserModule } from '@angular/platform-browser';
 import { MXSampleLayout } from './sample-layout';
 import { MXGuidanceLayout } from './guidance';
-import { MXComponentsModule } from '../mx-components';
+import { MXComponentsModule } from '../components';
 import { NgModule, NgModuleRef, ViewContainerRef, ComponentFactory } from '@angular/core';
 import { MXCommonModule } from '../../common';
-import { MX_COM_DIRECTIVES } from '../mx-components';
+import { MX_COM_DIRECTIVES } from '../components';
 import { MXStandaloneLayoutsModule } from './standalone';
 import { MXComponentServiceProvider } from '../../common/win-services';
 

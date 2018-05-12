@@ -1,5 +1,5 @@
-export * from './mx-layouts';
-import { MXGuidanceLayout, MXLayoutsModule } from './mx-layouts';
+export * from './layouts';
+import { MXGuidanceLayout, MXLayoutsModule } from './layouts';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
