@@ -23,6 +23,9 @@ export class MXWinComponentBox implements AfterViewInit {
     handleClick(e) {
         this.event.emit(this.ref);
     }
+    handleMousedown(e) {
+        
+    }
     mousedown(e) {
         this.isMousedown = true;
     }

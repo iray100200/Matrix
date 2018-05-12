@@ -2,14 +2,14 @@ import { CommonModule } from '@angular/common';
 import { NgModule, Directive } from '@angular/core';
 import { SampleComponent } from './sample-component';
 import { Provider } from '@angular/core';
-import { SampleComponentInterpreterDirective } from './sample-component/interpreter';
+import { SampleComponentInterpreterDirective } from './sample-component/index.p';
 import { MXStandaloneComponentsModule } from './standalone';
 
 export const MX_COM_DIRECTIVES: Provider[] = [
     SampleComponentInterpreterDirective
 ];
 
-export * from './sample-component/interpreter';
+export * from './sample-component/index.p';
 export * from './standalone';
 export * from './sample-component';
 

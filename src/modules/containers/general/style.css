@@ -1,0 +1,7 @@
+.container {
+    min-height: 2em;
+}
+
+.container:hover {
+    border: 1px dashed #dcdcdf;
+}

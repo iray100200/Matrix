@@ -3,6 +3,7 @@ import { SampleLayout } from './sample-layout';
 import { GuidanceLayout } from './guidance';
 import { NgModule } from '@angular/core';
 import { MXStandaloneComponentsModule } from '../components/standalone';
+import { MXContainersModule } from '../containers';
 
 export const MX_LAYOUTS = [
     GuidanceLayout,
@@ -11,7 +12,8 @@ export const MX_LAYOUTS = [
 
 @NgModule({
     imports: [
-        CommonModule
+        CommonModule,
+        MXContainersModule
     ],
     declarations: [
         MX_LAYOUTS
