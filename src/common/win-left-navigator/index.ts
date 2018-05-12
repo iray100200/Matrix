@@ -1,13 +1,12 @@
 import { Component, OnInit, ViewChildren, AfterViewInit, Directive, Input, QueryList, ElementRef, EventEmitter } from '@angular/core';
-import * as ResJson from './res.json';
+import { MenuList }  from './res';
 import { Observable, Observer } from 'Rxjs';
 
 export const Events = new EventEmitter();
-
 export const Utils = {
     cache: new Map(),
     getNavItem: function(name: string) {
-        const item = Utils.cache.has(name) ? Utils.cache.get(name) : Utils.cache.set(name, (<any>ResJson).find(m => {
+        const item = Utils.cache.has(name) ? Utils.cache.get(name) : Utils.cache.set(name, MenuList.find(m => {
             return m.name === name;
         }));
         return function(propertyName?: string) {
@@ -44,7 +43,7 @@ export class MXWinLeftNavigatorDirective implements AfterViewInit {
     styleUrls: ['style.css']
 })
 export class MXWinLeftNavigator implements OnInit, AfterViewInit {
-    menuList: Array<any> = <any>ResJson;
+    menuList: Array<any> = MenuList;
     state = {
         expanded: false
     };

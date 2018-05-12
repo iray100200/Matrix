@@ -1,4 +1,4 @@
-[
+export const MenuList = [
     {
         "name" : "list",
         "icon" : "menu",
@@ -18,9 +18,14 @@
         "href": "account"
     }, {
         "name" : "layout",
-        "icon" : "inbox",
+        "icon" : "library_books",
         "label" : "布局",
         "href": "switch/layout"
+    }, {
+        "name" : "container",
+        "icon" : "border_all",
+        "label" : "容器",
+        "href": "switch/container"
     }, {
         "name" : "comp",
         "icon" : "widgets",
