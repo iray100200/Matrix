@@ -18,7 +18,7 @@ export const MenuList = [
         "href": "account"
     }, {
         "name" : "layout",
-        "icon" : "library_books",
+        "icon" : "developer_board",
         "label" : "布局",
         "href": "switch/layout"
     }, {
