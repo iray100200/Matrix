@@ -1,4 +1,4 @@
-import { Directive, ContentChild, ViewContainerRef, Provider, Component, ViewChild, AfterViewInit, HostListener } from '@angular/core';
+import { Component, AfterViewInit, HostListener } from '@angular/core';
 import { MXComponentServiceProvider } from 'common/services';
 
 export abstract class Interpreter implements AfterViewInit {
