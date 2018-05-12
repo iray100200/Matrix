@@ -8,21 +8,23 @@ import { Val } from '../win-models';
     encapsulation: ViewEncapsulation.None
 })
 export class MXWinNumberPicker implements AfterContentChecked {
+    private _value: Val = new Val(0, 'px');
     @ViewChild("element") element: ElementRef;
     @ViewChild("dropdown") dropdown: ElementRef;
     @Input() min = 0;
     @Input() max = 1024;
     @Input() isChild: boolean = false;
     @Output() change: EventEmitter<any> = new EventEmitter();
-    private _value;
-    private event: EventEmitter<any> = new EventEmitter();
     @Input() label: string;
     @Input() get value() {
-        return this._value || 0;
+        return this._value;
     }
-    set value(val: any) {
-        this._value = val || 0;
-        this.element.nativeElement.value = this._value;
+    set value(val: Val) {
+        this.evalue = val.value;
+    }
+    set evalue(val: number) {
+        this._value.value = val;
+        this.element.nativeElement.value = val;
         this.change.emit(new Val(val, this.dropdown.nativeElement.value));
     }
     get symbol() {
@@ -35,13 +37,13 @@ export class MXWinNumberPicker implements AfterContentChecked {
         let value = parseInt(String((<HTMLInputElement>e.currentTarget).value).replace(/[a-z]/gi, "")) || 0;
         if (this.isValueInvalid(value)) {
             if (value < this.min) {
-                this.value = 0;
+                this.value.value = 0;
             } else if (value > this.max) {
-                this.value = this.max;
+                this.value.value = this.max;
             }
             return e.preventDefault();
         }
-        this.value = value;
+        this.evalue = value;
     }
     defaultKeyCodes: Array<number> = [
         8,37, 38, 39, 40, 46
@@ -59,14 +61,14 @@ export class MXWinNumberPicker implements AfterContentChecked {
         }
     }
     handleMousewheel(e: WheelEvent) {
-        let value = this._value + (e.wheelDeltaY > 0 ? 1 : -1);
+        let value = this._value.value + (e.wheelDeltaY > 0 ? 1 : -1);
         if (this.isValueInvalid(value)) {
             return e.preventDefault();
         }
-        this.value = value;
+        this.evalue = value;
     }
     subscribe(next: Function, error?: Function, complete?: Function) {
-        return this.event.subscribe(next, error, complete);
+        return this.change.subscribe(next, error, complete);
     }
     ngAfterContentChecked() {
         

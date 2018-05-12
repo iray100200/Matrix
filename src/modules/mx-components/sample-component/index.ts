@@ -6,23 +6,9 @@ import { Button } from '../../../common/win-models/button';
     templateUrl: './template.html',
     styleUrls: ['./style.css']
 })
-export class SampleComponent extends Button implements AfterViewInit {
+export class SampleComponent extends Button {
     @Input() name: string = "Button";
-    style: any;
-    private instance: {};
     constructor(protected elementRef: ElementRef) {
-        super(elementRef);
-    }
-    getInstanceBeforeHover() {
-        return this.instance;
-    }
-    ngAfterViewInit() {
-        this.instance = Object.assign({}, {
-            padding: this.padding,
-            margin: this.margin,
-            width: this.width,
-            height: this.height,
-            background: this.background
-        });
+        super(elementRef)
     }
 }

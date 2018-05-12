@@ -27,9 +27,8 @@ export class MXGuidanceLayout implements AfterViewInit {
     constructor(private componentServiceProvider: MXComponentServiceProvider) {
     }
     handleMouseenter(e) {
-        this.componentServiceProvider.emit({
-            target: this.target.container,
-            type: 'container'
+        this.componentServiceProvider.emit('container', {
+            target: this.target.container
         });
     }
     ngAfterViewInit() {

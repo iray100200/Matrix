@@ -1,12 +1,12 @@
 import { Margin, Padding, Color, Val, Background } from './index';
-import { ElementRef, ViewChild } from '@angular/core';
+import { ElementRef, ViewChild, Injectable } from '@angular/core';
 
-export class Button {
+export abstract class Button {
     @ViewChild('target') target;
     constructor(protected elementRef: ElementRef) {
     }
-    private _width: number;
-    private _height: number;
+    private _width: Val;
+    private _height: Val;
     private _margin: Margin = new Margin();
     private _padding: Padding = new Padding();
     private _background: Background = new Background();
@@ -14,8 +14,20 @@ export class Button {
         return <HTMLElement>this.target.nativeElement;
     }
     get width() {
-        this._width = this._width || this.nativeElement.offsetWidth;
-        return this._width
+        this._width = this._width || new Val(this.nativeElement.offsetWidth, 'px');
+        return this._width;
+    }
+    set width(val) {
+        this._width = val;
+        this.nativeElement.style.width = val.stringify();
+    }
+    get height() {
+        this._height = this._height || new Val(this.nativeElement.offsetHeight, 'px');
+        return this._height;
+    }
+    set height(val) {
+        this._height = val;
+        this.nativeElement.style.height = val.stringify();
     }
     get background() {
         this._background.color =  this._background.color || Color.parse(getComputedStyle(this.nativeElement, null).backgroundColor);
@@ -24,18 +36,6 @@ export class Button {
     set background(val) {
         this._background.color = val.color;
         this.nativeElement.style.backgroundColor = `${val.color.stringify()}`;
-    }
-    set width(val) {
-        this._width = val;
-        this.nativeElement.style.width = val + 'px';
-    }
-    get height() {
-        this._height = this._height || this.nativeElement.offsetHeight;
-        return this._height;
-    }
-    set height(val) {
-        this._height = val;
-        this.nativeElement.style.height = val + 'px';
     }
     get margin() {
         this._margin.top = this._margin.top || Val.parse(getComputedStyle(this.nativeElement).marginTop);

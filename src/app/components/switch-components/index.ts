@@ -17,9 +17,8 @@ export class MXSwitchToComponents implements AfterViewInit {
     ngAfterViewInit() {
         this.components.map(t => {
             return t.subscribe(f => {
-                this.componentServiceProvider.emit({
-                    target: f,
-                    type: 'component'
+                this.componentServiceProvider.emit('component', {
+                    target: f
                 });
             })
         })

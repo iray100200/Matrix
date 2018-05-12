@@ -14,12 +14,19 @@ export class MXDocumentServiceProvider {
 
 @Injectable() 
 export class MXComponentServiceProvider {
-    static event: EventEmitter<any> = new EventEmitter();
-    emit(value?: any) {
-        MXComponentServiceProvider.event.emit(value);
+    static events: Map<string, EventEmitter<any>> = new Map();
+    emit(key: string, value?: any) {
+        if (MXComponentServiceProvider.events.has(key)) {
+            MXComponentServiceProvider.events.get(key).emit(value);
+        }
     }
-    subscribe(fn: Function) {
-        MXComponentServiceProvider.event.subscribe(fn);
+    subscribe(key: string, fn: Function) {
+        if (MXComponentServiceProvider.events.has(key)) {
+            return MXComponentServiceProvider.events.get(key).subscribe(fn);
+        }
+        let event = new EventEmitter();
+        MXComponentServiceProvider.events.set(key, event);
+        return event.subscribe(fn);
     }
 }
 

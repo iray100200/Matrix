@@ -5,7 +5,7 @@ import { SampleComponent } from "../modules/mx-components";
 import { MXGuidanceLayout } from "../modules";
 import { MXHomeComponent } from "./components/home";
 import { MXSwitchComponent } from "./components/switch";
-import { ActivatedRouteSnapshot, RouteReuseStrategy, DetachedRouteHandle } from "@angular/router";
+import { ActivatedRouteSnapshot, RouteReuseStrategy, DetachedRouteHandle, Route } from "@angular/router";
 
 interface RouteStorageObject {
     snapshot: ActivatedRouteSnapshot;
@@ -15,7 +15,8 @@ interface RouteStorageObject {
 export const MXRouteConfig = [
     {
         path: "",
-        component: MXHomeComponent
+        redirectTo: '/account',
+        pathMatch: 'full'
     },
     {
         path: "account",
@@ -32,12 +33,12 @@ export const MXRouteConfig = [
             {
                 path: "sample-layouts",
                 component: MXSampleLayout
+            },
+            {
+                path: "**",
+                component: MXGuidanceLayout
             }
         ]
-    },
-    {
-        path: "**",
-        component: MXHomeComponent
     }
 ]
 

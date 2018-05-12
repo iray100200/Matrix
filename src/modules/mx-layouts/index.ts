@@ -26,17 +26,14 @@ import { MXComponentServiceProvider } from '../../common/win-services';
 export class MXLayoutsModule {
     component: ComponentFactory<any>;
     constructor(private moduleRef: NgModuleRef<any>, private componentServiceProvider: MXComponentServiceProvider) {
-        this.componentServiceProvider.subscribe(f => {
-            switch(f.type) {
-                case 'component': this.component = this.moduleRef.componentFactoryResolver.resolveComponentFactory(f.target);
-                    break;
-                case 'container': 
-                    if (this.component) {
-                        (<ViewContainerRef>f.target).createComponent(this.component);
-                        this.component = null
-                    }
-                    break;
+        this.componentServiceProvider.subscribe('component', f => {
+            this.component = this.moduleRef.componentFactoryResolver.resolveComponentFactory(f.target);
+        });
+        this.componentServiceProvider.subscribe('container', f => {
+            if (this.component) {
+                (<ViewContainerRef>f.target).createComponent(this.component);
+                this.component = null
             }
-        })
+        });
     }
 }
