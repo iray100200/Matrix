@@ -9,6 +9,7 @@ import { NgModule, NgModuleRef, ViewContainerRef, ComponentFactory } from '@angu
 import { MXCommonModule } from '../../common';
 import { MX_COM_DIRECTIVES } from '../components';
 import { MXStandaloneLayoutsModule } from './standalone';
+import { MXContainersModule } from '../containers';
 import { MXComponentServiceProvider } from '../../common/win-services';
 
 @NgModule({
@@ -16,6 +17,7 @@ import { MXComponentServiceProvider } from '../../common/win-services';
         BrowserModule,
         MXCommonModule,
         MXComponentsModule,
+        MXContainersModule,
         MXStandaloneLayoutsModule
     ],
     declarations: [

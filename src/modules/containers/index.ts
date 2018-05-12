@@ -1,13 +1,17 @@
 export * from './general';
 import { NgModule } from '@angular/core';
-import { GeneralContainer } from './general';
+import { MXStandaloneConatinersModule } from './standalone';
+import { GeneralContainerInterpreter } from './general/index.p';
 
 @NgModule({
+    imports: [
+        MXStandaloneConatinersModule
+    ],
     declarations: [
-        GeneralContainer
+        GeneralContainerInterpreter
     ],
     exports: [
-        GeneralContainer
+        GeneralContainerInterpreter
     ]
 })
 export class MXContainersModule {
