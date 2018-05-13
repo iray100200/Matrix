@@ -1,5 +1,5 @@
 import { Component, Input, ViewChild, ElementRef, TemplateRef, AfterViewInit } from '@angular/core';
-import { Button } from '../../../common/win-models/button';
+import { Button } from 'common/models';
 
 @Component({
     selector: 'component[sample-component]',

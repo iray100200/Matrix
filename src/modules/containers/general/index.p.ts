@@ -1,5 +1,5 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
-import { Interpreter } from '../../interpreter';
+import { Component, ElementRef, ViewChild, HostListener } from '@angular/core';
+import { Interpreter } from 'common/models/interpreter';
 import { GeneralContainer } from './index';
 import { MXComponentServiceProvider } from 'common/services';
 
@@ -12,5 +12,10 @@ export class GeneralContainerInterpreter extends Interpreter {
     attributes = [];
     constructor(componentServiceProvider: MXComponentServiceProvider) {
         super(componentServiceProvider);
+    }
+    @HostListener('mouseup', ['$event']) handleMouseup() {
+        this.componentServiceProvider.emit('container', {
+            target: this.component.target
+        });
     }
 }

@@ -1,10 +1,9 @@
-import { Margin, Padding, Color, Val, Background } from './index';
+import { Margin, Padding, Color, Val, Background } from './models';
 import { ElementRef, ViewChild, Injectable } from '@angular/core';
 
 export abstract class Button {
     @ViewChild('target') target;
-    constructor(protected elementRef: ElementRef) {
-    }
+    constructor(protected elementRef: ElementRef) { }
     private _width: Val;
     private _height: Val;
     private _margin: Margin = new Margin();

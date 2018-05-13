@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, HostListener } from '@angular/core';
+import { Component, AfterViewInit, HostListener, ViewContainerRef } from '@angular/core';
 import { MXComponentServiceProvider } from 'common/services';
 
 export abstract class Interpreter implements AfterViewInit {
@@ -23,7 +23,7 @@ export abstract class Interpreter implements AfterViewInit {
     ngAfterViewInit() {
         if (this.attributes) {
             for (let attribute of this.attributes) {
-                this.attributesBeforeHover[attribute] = this.component[attribute];    
+                this.attributesBeforeHover[attribute] = this.component[attribute];
             }
         }
     }

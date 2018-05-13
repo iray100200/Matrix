@@ -15,7 +15,8 @@
     "paths": {
       "common/services": ["src/common/win-services", "src/common/win-services/index"],
       "modules/components": ["src/modules/components", "src/modules/components/index"],
-      "modules/*": ["src/modules/*", "src/modules/*/index"]
+      "common/models": ["src/common/win-models/index"],
+      "common/models/*": ["src/common/win-models/*"]
     },
     "lib": [
       "es2017",

@@ -1,7 +1,7 @@
 import {Component, ViewChild } from '@angular/core';
 import { SampleComponent } from './index';
 import { MXComponentServiceProvider } from 'common/services';
-import { Interpreter } from '../../interpreter';
+import { Interpreter } from 'common/models/interpreter';
 
 @Component({
     selector: 'component-outlet',
