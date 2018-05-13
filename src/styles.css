@@ -85,6 +85,10 @@ button, input, a, div {
   color: inherit;
 }
 
+._mx-copy * {
+  cursor: url(/assets/images/lib/add-text-line.svg) 0 0, pointer!important;
+}
+
 .material-icons.md-16 { font-size: 16px; }
 .material-icons.md-18 { font-size: 18px; }
 .material-icons.md-20 { font-size: 20px; }

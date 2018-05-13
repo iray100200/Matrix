@@ -1,5 +1,7 @@
 import { Component, Input, EventEmitter, AfterViewInit } from '@angular/core';
 import { SampleComponentInterpreterDirective } from 'modules/components';
+import { fromEvent } from 'rxjs/observable/fromEvent';
+import { MXDocumentServiceProvider as documentService } from '../win-services'
 
 @Component({
     selector: "[mx-win-component-box]",
@@ -15,7 +17,7 @@ export class MXWinComponentBox implements AfterViewInit {
     @Input() img: any;
     @Input() name: any;
     @Input() shape: string;
-    private isMousedown: boolean = false;
+    private selected: boolean = false;
     private event: EventEmitter<any> = new EventEmitter();
     subscribe(fn: Function) {
         this.event.subscribe(fn);
@@ -24,12 +26,13 @@ export class MXWinComponentBox implements AfterViewInit {
         this.event.emit(this.ref);
     }
     handleMousedown(e) {
-        
-    }
-    mousedown(e) {
-        this.isMousedown = true;
+        this.selected = true;
+        document.body.classList.add('_mx-copy');
     }
     ngAfterViewInit() {
-
+        documentService.MouseupEvent.subscribe(f => {
+            this.selected = false;
+            document.body.classList.remove('_mx-copy');
+        })
     }
 }
