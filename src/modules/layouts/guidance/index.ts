@@ -1,4 +1,4 @@
-import { Component, ViewContainerRef, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, ViewContainerRef, ViewChild } from '@angular/core';
 import { MXComponentServiceProvider } from '../../../common/win-services';
 
 @Component({
@@ -12,21 +12,4 @@ export class GuidanceLayout {
 
     }
     path: 'modules/mx-layouts/guidance'
-}
-
-@Component({
-    selector: "[mx-guidance]",
-    template: '<mx-layout><div guidance #target></div></mx-layout>',
-    host: {
-        '(mouseenter)': "handleMouseenter($event)"
-    }
-})
-export class MXGuidanceLayout implements AfterViewInit {
-    @ViewChild(GuidanceLayout) target: GuidanceLayout;
-    private component: any;
-    constructor(private componentServiceProvider: MXComponentServiceProvider) {
-    }
-    ngAfterViewInit() {
-        
-    }
 }

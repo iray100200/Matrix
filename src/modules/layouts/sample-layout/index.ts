@@ -8,11 +8,3 @@ import { Component } from '@angular/core';
 export class SampleLayout {
     
 }
-
-@Component({
-    selector: "[mx-sample-layout]",
-    template: `<mx-layout><div sample-layout></div></mx-layout>`
-})
-export class MXSampleLayout {
-    
-}
