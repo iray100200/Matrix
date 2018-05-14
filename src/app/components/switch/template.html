@@ -2,10 +2,7 @@
     <div mx-win-primary-side [minWidth]="240" [maxWidth]="320" class="library-context">
         <div class="library-items" mx-win-scroller>
             <div class="library-items-container">
-                <div *ngIf="location==='layout'; else elseBlock" switch-layouts></div>
-                <ng-template #elseBlock>
-                    <div switch-components></div>
-                </ng-template>
+                <ng-template #switchHost></ng-template>
             </div>
         </div>
     </div>

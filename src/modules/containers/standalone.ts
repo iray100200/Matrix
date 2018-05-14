@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { GeneralContainer } from './general';
 import { Provider } from '@angular/core';
 
-export const MX_COMPONENTS: Provider[] = [
+export const MX_CONTAINERS: Provider[] = [
     GeneralContainer
 ]
 
@@ -14,13 +14,13 @@ export * from './general';
         CommonModule
     ],
     declarations: [
-        MX_COMPONENTS
+        MX_CONTAINERS
     ],
     exports: [
-        MX_COMPONENTS
+        MX_CONTAINERS
     ],
     entryComponents: [
-        MX_COMPONENTS
+        MX_CONTAINERS
     ]
 })
 export class MXStandaloneConatinersModule {

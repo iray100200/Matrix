@@ -1,6 +1,9 @@
-import { Component, ViewChild, OnInit, ElementRef } from "@angular/core";
-import { Router, RouterState, ActivatedRoute } from "@angular/router";
-import { MXComponentServiceProvider } from "../../../common/win-services";
+import { Component, ViewChild, OnInit, ElementRef, ViewContainerRef, ComponentFactoryResolver } from "@angular/core";
+import { MXComponentServiceProvider } from "common/services";
+import { MXRouterService } from 'common/services';
+import { MXSwitchToComponents } from '../switch-components';
+import { MXSwitchToContainers } from '../switch-containers';
+import { MXSwitchToLayouts } from '../switch-layouts';
 
 @Component({
     selector: "[mx-app-switch]",
@@ -11,15 +14,24 @@ export class MXSwitchComponent implements OnInit {
     resJson: Array<any>;
     private resize: number = 0;
     location: string;
+    @ViewChild('switchHost', { read: ViewContainerRef }) switchHost: ViewContainerRef;
+    componentMap: any = {
+        '/switch/layout': MXSwitchToLayouts,
+        '/switch/container': MXSwitchToContainers,
+        '/switch/component': MXSwitchToComponents
+    }
     constructor(
-        router: Router,
-        private componentServiceProvider: MXComponentServiceProvider
+        private componentServiceProvider: MXComponentServiceProvider,
+        private componentFactoryResolver: ComponentFactoryResolver,
+        private routerService: MXRouterService
     ) {
-        const state: RouterState = router.routerState;
-        const root: ActivatedRoute = state.root;
-        const child = root.firstChild;
-        child.params.forEach(p => {
-            this.location = p.location;
+        this.routerService.subscribe(event => {
+            let component = this.componentMap[event.url];
+            if (component) {
+                let componentRef = this.componentFactoryResolver.resolveComponentFactory(component);
+                this.switchHost.clear();
+                this.switchHost.createComponent(componentRef);
+            }
         });
     }
     @ViewChild("virtualWin") virtualWin: ElementRef;
@@ -27,7 +39,6 @@ export class MXSwitchComponent implements OnInit {
         window.addEventListener("resize", () => {
             this.resize++;
         });
-        console.log(this.location);
     }
     get vwidth(): number {
         return this.virtualWin.nativeElement.offsetWidth;

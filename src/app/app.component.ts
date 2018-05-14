@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
             hasAlert: true
         });
         this.routerService.subscribe(event => {
-            let index = ['/account', '/switch/layout', '/switch/component'].findIndex(r => {
+            let index = ['/account', '/switch/layout', '/switch/container', '/switch/component'].findIndex(r => {
                 return r === event.url;
             });
             this.routerIndex = 1 + (index > 0 ? index : 0);

@@ -1,0 +1,5 @@
+<div class="components-container">
+    <div *ngFor="let item of res">
+        <div mx-win-component-box [ref]="item.ref" [name]="item.name" [shape]="item.shape" #components></div>
+    </div>
+</div>

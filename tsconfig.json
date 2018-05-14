@@ -15,6 +15,7 @@
     "paths": {
       "common/services": ["src/common/win-services", "src/common/win-services/index"],
       "modules/components": ["src/modules/components", "src/modules/components/index"],
+      "modules/containers": ["src/modules/containers", "src/modules/containers/index"],
       "common/models": ["src/common/win-models/index"],
       "common/models/*": ["src/common/win-models/*"]
     },

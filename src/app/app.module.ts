@@ -11,6 +11,7 @@ import { MXHomeComponent } from './components/home';
 import { MXSwitchComponent } from './components/switch';
 import { MXSwitchToLayouts } from './components/switch-layouts';
 import { MXSwitchToComponents } from './components/switch-components';
+import { MXSwitchToContainers } from './components/switch-containers';
 import { ClarityModule, ClrIconModule } from '@clr/angular';
 import { SERVICES_PROVIDERS } from '../services';
 import { MXLayoutsModule } from '../modules';
@@ -22,7 +23,8 @@ import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http'
     MXHomeComponent,
     MXSwitchComponent,
     MXSwitchToLayouts,
-    MXSwitchToComponents
+    MXSwitchToComponents,
+    MXSwitchToContainers
   ],
   imports: [
     CommonModule,
@@ -45,6 +47,11 @@ import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http'
     MXSwitchComponent,
     MXSwitchToLayouts,
     MXSwitchToComponents
+  ],
+  entryComponents: [
+    MXSwitchToLayouts,
+    MXSwitchToComponents,
+    MXSwitchToContainers
   ],
   bootstrap: [AppComponent]
 })

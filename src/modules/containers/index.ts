@@ -1,4 +1,5 @@
 export * from './general';
+export * from './general/index.p';
 import { NgModule } from '@angular/core';
 import { MXStandaloneConatinersModule } from './standalone';
 import { GeneralContainerInterpreter } from './general/index.p';
@@ -11,6 +12,9 @@ import { GeneralContainerInterpreter } from './general/index.p';
         GeneralContainerInterpreter
     ],
     exports: [
+        GeneralContainerInterpreter
+    ],
+    entryComponents: [
         GeneralContainerInterpreter
     ]
 })
