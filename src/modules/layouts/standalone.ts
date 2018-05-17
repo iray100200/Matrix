@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { SampleLayout } from './sample-layout';
-import { GuidanceLayout, ElementDirective } from './guidance';
+import { GuidanceLayout } from './guidance';
 import { NgModule } from '@angular/core';
 import { MXStandaloneComponentsModule } from '../components/standalone';
 import { MXStandaloneConatinersModule } from '../containers/standalone';
@@ -17,8 +17,7 @@ export const MX_LAYOUTS = [
         MXStandaloneConatinersModule
     ],
     declarations: [
-        MX_LAYOUTS,
-        ElementDirective
+        MX_LAYOUTS
     ],
     entryComponents: [
         MX_LAYOUTS

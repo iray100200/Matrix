@@ -37,7 +37,7 @@ export class MXLayoutsModule {
         this.componentServiceProvider.subscribe('container/mouseup', f => {
             this.component = this.moduleRef.componentFactoryResolver.resolveComponentFactory(f.target);
             if (this.component && this.layout) {
-                (<ViewContainerRef>this.layout).createComponent(this.component);
+                let componentRef = (<ViewContainerRef>this.layout).createComponent(this.component);
                 this.component = null
             }
         });
