@@ -28,3 +28,11 @@ export abstract class Interpreter implements AfterViewInit {
         }
     }
 }
+
+export abstract class ContainerInterpreter extends Interpreter {
+    @HostListener('mouseup', ['$event']) handleMouseup(e) {
+        this.componentServiceProvider.emit('container/mouseup', {
+            target: this.component
+        })
+    }
+}

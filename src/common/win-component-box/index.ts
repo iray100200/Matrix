@@ -1,7 +1,7 @@
 import { Component, Input, EventEmitter, AfterViewInit } from '@angular/core';
 import { SampleComponentInterpreterDirective } from 'modules/components';
 import { fromEvent } from 'rxjs/observable/fromEvent';
-import { MXDocumentServiceProvider as documentService } from '../win-services'
+import { MXDocumentServiceProvider as documentService, MXComponentServiceProvider } from '../win-services'
 
 @Component({
     selector: "[mx-win-component-box]",
@@ -19,6 +19,9 @@ export class MXWinComponentBox implements AfterViewInit {
     @Input() shape: string;
     private selected: boolean = false;
     private event: EventEmitter<any> = new EventEmitter();
+    constructor(private componentServiceProvider: MXComponentServiceProvider) {
+
+    }
     subscribe(fn: Function) {
         this.event.subscribe(fn);
     }
@@ -31,8 +34,13 @@ export class MXWinComponentBox implements AfterViewInit {
     }
     ngAfterViewInit() {
         documentService.MouseupEvent.subscribe(f => {
-            this.selected = false;
             document.body.classList.remove('_mx-copy');
+            if (this.selected) {
+                this.selected = false;
+                this.componentServiceProvider.emit('container/mouseup', {
+                    target: this.ref
+                })
+            }
         })
     }
 }

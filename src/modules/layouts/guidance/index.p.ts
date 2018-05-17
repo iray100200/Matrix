@@ -1,4 +1,4 @@
-import { Component, ViewContainerRef, AfterViewInit, ViewChild, HostListener } from '@angular/core';
+import { Component, ViewContainerRef, AfterViewInit, ViewChild, HostListener, Directive } from '@angular/core';
 import { MXComponentServiceProvider } from 'common/services';
 import { GuidanceLayout } from './index';
 
@@ -12,7 +12,9 @@ export class MXGuidanceLayout implements AfterViewInit {
     constructor(private componentServiceProvider: MXComponentServiceProvider) {
     }
     @HostListener('mouseenter', ['$event']) handleMouseenter(e) {
-
+        this.componentServiceProvider.emit('layout/mouseenter', {
+            target: this.target.container
+        })
     }
     ngAfterViewInit() {
         
