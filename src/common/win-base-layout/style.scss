@@ -23,6 +23,11 @@
     opacity: 0.84;
 }
 
+._mx-layout layout {
+    display: block;
+    height: 100%;
+}
+
 ._mx-layout container-outlet {
     display: block;
     height: 100%;

@@ -2,9 +2,8 @@ import { Component, ViewContainerRef, ViewChild, Directive, ViewChildren, AfterV
 import { MXComponentServiceProvider } from '../../../common/win-services';
 
 @Component({
-    selector: "[guidance]",
-    templateUrl: "./template.html",
-    styleUrls: ["./style.css"]
+    selector: "layout[guidance]",
+    templateUrl: "./template.html"
 })
 export class GuidanceLayout implements AfterViewInit {
     @ViewChild('tpl', { read: ViewContainerRef }) container: ViewContainerRef;

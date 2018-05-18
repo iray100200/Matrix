@@ -4,7 +4,7 @@ import { GuidanceLayout } from './index';
 
 @Component({
     selector: "[mx-guidance]",
-    template: '<mx-layout><div guidance #target></div></mx-layout>'
+    template: '<mx-layout><layout guidance #target></layout></mx-layout>'
 })
 export class MXGuidanceLayout implements AfterViewInit {
     @ViewChild(GuidanceLayout) target: GuidanceLayout;
