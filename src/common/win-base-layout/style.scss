@@ -1,9 +1,7 @@
 @import '../../base.sass';
 
 ._mx-layout .mx-layout-container {
-    border: 1px solid transparent;
     transition: 0.2s all;
-    border: 1px dashed transparent;
     display: flex;
     flex-direction: column;
 }
@@ -23,5 +21,19 @@
 
 ._mx-layout:hover .mx-layout-container {
     opacity: 0.84;
-    border: 1px dashed #5eb8ff;
+}
+
+._mx-layout container-outlet {
+    display: block;
+    height: 100%;
+}
+
+._mx-layout container-outlet container {
+    display: block;
+    height: 100%;
+}
+
+._mx-layout container-outlet container .container {
+    display: block;
+    height: 100%;
 }

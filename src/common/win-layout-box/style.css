@@ -1,15 +1,12 @@
 .layout-box {
-    border: 1px solid #d3d7d4;
     padding: 30%;
 }
 
 .layout-box.cloned {
-    border: 1px dotted #d3d7d4;
     position: absolute;
 }
 
 .layout-box:hover {
-    border-color: #999d9c;
     transition: 0.5s all;
 }
 
