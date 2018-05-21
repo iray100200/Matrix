@@ -18,6 +18,7 @@ export class MXSwitchComponent implements OnInit, AfterViewInit {
     wheelDelta: number = 1;
     MAX_Z: number = 1.6;
     MIN_Z: number = 0.3;
+    private ctrl_keydown = false;
     @ViewChild('switchHost', { read: ViewContainerRef }) switchHost: ViewContainerRef;
     componentMap: any = {
         '/switch/layout': MXSwitchToLayouts,
@@ -46,9 +47,24 @@ export class MXSwitchComponent implements OnInit, AfterViewInit {
     }
     ngAfterViewInit() {
         fromEvent(this.virtualWin.nativeElement, 'mousewheel').subscribe((f: WheelEvent) => {
-            let delta = (this.wheelDelta + f.wheelDeltaY / 1200);
-            this.wheelDelta = delta < this.MIN_Z ? this.MIN_Z : delta > this.MAX_Z ? this.MAX_Z : delta;
-            this.virtualWin.nativeElement.style.zoom = this.wheelDelta;
+            f.preventDefault();
+            if (this.ctrl_keydown) {
+                let delta = (this.wheelDelta + f.wheelDeltaY / 1200);
+                this.wheelDelta = delta < this.MIN_Z ? this.MIN_Z : delta > this.MAX_Z ? this.MAX_Z : delta;
+                this.virtualWin.nativeElement.style.zoom = this.wheelDelta;
+            }  
+        })
+        fromEvent(window, 'keydown').subscribe((f: KeyboardEvent) => {
+            f.preventDefault()
+            if (f.keyCode === 17) {
+                this.ctrl_keydown = true;
+            }
+        })
+        fromEvent(window, 'keyup').subscribe((f: KeyboardEvent) => {
+            f.preventDefault();
+            if (f.keyCode === 17) {
+                this.ctrl_keydown = false;
+            }
         })
     }
     get vwidth(): number {
