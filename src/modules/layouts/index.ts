@@ -44,5 +44,8 @@ export class MXLayoutsModule {
         this.componentServiceProvider.subscribe('layout/mouseenter', f => {
             this.layout = f.target
         });
+        this.componentServiceProvider.subscribe('container/mouseenter', f => {
+            this.layout = f.target
+        });
     }
 }

@@ -9,7 +9,8 @@ export abstract class Interpreter implements AfterViewInit {
     constructor(componentServiceProvider: MXComponentServiceProvider) {
         this.componentServiceProvider = componentServiceProvider;
     }
-    @HostListener('click', ['$event']) handleClick(e) {
+    @HostListener('click', ['$event']) handleClick(e:MouseEvent) {
+        e.stopPropagation();
         this.componentServiceProvider.emit('interpreter', {
             target: this.component,
             attributes: {

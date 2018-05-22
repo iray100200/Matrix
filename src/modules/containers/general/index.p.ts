@@ -18,4 +18,9 @@ export class GeneralContainerInterpreter extends Interpreter {
             target: this.component.target
         });
     }
+    @HostListener('mouseenter', ['$event']) handleMouseenter() {
+        this.componentServiceProvider.emit('container/mouseenter', {
+            target: this.component.target
+        });
+    }
 }

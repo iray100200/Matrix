@@ -7,5 +7,5 @@ import { Container } from 'common/models';
     styleUrls: ['./style.css']
 })
 export class GeneralContainer extends Container {
-    @ViewChild('container', { read: ViewContainerRef }) target: ViewContainerRef;
+    @ViewChild('target', { read: ViewContainerRef }) target: ViewContainerRef;
 }
