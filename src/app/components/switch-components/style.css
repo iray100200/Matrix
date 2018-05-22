@@ -1,5 +1,6 @@
 .components-container {
     margin-right: -10px;
+    overflow: auto;
 }
 
 .components-container > div {

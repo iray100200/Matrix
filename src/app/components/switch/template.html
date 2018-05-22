@@ -13,8 +13,10 @@
             <clr-icon shape="times"></clr-icon>
             <span>{{vheight}}</span>
         </div>
-        <div class="mx-container" #virtualWin>
-            <router-outlet></router-outlet>
+        <div class="mx-container">
+            <div class="mx-context" #virtualWin>
+                <router-outlet></router-outlet>
+            </div>
         </div>
         <div class="ng-host"><ng-template #templateHost></ng-template></div>
     </div>

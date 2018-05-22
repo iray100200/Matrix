@@ -49,10 +49,10 @@ export class MXSwitchComponent implements OnInit, AfterViewInit {
         fromEvent(this.virtualWin.nativeElement, 'mousewheel').subscribe((f: WheelEvent) => {
             f.preventDefault();
             if (this.ctrl_keydown) {
-                let delta = (this.wheelDelta + f.wheelDeltaY / 1200);
-                this.wheelDelta = delta < this.MIN_Z ? this.MIN_Z : delta > this.MAX_Z ? this.MAX_Z : delta;
-                this.virtualWin.nativeElement.style.zoom = this.wheelDelta;
-            }  
+                let delta = (this.wheelDelta + f.wheelDeltaY / 1000);
+                delta = this.wheelDelta = delta < this.MIN_Z ? this.MIN_Z : delta > this.MAX_Z ? this.MAX_Z : delta;
+                this.virtualWin.nativeElement.style.transform = `scale(${delta})`;
+            }
         })
         fromEvent(window, 'keydown').subscribe((f: KeyboardEvent) => {
             f.preventDefault()
