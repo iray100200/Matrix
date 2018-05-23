@@ -16,8 +16,8 @@ export class MXSwitchComponent implements OnInit, AfterViewInit {
     private resize: number = 0;
     location: string;
     wheelDelta: number = 1;
-    MAX_Z: number = 1.6;
-    MIN_Z: number = 0.4;
+    MAX_Z: number = 1.5;
+    MIN_Z: number = 0.5;
     private ctrl_keydown = false;
     @ViewChild('switchHost', { read: ViewContainerRef }) switchHost: ViewContainerRef;
     componentMap: any = {
