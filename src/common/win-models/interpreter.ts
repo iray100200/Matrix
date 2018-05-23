@@ -14,7 +14,7 @@ export abstract class Interpreter implements AfterViewInit {
         this.componentServiceProvider.emit('interpreter', {
             target: this.component,
             attributes: {
-                beforeHover: this.attributesBeforeHover
+                beforeHover: this.component
             }
         });
     }
