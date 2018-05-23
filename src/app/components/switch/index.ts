@@ -17,7 +17,7 @@ export class MXSwitchComponent implements OnInit, AfterViewInit {
     location: string;
     wheelDelta: number = 1;
     MAX_Z: number = 1.6;
-    MIN_Z: number = 0.3;
+    MIN_Z: number = 0.4;
     private ctrl_keydown = false;
     @ViewChild('switchHost', { read: ViewContainerRef }) switchHost: ViewContainerRef;
     componentMap: any = {
@@ -49,7 +49,7 @@ export class MXSwitchComponent implements OnInit, AfterViewInit {
         fromEvent(this.virtualWin.nativeElement, 'mousewheel').subscribe((f: WheelEvent) => {
             f.preventDefault();
             if (this.ctrl_keydown) {
-                let delta = (this.wheelDelta + f.wheelDeltaY / 1000);
+                let delta = (this.wheelDelta + f.wheelDeltaY / 2400);
                 delta = this.wheelDelta = delta < this.MIN_Z ? this.MIN_Z : delta > this.MAX_Z ? this.MAX_Z : delta;
                 this.virtualWin.nativeElement.style.cssText = `transform:scale(${delta});width:${(100 / delta)}%;height:${(100 / delta)}%`;
             }
