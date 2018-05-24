@@ -17,6 +17,7 @@ export class MXWinComponentBox implements AfterViewInit {
     @Input() img: any;
     @Input() name: any;
     @Input() shape: string;
+    static activatedComponent: any;
     private selected: boolean = false;
     private event: EventEmitter<any> = new EventEmitter();
     constructor(private componentServiceProvider: MXComponentServiceProvider) {
@@ -31,16 +32,12 @@ export class MXWinComponentBox implements AfterViewInit {
     handleMousedown(e) {
         this.selected = true;
         document.body.classList.add('_mx-copy');
+        MXWinComponentBox.activatedComponent = this.ref;
     }
     ngAfterViewInit() {
         documentService.MouseupEvent.subscribe(f => {
             document.body.classList.remove('_mx-copy');
-            if (this.selected) {
-                this.selected = false;
-                this.componentServiceProvider.emit('container/mouseup', {
-                    target: this.ref
-                })
-            }
+            MXWinComponentBox.activatedComponent = null;
         })
     }
 }

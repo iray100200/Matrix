@@ -1,7 +1,8 @@
-import { Component, ElementRef, ViewChild, HostListener } from '@angular/core';
+import { Component, ElementRef, ViewChild, HostListener, ComponentFactoryResolver } from '@angular/core';
 import { Interpreter } from 'common/models/interpreter';
 import { GeneralContainer } from './index';
 import { MXComponentServiceProvider } from 'common/services';
+import { MXWinComponentBox } from '../../../common/win-component-box';
 
 @Component({
     selector: 'container-outlet',
@@ -10,17 +11,13 @@ import { MXComponentServiceProvider } from 'common/services';
 export class GeneralContainerInterpreter extends Interpreter {
     @ViewChild(GeneralContainer) component: GeneralContainer;
     attributes = [];
-    constructor(componentServiceProvider: MXComponentServiceProvider) {
+    constructor(componentServiceProvider: MXComponentServiceProvider, private componentFactoryResolver: ComponentFactoryResolver) {
         super(componentServiceProvider);
     }
     @HostListener('mouseup', ['$event']) handleMouseup() {
-        this.componentServiceProvider.emit('container', {
-            target: this.component.target
-        });
-    }
-    @HostListener('mouseenter', ['$event']) handleMouseenter() {
-        this.componentServiceProvider.emit('container/mouseenter', {
-            target: this.component.target
-        });
+        if (MXWinComponentBox.activatedComponent) {
+            let component = this.componentFactoryResolver.resolveComponentFactory(MXWinComponentBox.activatedComponent);
+            this.component.target.createComponent(component);
+        }
     }
 }

@@ -1,6 +1,7 @@
-import { Component, ViewContainerRef, AfterViewInit, ViewChild, HostListener, Directive } from '@angular/core';
+import { Component, ViewContainerRef, AfterViewInit, ViewChild, HostListener, Directive, ComponentFactoryResolver } from '@angular/core';
 import { MXComponentServiceProvider } from 'common/services';
 import { GuidanceLayout } from './index';
+import { MXWinComponentBox } from '../../../common/win-component-box';
 
 @Component({
     selector: "[mx-guidance]",
@@ -9,12 +10,13 @@ import { GuidanceLayout } from './index';
 export class MXGuidanceLayout implements AfterViewInit {
     @ViewChild(GuidanceLayout) target: GuidanceLayout;
     private component: any;
-    constructor(private componentServiceProvider: MXComponentServiceProvider) {
+    constructor(private componentServiceProvider: MXComponentServiceProvider, private componentFactoryResolver: ComponentFactoryResolver) {
     }
     @HostListener('mouseenter', ['$event']) handleMouseenter(e) {
-        this.componentServiceProvider.emit('layout/mouseenter', {
-            target: this.target.container
-        })
+        if (MXWinComponentBox.activatedComponent) {
+            let component = this.componentFactoryResolver.resolveComponentFactory(MXWinComponentBox.activatedComponent);
+            this.target.container.createComponent(component);
+        }
     }
     ngAfterViewInit() {
         

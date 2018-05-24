@@ -27,25 +27,4 @@ import { MXComponentServiceProvider } from 'common/services';
         MXGuidanceLayout
     ]
 })
-export class MXLayoutsModule {
-    component: ComponentFactory<any>;
-    layout: any;
-    constructor(private moduleRef: NgModuleRef<any>, private componentServiceProvider: MXComponentServiceProvider) {
-        this.componentServiceProvider.subscribe('component_active', f => {
-            
-        });
-        this.componentServiceProvider.subscribe('container/mouseup', f => {
-            this.component = this.moduleRef.componentFactoryResolver.resolveComponentFactory(f.target);
-            if (this.component && this.layout) {
-                let componentRef = (<ViewContainerRef>this.layout).createComponent(this.component);
-                this.component = null
-            }
-        });
-        this.componentServiceProvider.subscribe('layout/mouseenter', f => {
-            this.layout = f.target
-        });
-        this.componentServiceProvider.subscribe('container/mouseenter', f => {
-            this.layout = f.target
-        });
-    }
-}
+export class MXLayoutsModule { }
